@@ -1,3 +1,3 @@
-put all input data into this folder
+put all input and intermediary data into this folder
 
-any data >40mb, put into a local sub-folder that is gitignored
+any data >40mb, put into the "local" sub-folder which is gitignored
