@@ -81,16 +81,18 @@
 					'source': 'ttszones',
 					'paint': {
 						'fill-color': [
-							'step', ['get', 'Perc_No_Veh'],
+							'case',
+							['==', ['get', 'Perc_No_Veh'], null], '#cbcbcb',
+							['step', ['get', 'Perc_No_Veh'],
 							colours[0], 0.2,
 							colours[1], 0.4,
 							colours[2], 0.6,
 							colours[3], 0.8,
 							colours[4], 1.01,
 							'#cbcbcb'
-						],
-						'fill-opacity': 0.5,
-						'fill-outline-color': '#000000'
+						]],
+						'fill-opacity': 1,
+						'fill-outline-color': '#ffffff',
 					}
 				}
 			);
@@ -116,8 +118,7 @@
 					'paint': {
 						'line-color': '#6C3BAA',
 						'line-opacity': 0.95,
-						'line-width': 2,
-						'line-dasharray': [1.5, 1.5] 
+						'line-width': 2
 					}
 				}
 			);
@@ -191,9 +192,25 @@
 
 <style>
 
+	#container {
+		display: flex;
+	}
+
+	#panel {
+		width: 400px;
+		min-width: 400px;
+		height:100vh;
+		overflow: auto;
+		overflow-x: hidden;
+		background-color: #cbcbcb;
+		border-left: 10px;
+	}
+
 	#map {
-		width: 100vw;
+		width: calc(100vw - 400px);
 		height: 100vh;
+		overflow: hidden;
+		overflow-x: hidden
 	}
 
 </style>
