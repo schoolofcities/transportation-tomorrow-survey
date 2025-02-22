@@ -21,6 +21,7 @@
 	"dependencies": {
 		"maplibre-gl": "^5.0.1",
 		"pmtiles": "^3.2.1",
-		"protomaps-themes-base": "^4.3.1"
+		"protomaps-themes-base": "^4.3.1",
+		"svelte-select": "^5.8.3"
 	}
 }
