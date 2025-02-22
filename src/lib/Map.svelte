@@ -9,6 +9,8 @@
 	import ttszones from "../data/tts2022.geo.json";
 	import currentlines from "../data/CurrentTransitLines.geo.json";
 	import futurelines from "../data/FutureTransitLines.geo.json";
+	import currentstations from "../data/currentstations.geo.json";
+	import futurestations from "../data/futurestations.geo.json";
 	import Select from "svelte-select";
 
 	let PMTILES_URL = 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b'
@@ -17,7 +19,7 @@
 
 	let colours = ["#f7ecc3", "#f2cd8d", "#eeb05b", "#e78052", "#e15449"];
 
-	const defaultMap = "% of Households with No Vehicles";
+	const defaultMap = "Population Density";
 	let mapSelected = defaultMap;
 
 	const choropleths = {
@@ -42,25 +44,32 @@
 		}
 	});
 
-	let mapLoaded = false
+	let mapLoaded = false;
+	let isMapReady = false;
+
+	let pendingLayerSelectCalls = [];
+
+	function processPendingLayerSelectCalls() {
+    	if (map && mapLoaded && isMapReady && map.isStyleLoaded()) {
+        	while (pendingLayerSelectCalls.length > 0) {
+            	const e = pendingLayerSelectCalls.shift(); // Get the next pending call
+            	layerSelect(e); // Process the call
+        	}
+    	}
+	}
 	
 	function layerSelect(e) {
-		if (!map || !mapLoaded) {
-			console.warn("Map is not initialized or fully loaded yet.");
-			return;
-		}
+		console.log("layerSelect called with:", e.detail);
 
-		if (!map.isStyleLoaded()) {
-			console.warn("Map style is not loaded yet. Waiting for style to load...");
-			map.once('styledata', () => {
-				layerSelect(e); // Retry after the style is loaded
-			});
-			return;
-		}
+    	if (!map || !mapLoaded || !isMapReady || !map.isStyleLoaded()) {
+        	console.warn("Map is not ready. Adding to queue...");
+			pendingLayerSelectCalls.push(e);
+        	return;
+    	};
 
-		console.log("Setting layer:", e.detail.value);
-		mapSelected = e.detail.value;
-		layerSet(mapSelected);
+    	console.log("Setting layer:", e.detail.value);
+    	mapSelected = e.detail.value;
+    	layerSet(mapSelected);
 	}		
 
 	function layerSet(layer) {
@@ -139,23 +148,22 @@
 				data: futurelines
 			});
 
+			map.addSource('currentstations', {
+				type: 'geojson',
+				data: currentstations
+			});
+
+			map.addSource('futurestations', {
+				type: 'geojson',
+				data: futurestations
+			});
+
 			map.addLayer(
 				{
 					'id': 'ttszones',
 					'type': 'fill',
 					'source': 'ttszones',
 					'paint': {
-						'fill-color': [
-							"case",
-							["==", ["get", "Perc_No_Veh"], null], "#cbcbcb",
-							["step", ["get", "Perc_No_Veh"],
-							colours[0], 6,
-							colours[1], 20,
-							colours[2], 40,
-							colours[3], 71,
-							colours[4], 101,
-							"#cbcbcb"]	
-						],
 						'fill-opacity': 1,
 						'fill-outline-color': '#ffffff',
 					}
@@ -173,7 +181,7 @@
 						'line-width': 2 
 					}
 				}
-			)
+			);
 
 			map.addLayer(
 				{
@@ -188,8 +196,45 @@
 				}
 			);
 
+			map.addLayer(
+				{
+					'id': 'currentstations',
+					'type': 'circle',
+					'source': 'currentstations',
+					'paint': {
+						'circle-radius': 4,
+						'circle-color': '#006400',
+						'circle-opacity': 0.95
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id': 'futurestations',
+					'type': 'circle',
+					'source': 'futurestations',
+					'paint': {
+						'circle-radius': 4,
+						'circle-color': '#6C3BAA',
+						'circle-opacity': 0.95
+					}
+				}
+			);
+
+			console.log("Map loaded successfully.");
 			mapLoaded = true;
-			layerSelect({ detail: { value: mapSelected } });
+			
+			map.once('styledata', () => {
+				console.log("Map style fully loaded.");
+				isMapReady = true;
+				layerSet(defaultMap);
+				processPendingLayerSelectCalls();
+			});
+		});
+
+		map.on('error', (error) => {
+			console.error("Map load error:", error);
 		});
 
 		const attributions = [
@@ -230,22 +275,24 @@
 		<h3>Select Layers</h3>
 
 		<div id='select-wrapper'>
-			{#if map && mapLoaded}
+			{#if map && mapLoaded && isMapReady}
 				<Select
 					id='select'
 					items={items}
-					value
+					value={mapSelected}
 					clearable={false}
 					showChevron={true}
 					listAutoWidth={true}
 					searchable={false}
 					listOffset = 10
-					on:input={layerSelect}
+					on:change={layerSelect}
 				/>
+			{:else}
+				<p>Loading map...</p>
 			{/if}
 		</div>
 
-		<svg width='400' height={mapSelected == "% of Households with No Vehicles" ? 24 : 40}>
+		<svg width='400' height='40'>
 			<rect
 			class = "box"
 			width="74"
@@ -312,8 +359,8 @@
 	}
 
 	#panel {
-		width: 400px;
-		min-width: 400px;
+		width: 420px;
+		min-width: 420px;
 		height:100vh;
 		overflow: auto;
 		overflow-x: hidden;
