@@ -25,13 +25,13 @@
 	const choropleths = {
 		"Population Density": {
 			dataSource: "Pop_Dens",
-			breaks: [2000, 4000, 8000, 16000],
+			breaks: [2000, 4000, 8000, 16000], // using similar breaks to the essential-spaces map
 			colours: colours,
 			text: "TTS Zone-level population density per sq km"
 		},
 		"% of Households with No Vehicles": {
 			dataSource: "Perc_No_Veh",
-			breaks: [6, 20, 40, 71],
+			breaks: [6, 20, 40, 71],  // using natural jenks breaks
 			colours: colours,
 			text: "Percentage of households in each TTS Zone that do not own a vehicle"
 		}
@@ -88,6 +88,38 @@
 			choropleth.colours[4]]			
 		]);
 		map.setPaintProperty("ttszones", "fill-outline-color", "#ffffff");
+	}
+
+	let onTransit = true;
+
+	$:  onTransit, filterTransit()
+
+	function filterTransit() {
+		if (map) {
+			if (onTransit) {
+				map.setPaintProperty('currentlines', 'line-opacity', 0.95);
+				map.setPaintProperty('currentstations', 'circle-opacity', 1);
+			} else {
+				map.setPaintProperty('currentlines', 'line-opacity', 0);
+				map.setPaintProperty('currentstations', 'circle-opacity', 0);
+			}
+		}
+	}
+
+	let onTransitFuture = false;
+
+	$:  onTransitFuture, filterTransitFuture()
+
+	function filterTransitFuture() {
+		if (map) {
+			if (onTransitFuture) {
+				map.setPaintProperty('futurelines', 'line-opacity', 0.95);
+				map.setPaintProperty('futurestations', 'circle-opacity', 1);
+			} else {
+				map.setPaintProperty('futurelines', 'line-opacity', 0);
+				map.setPaintProperty('futurestations', 'circle-opacity', 0);
+			}
+		}
 	}
 
 	onMount(async () => {
@@ -164,8 +196,7 @@
 					'type': 'fill',
 					'source': 'ttszones',
 					'paint': {
-						'fill-opacity': 1,
-						'fill-outline-color': '#ffffff',
+						'fill-opacity': 1
 					}
 				}
 			);
@@ -190,7 +221,7 @@
 					'source':'futurelines',
 					'paint': {
 						'line-color': '#6C3BAA',
-						'line-opacity': 0.95,
+						'line-opacity': 0,
 						'line-width': 2
 					}
 				}
@@ -202,7 +233,7 @@
 					'type': 'circle',
 					'source': 'currentstations',
 					'paint': {
-						'circle-radius': 4,
+						'circle-radius': ['interpolate', ['linear'], ['zoom'], 7, 0, 10, 5],
 						'circle-color': '#006400',
 						'circle-opacity': 0.95
 					}
@@ -215,9 +246,9 @@
 					'type': 'circle',
 					'source': 'futurestations',
 					'paint': {
-						'circle-radius': 4,
+						'circle-radius': ['interpolate', ['linear'], ['zoom'], 7, 0, 10, 5],
 						'circle-color': '#6C3BAA',
-						'circle-opacity': 0.95
+						'circle-opacity': 0
 					}
 				}
 			);
@@ -345,6 +376,30 @@
 	
 		</svg>
 
+		<p class="des">
+			{choropleths[mapSelected].text}
+		</p>
+
+		<h3>Select Other Reference Layers</h3>
+
+		<div id="checkbox" class="check-box">
+			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onTransit}/> 
+				Existing Transit Lines
+				<svg width="30" height="10">
+					<line x1="0" y1="6" x2="40" y2="6" stroke="#006400" stroke-width="3.5"/>
+					<circle cx="15" cy="6" r="4" fill="#006400"/>
+				</svg>
+			</label>
+			<br>
+			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onTransitFuture}/> 
+				Upcoming Transit Lines
+				<svg width="30" height="10">
+					<line x1="0" y1="6" x2="40" y2="6" stroke="#6C3BAA" stroke-width="3.5"/>
+					<circle cx="15" cy="6" r="4" fill="#6C3BAA"/>
+				</svg>
+			</label>
+		</div>
+
 	</div>
 
 	<div id="map"></div>
@@ -409,6 +464,14 @@
 		--item-is-active-bg: #DA291C;
 		--chevron-color: #DA291C;
 		--item-hover-bg: #F8D4D2;
+	}
+
+	.des {
+		margin-top: 4px;
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size: 14px;
+		line-height: 18px;
 	}
 
 	#map {

@@ -45,7 +45,6 @@ h2 {
     font-family: TradeGothicBold, sans-serif;
     font-size: 24px;
     color: var(--brandDarkBlue);
-    text-decoration: underline;
 }
 
 h3 {
@@ -84,7 +83,7 @@ h5 {
 
 p {
     font-family: Roboto;
-    color: var(--brandWhite);
+    color: "black";
     font-size: 16px;
     line-height: 24px;
 }
