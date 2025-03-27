@@ -7,10 +7,10 @@
 	import layers from 'protomaps-themes-base';
 	import "../assets/global.css";
 	import ttszones from "../data/tts2022.geo.json";
-	import currentlines from "../data/CurrentTransitLines.geo.json";
-	import futurelines from "../data/FutureTransitLines.geo.json";
-	import currentstations from "../data/currentstations.geo.json";
-	import futurestations from "../data/futurestations.geo.json";
+	import current_lines from "../data/current-lines.geo.json";
+	import future_lines from "../data/future-lines.geo.json";
+	import currentstations from "../data/current-stations.geo.json";
+	import futurestations from "../data/future-stations.geo.json";
 	import Select from "svelte-select";
 	import lowertier from "../data/TTS_Lower_Tier.geo.json";
 	import uppertier from "../data/TTS_Upper_Single_Tier.geo.json";
@@ -19,7 +19,7 @@
 
 	let map = null;
 
-	let colours = ["#ffe200", "#dbc300", "#bda800", "#938200", "#525100"];
+	let colours = ["#f1c500", "#eca50d", "#e7861a", "#e16626", "#DC4633"];
 
 	const defaultMap = "Population Density";
 	let mapSelected = defaultMap;
@@ -95,7 +95,7 @@
 			choropleth.colours[3], choropleth.breaks[3],
 			choropleth.colours[4]]			
 		]);
-		map.setPaintProperty("ttszones", "fill-outline-color", "#ffffff");
+		// map.setPaintProperty('ttszones-pattern', 'fill-pattern', 'pattern');
 	}
 
 	let onTransit = true;
@@ -105,11 +105,11 @@
 	function filterTransit() {
 		if (map) {
 			if (onTransit) {
-				map.setPaintProperty('currentlines', 'line-opacity', 0.95);
-				map.setPaintProperty('currentstations', 'circle-opacity', 0.95);
-				map.setPaintProperty('currentstations', 'circle-stroke-opacity', 0.95);
+				map.setPaintProperty('current_lines', 'line-opacity', 1);
+				map.setPaintProperty('currentstations', 'circle-opacity', 1);
+				map.setPaintProperty('currentstations', 'circle-stroke-opacity', 1);
 			} else {
-				map.setPaintProperty('currentlines', 'line-opacity', 0);
+				map.setPaintProperty('current_lines', 'line-opacity', 0);
 				map.setPaintProperty('currentstations', 'circle-opacity', 0);
 				map.setPaintProperty('currentstations', 'circle-stroke-opacity', 0);
 			}
@@ -123,11 +123,11 @@
 	function filterTransitFuture() {
 		if (map) {
 			if (onTransitFuture) {
-				map.setPaintProperty('futurelines', 'line-opacity', 0.95);
-				map.setPaintProperty('futurestations', 'circle-opacity', 0.95);
-				map.setPaintProperty('futurestations', 'circle-stroke-opacity', 0.95);
+				map.setPaintProperty('future_lines', 'line-opacity', 1);
+				map.setPaintProperty('futurestations', 'circle-opacity', 1);
+				map.setPaintProperty('futurestations', 'circle-stroke-opacity', 1);
 			} else {
-				map.setPaintProperty('futurelines', 'line-opacity', 0);
+				map.setPaintProperty('future_lines', 'line-opacity', 0);
 				map.setPaintProperty('futurestations', 'circle-opacity', 0);
 				map.setPaintProperty('futurestations', 'circle-stroke-opacity', 0);
 			}
@@ -176,31 +176,11 @@
 
 		});
 
-		map.on('load', () => {
+		map.on('load', async () => {
 
 			map.addSource('ttszones', {
 				type: 'geojson',
 				data: ttszones
-			});
-
-			map.addSource('currentlines', {
-				type: 'geojson',
-				data: currentlines
-			});
-
-			map.addSource('futurelines', {
-				type: 'geojson',
-				data: futurelines
-			});
-
-			map.addSource('currentstations', {
-				type: 'geojson',
-				data: currentstations
-			});
-
-			map.addSource('futurestations', {
-				type: 'geojson',
-				data: futurestations
 			});
 
 			map.addSource('lowertier', {
@@ -211,6 +191,27 @@
 			map.addSource('uppertier', {
 				type: 'geojson',
 				data: uppertier
+			});
+
+
+			map.addSource('current_lines', {
+				type: 'geojson',
+				data: current_lines
+			});
+
+			map.addSource('future_lines', {
+				type: 'geojson',
+				data: future_lines
+			});
+
+			map.addSource('currentstations', {
+				type: 'geojson',
+				data: currentstations
+			});
+
+			map.addSource('futurestations', {
+				type: 'geojson',
+				data: futurestations
 			});
 
 			map.addLayer(
@@ -224,61 +225,19 @@
 				}
 			);
 
-			map.addLayer(
-				{
-					'id':'currentlines',
-					'type':'line',
-					'source':'currentlines',
-					'paint': {
-						'line-color': '#002FD8',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 10, 4] 
-					}
-				}
-			);
+			/*const image = await map.loadImage('https://png.pngtree.com/png-vector/20210224/ourmid/pngtree-diagonal-black-stripes-png-image_2933503.jpg');
 
-			map.addLayer(
-				{
-					'id':'futurelines',
-					'type':'line',
-					'source':'futurelines',
-					'paint': {
-						'line-color': '#002FD8',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 10, 4],
-						'line-opacity': 0,
-						"line-dasharray": [4, 4]
-					}
-				}
-			);
+			map.addImage('pattern', image.data);
 
-			map.addLayer(
-				{
-					'id': 'currentstations',
-					'type': 'circle',
-					'source': 'currentstations',
-					'paint': {
-						'circle-radius': ['interpolate', ['linear'], ['zoom'], 7, 0, 10, 2.5],
-						'circle-color': '#ffffff',
-						'circle-stroke-color': '#000000',
-						'circle-stroke-width': 1,
-					}
+			map.addLayer({
+				id: 'ttszones-pattern',
+				type: 'fill',
+				source: 'ttszones',
+				paint: {
+					'fill-pattern': 'pattern',
+					'fill-opacity': 0.6
 				}
-			);
-
-			map.addLayer(
-				{
-					'id': 'futurestations',
-					'type': 'circle',
-					'source': 'futurestations',
-					'paint': {
-						'circle-radius': ['interpolate', ['linear'], ['zoom'], 7, 0, 10, 2.5],
-						'circle-color': '#ffffff',
-						'circle-opacity': 0,
-						'circle-stroke-color': '#000000',
-						'circle-stroke-width': 1,
-						'circle-stroke-opacity': 0
-					}
-				}
-			);
+			});*/
 
 			map.addLayer(
 				{
@@ -287,7 +246,7 @@
 					'source': 'lowertier',
 					'paint': {
 						'line-color': '#808080',
-						'line-width': 1
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.5, 10, 2]
 					}
 				}
 			);
@@ -299,7 +258,62 @@
 					'source': 'uppertier',
 					'paint': {
 						'line-color': '#000000',
-						'line-width': 2
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.5, 10, 2]
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id':'current_lines',
+					'type':'line',
+					'source':'current_lines',
+					'paint': {
+						'line-color': '#002FD8',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 2, 10, 4] 
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id':'future_lines',
+					'type':'line',
+					'source':'future_lines',
+					'paint': {
+						'line-color': '#00CCFF',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 2, 10, 4],
+						'line-opacity': 0
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id': 'currentstations',
+					'type': 'circle',
+					'source': 'currentstations',
+					'paint': {
+						'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 4.5],
+						'circle-color': '#002FD8',
+						'circle-stroke-color': '#ffffff',
+						'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 1],
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id': 'futurestations',
+					'type': 'circle',
+					'source': 'futurestations',
+					'paint': {
+						'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 4.5],
+						'circle-color': '#00CCFF',
+						'circle-opacity': 0,
+						'circle-stroke-color': '#000000',
+						'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 1],
+						'circle-stroke-opacity': 0
 					}
 				}
 			);
@@ -323,17 +337,31 @@
 		map.on('mousemove', 'ttszones', (e) => {
 			map.getCanvas().style.cursor = 'pointer';
 
-			const coordinates = e.features[0].geometry.coordinates[0][0].slice();
-			const properties = e.features[0].properties; // Extract properties from the feature
+    		const properties = e.features[0].properties; // Extract properties from the feature
 
-			// Create the popup content
-			const description = 
-			`<strong>TTS Zone ${properties.TTS2022}</strong><br>
-			Population Density: ${properties.Pop_Dens}<br>
-			No-Vehicle Household Rate (in %): ${properties.Perc_No_Veh}<br>
-			Vehicle per Household Rate: ${properties.Veh_Per_Hhld}`;
+    		// Create the popup content
+    		const description = 
+    		`<strong>TTS Zone ${properties.TTS2022}</strong><br>
+    		Population Density: ${properties.Pop_Dens}<br>
+    		No-Vehicle Household Rate (in %): ${properties.Perc_No_Veh}<br>
+    		Vehicle per Household Rate: ${properties.Veh_Per_Hhld}`;
 
-			popup.setLngLat(coordinates).setHTML(description).addTo(map);
+    		// Get map container dimensions
+    		const container = map.getContainer();
+    		const width = container.offsetWidth;
+    
+    		// Position popup in top-right corner (adjust padding as needed)
+    		popup.setLngLat([0, 0]) // Dummy coordinates (won't be used)
+			.setHTML(description)
+          	.addTo(map);
+    
+		    // Manually position the popup element
+    		const popupElement = popup.getElement();
+    		popupElement.style.position = 'absolute';
+    		popupElement.style.top = '10px';
+    		popupElement.style.right = '10px';
+    		popupElement.style.left = 'auto';
+    		popupElement.style.transform = 'none';
 		});
 
 		map.on('mouseleave', 'ttszones', () => {
@@ -462,17 +490,17 @@
 		<div id="checkbox" class="check-box">
 			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onTransit}/> 
 				Existing Transit Lines
-				<svg width="30" height="10">
-					<line x1="0" y1="6" x2="40" y2="6" stroke="#FDA708" stroke-width="4.5"/>
-					<circle cx="15" cy="6" r="2" fill="#ffffff", stroke="#000000"/>
+				<svg width="30" height="12">
+					<line x1="0" y1="6" x2="40" y2="6" stroke="#002FD8" stroke-width="4.5"/>
+					<circle cx="15" cy="6" r="4" fill="#002FD8", stroke="#ffffff"/>
 				</svg>
 			</label>
 			<br>
 			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onTransitFuture}/> 
 				Upcoming Transit Lines
-				<svg width="30" height="10">
-					<line x1="0" y1="6" x2="40" y2="6" stroke="#FDA708" stroke-width="4.5", stroke-dasharray="4, 4"/>
-					<circle cx="15" cy="6" r="2" fill="#ffffff", stroke="#000000"/>
+				<svg width="30" height="12">
+					<line x1="0" y1="6" x2="40" y2="6" stroke="#00CCFF" stroke-width="4.5"/>
+					<circle cx="15" cy="6" r="4" fill="#00CCFF", stroke="#000000"/>
 				</svg>
 			</label>
 		</div>
@@ -508,15 +536,7 @@
 		margin-top: 17px;
 		padding: 10px;
 		text-align: center;
-		background-color: #89CFF0;
-	}
-
-	#title h1 {
-		color: #000000;
-	}
-
-	#title h2 {
-		color: #000000;
+		background-color: #007FA3;
 	}
 
 	#panel h3 {
