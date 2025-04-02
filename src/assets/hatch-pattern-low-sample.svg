@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="8"
-   height="8"
-   viewBox="0 0 2.1166666 2.1166666"
+   width="6"
+   height="6"
+   viewBox="0 0 1.5874999 1.5874999"
    version="1.1"
    id="svg1"
    sodipodi:docname="hatch-pattern-low-sample.svg"
@@ -26,9 +26,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      showgrid="true"
-     inkscape:zoom="67.970639"
-     inkscape:cx="4.5607928"
-     inkscape:cy="4.0679329"
+     inkscape:zoom="48.0625"
+     inkscape:cx="2.9128739"
+     inkscape:cy="3.4018206"
      inkscape:window-width="1920"
      inkscape:window-height="1016"
      inkscape:window-x="0"
@@ -55,132 +55,100 @@
   <g
      id="layer1">
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#f6f5f4;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-53"
        width="0.26458332"
        height="0.26458332"
-       x="-2.1166668"
-       y="-2.1166663"
-       transform="scale(-1)" />
+       x="-1.5874997"
+       y="1.3411045e-07"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#f6f5f4;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-5-5"
        width="0.26458332"
        height="0.26458332"
-       x="-1.8520834"
-       y="-1.852083"
-       transform="scale(-1)" />
+       x="-1.3229164"
+       y="0.26458347"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#f6f5f4;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-2-6"
        width="0.26458332"
        height="0.26458332"
-       x="-1.5875001"
-       y="-1.5874996"
-       transform="scale(-1)" />
+       x="-1.058333"
+       y="0.52916682"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#f6f5f4;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-7-2"
        width="0.26458332"
        height="0.26458332"
-       x="-1.3229167"
-       y="-1.3229164"
-       transform="scale(-1)" />
+       x="-0.79374969"
+       y="0.79375005"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#f6f5f4;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-6-9"
        width="0.26458332"
        height="0.26458332"
-       x="-1.0583334"
-       y="-1.0583333"
-       transform="scale(-1)" />
+       x="-0.52916634"
+       y="1.0583332"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#f6f5f4;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-61-1"
        width="0.26458332"
        height="0.26458332"
-       x="-0.79375005"
-       y="-0.79374993"
-       transform="scale(-1)" />
+       x="-0.26458305"
+       y="1.3229165"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#9a9996;fill-rule:evenodd;stroke:#3d3846;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-2-6-6"
        width="0.26458332"
        height="0.26458332"
-       x="-2.1166668"
-       y="-1.0583329"
-       transform="scale(-1)" />
+       x="-1.5874997"
+       y="0.79375017"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#9a9996;fill-rule:evenodd;stroke:#3d3846;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-7-2-0"
        width="0.26458332"
        height="0.26458332"
-       x="-1.8520834"
-       y="-0.79374975"
-       transform="scale(-1)" />
+       x="-1.3229164"
+       y="1.0583334"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#9a9996;fill-rule:evenodd;stroke:#3d3846;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-6-9-6"
        width="0.26458332"
        height="0.26458332"
-       x="-1.5875001"
-       y="-0.52916664"
-       transform="scale(-1)" />
+       x="-1.058333"
+       y="1.3229165"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
-       id="rect1-61-1-2"
-       width="0.26458332"
-       height="0.26458332"
-       x="-1.3229167"
-       y="-0.26458326"
-       transform="scale(-1)" />
-    <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#9a9996;fill-rule:evenodd;stroke:#3d3846;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-2-6-7"
        width="0.26458332"
        height="0.26458332"
-       x="-1.0583334"
-       y="-2.1166663"
-       transform="scale(-1)" />
+       x="-0.79374993"
+       y="1.3411045e-07"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#9a9996;fill-rule:evenodd;stroke:#3d3846;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-7-2-9"
        width="0.26458332"
        height="0.26458332"
-       x="-0.79375011"
-       y="-1.8520831"
-       transform="scale(-1)" />
+       x="-0.5291667"
+       y="0.26458335"
+       transform="rotate(-90)" />
     <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
+       style="fill:#9a9996;fill-rule:evenodd;stroke:#3d3846;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-6-9-2"
        width="0.26458332"
        height="0.26458332"
-       x="-0.52916676"
-       y="-1.5875"
-       transform="scale(-1)" />
-    <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
-       id="rect1-61-1-0"
-       width="0.26458332"
-       height="0.26458332"
-       x="-0.26458341"
-       y="-1.3229166"
-       transform="scale(-1)" />
-    <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
-       id="rect1-20-2"
-       width="0.26458332"
-       height="0.26458332"
-       x="-0.5291667"
-       y="-0.52916658"
-       transform="scale(-1)" />
-    <rect
-       style="fill:#5e5c64;fill-rule:evenodd;stroke:#5e5c64;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
-       id="rect1-59-7"
-       width="0.26458332"
-       height="0.26458332"
-       x="-0.26458359"
-       y="-0.26458302"
-       transform="scale(-1)" />
+       x="-0.26458335"
+       y="0.52916646"
+       transform="rotate(-90)" />
   </g>
 </svg>

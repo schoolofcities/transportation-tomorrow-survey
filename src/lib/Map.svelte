@@ -24,7 +24,7 @@
 	let colours_greens = ['#eafffc','#6cccbe','#00a189','#067c6c','#0d534d'];
 	let colours_bluepurple = ['#cdf1ff', '#9acef4', '#6fb1ea', '#6e6db4', '#6d247a']
 
-	const defaultMap = "% Trips by bicycle";
+	const defaultMap = "% Trips by walking";
 	let mapSelected = defaultMap;
 
 	const choropleths = {
@@ -48,7 +48,7 @@
 		},
 		"% Trips by car": {
 			dataSource: "mode_drive",
-			breaks: [35, 50, 65, 80],  // using natural jenks breaks
+			breaks: [50, 65, 80, 90],  // using natural jenks breaks
 			colours: colours_bluepurple,
 			text: "% of trips by people who live in this zone that are by car (including as a driver or passenger)"
 		},
@@ -103,7 +103,7 @@
 		map.setPaintProperty("ttszones", "fill-opacity", 0.8);
 		map.setPaintProperty("ttszones", "fill-color", [
 			"case",
-			["==", ["get", choropleth.dataSource], null], "#fff",
+			["==", ["get", choropleth.dataSource], null], "#c0bfbc",
 			["step", ["get", choropleth.dataSource],
 			choropleth.colours[0], choropleth.breaks[0],
 			choropleth.colours[1], choropleth.breaks[1],
@@ -157,8 +157,9 @@
 
 		map = new maplibregl.Map({
 			container: "map",
-			style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
-			/*{
+			style: 
+			// https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+			{
 				version: 8,
 				name: "Empty",
 				// glyphs: "https://schoolofcities.github.io/fonts/fonts/{fontstack}/{range}.pbf", // our fonts, switch back in when we have our own style
@@ -171,11 +172,24 @@
 						attribution: '<a href="https://protomaps.com">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>'
 					}
 				},
-				layers: layers("protomaps","light") // sub out for our own layer styles eventually
-			},*/
+				layers: [
+					{
+						"id": "background",
+						"type": "background",
+						"layout": {
+							"visibility": "visible"
+						},
+							"paint": {
+							"background-color": "#f6f5f4",
+							"background-opacity": 1
+						}
+					}
+				]
+			},
 			
 			maxPitch: 0,
-			maxZoom: 15,
+			maxZoom: 14,
+			minZoom: 8,
 			center: [-79.45, 43.75],
 			zoom: 10,
 
@@ -204,6 +218,8 @@
 				type: "vector",
                 url: "pmtiles://" + TTS_URL,
 			});
+
+			
 
 			map.addSource('lowertier', {
 				type: 'geojson',
@@ -245,7 +261,209 @@
 				}
 			);
 
-			console.log("Hatch URL:", hatch);
+			map.addLayer(
+				{
+					"id": "water",
+					"type": "fill",
+					"filter": [
+						"==",
+						[
+						"geometry-type"
+						],
+						"Polygon"
+					],
+					"source": "protomaps",
+					"source-layer": "water",
+					"paint": {
+						"fill-color": "#fff",
+						"fill-opacity": 1
+					}
+				}
+			)
+
+			// map.addLayer(
+			// 	{
+			// 		"id": "water_outline",
+			// 		"type": "line",
+			// 		"filter": [
+			// 			"==",
+			// 			[
+			// 			"geometry-type"
+			// 			],
+			// 			"Polygon"
+			// 		],
+			// 		"source": "protomaps",
+			// 		"source-layer": "water",
+			// 		"paint": {
+			// 			"line-opacity": 1,
+			// 			"line-color": "#bebdbb",
+			// 			"line-width": 0.3
+			// 		}
+			// 	}
+			// )
+
+			map.addLayer(
+				{
+					"id": "roads_minor",
+					"type": "line",
+					"source": "protomaps",
+					"source-layer": "roads",
+					"filter": [
+					"all",
+					[
+						"==",
+						"kind",
+						"minor_road"
+					],
+					[
+						"!=",
+						"kind_detail",
+						"service"
+					]
+					],
+					"minzoom": 11,
+					"paint": {
+					"line-opacity": 0.3,
+					"line-color": "#d0cfce",
+					"line-width": [
+						"interpolate",
+						[
+						"exponential",
+						1.6
+						],
+						[
+						"zoom"
+						],
+						11, 0,
+						12.5, 0.5,
+						15,	4
+					]
+					}
+				}
+			)
+
+			map.addLayer(
+				{
+					"id": "roads_major",
+					"type": "line",
+					"source": "protomaps",
+					"source-layer": "roads",
+					"filter": [
+						"any",
+						[
+							"==",
+							"kind",
+							"major_road"
+						],
+						[
+							"==",
+							"kind",
+							"highway"
+						]
+					],
+					"minzoom": 10,
+					"paint": {
+						"line-opacity": 0.3,
+						"line-color": "#d0cfce",
+						"line-width": [
+						"interpolate",
+						[
+							"exponential",
+							1.6
+						],
+						[
+							"zoom"
+						],
+						7,	0,
+						12,	2,
+						15,	4,
+						]
+					}
+				}
+			)
+
+			map.addLayer(
+				{
+					'id': 'lowertier',
+					'type': 'line',
+					'source': 'lowertier',
+					'paint': {
+						'line-color': '#fff',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.5, 10, 3]
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id': 'uppertier',
+					'type': 'line',
+					'source': 'uppertier',
+					'paint': {
+						'line-color': '#fff',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 10, 6],
+						
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id':'current_lines',
+					'type':'line',
+					'source':'current_lines',
+					'paint': {
+						'line-color': '#1E3765',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 16, 2] 
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id':'future_lines',
+					'type':'line',
+					'source':'future_lines',
+					'paint': {
+						'line-color': '#1E3765',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 16, 2],
+						'line-dasharray': [4, 2],
+						'line-opacity': 0
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id': 'currentstations',
+					'type': 'circle',
+					'source': 'currentstations',
+					'paint': {
+						'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 1, 16, 6],
+						'circle-color': '#1E3765',
+						'circle-stroke-color': '#ffffff',
+						'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 1],
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					'id': 'futurestations',
+					'type': 'circle',
+					'source': 'futurestations',
+					'paint': {
+						'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 1, 16, 6],
+						'circle-color': '#1E3765',
+						'circle-stroke-color': '#ffffff',
+						'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 1],
+						'circle-opacity': 0,
+						'circle-stroke-opacity': 0
+					}
+				}
+			);
+
+			// hatch pattern on low sample
 			fetch(hatch)
 				.then(response => response.blob())
 				.then(blob => createImageBitmap(blob))
@@ -263,9 +481,28 @@
 						'filter': [
 							'any',
 							['!', ['has', 'hhld_sample']] ,
-							['<', ['get', 'hhld_sample'], 11]
+							['<', ['get', 'hhld_sample'], 10]
 						]
-					});
+					}, 'lowertier');
+					map.addLayer(
+						{
+							'id': 'ttszones_lines',
+							'type': 'line',
+							'source': 'ttszones',
+							'source-layer': 'tts2022zones_data',
+							'minzoom': 9,
+							'paint': {
+								'line-width': [
+									'interpolate',            
+									['linear'],               
+									['zoom'],                
+									8, 0,
+									9, 0.5,                   
+									10, 0.9                   
+								],
+								'line-color': '#fff'
+							},
+					}, 'lowertier');
 				})
 				.catch(error => console.error("Error fetching image:", error));
 
@@ -289,84 +526,7 @@
 				}
 			});*/
 
-			map.addLayer(
-				{
-					'id': 'lowertier',
-					'type': 'line',
-					'source': 'lowertier',
-					'paint': {
-						'line-color': '#808080',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.5, 10, 2]
-					}
-				}
-			);
-
-			map.addLayer(
-				{
-					'id': 'uppertier',
-					'type': 'line',
-					'source': 'uppertier',
-					'paint': {
-						'line-color': '#000000',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.5, 10, 2]
-					}
-				}
-			);
-
-			map.addLayer(
-				{
-					'id':'current_lines',
-					'type':'line',
-					'source':'current_lines',
-					'paint': {
-						'line-color': '#002FD8',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 2, 10, 4] 
-					}
-				}
-			);
-
-			map.addLayer(
-				{
-					'id':'future_lines',
-					'type':'line',
-					'source':'future_lines',
-					'paint': {
-						'line-color': '#00CCFF',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 2, 10, 4],
-						'line-opacity': 0
-					}
-				}
-			);
-
-			map.addLayer(
-				{
-					'id': 'currentstations',
-					'type': 'circle',
-					'source': 'currentstations',
-					'paint': {
-						'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 4.5],
-						'circle-color': '#002FD8',
-						'circle-stroke-color': '#ffffff',
-						'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 1],
-					}
-				}
-			);
-
-			map.addLayer(
-				{
-					'id': 'futurestations',
-					'type': 'circle',
-					'source': 'futurestations',
-					'paint': {
-						'circle-radius': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 4.5],
-						'circle-color': '#00CCFF',
-						'circle-opacity': 0,
-						'circle-stroke-color': '#000000',
-						'circle-stroke-width': ['interpolate', ['linear'], ['zoom'], 8, 0, 11, 1],
-						'circle-stroke-opacity': 0
-					}
-				}
-			);
+			
 
 			console.log("Map loaded successfully.");
 			mapLoaded = true;
