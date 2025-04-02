@@ -4,6 +4,6 @@
 
 </script>
 
-Hello world
+<!-- Hello world -->
 
 <Map/>
