@@ -29,16 +29,16 @@ gdf["low_income_hhlds_percent"] = 100 * (gdf["hhld_income_group_1"] + gdf["hhld_
 gdf["immig_recent"] = 100 * (gdf["immig_2year"] + gdf["immig_nonpr"]) / (gdf["immig_2year"] + gdf["immig_nonpr"] + gdf["immig_2to5year"] + gdf["immig_5to10year"] + gdf["immig_10to15year"] + gdf["immig_15moreyear"] + gdf["immig_no"])
 
 # bike
-gdf["mode_bike"] = gdf["trip_mode_prime_C"] / gdf["trips_total"]
+gdf["mode_bike"] = 100 * gdf["trip_mode_prime_C"] / gdf["trips_total"]
 
 # walk
-gdf["mode_walk"] = gdf["trip_mode_prime_W"] / gdf["trips_total"]
+gdf["mode_walk"] = 100 * gdf["trip_mode_prime_W"] / gdf["trips_total"]
 
 # transit
-gdf["mode_transit"] = (gdf["trip_mode_prime_B"] + gdf["trip_mode_prime_G"] + gdf["trip_mode_prime_J"]) / gdf["trips_total"]
+gdf["mode_transit"] = 100 * (gdf["trip_mode_prime_B"] + gdf["trip_mode_prime_G"] + gdf["trip_mode_prime_J"]) / gdf["trips_total"]
 
 # car
-gdf["mode_drive"] = (gdf["trip_mode_prime_D"] + gdf["trip_mode_prime_P"] + gdf["trip_mode_prime_T"] + gdf["trip_mode_prime_U"]) / gdf["trips_total"]
+gdf["mode_drive"] = 100 * (gdf["trip_mode_prime_D"] + gdf["trip_mode_prime_P"] + gdf["trip_mode_prime_T"] + gdf["trip_mode_prime_U"]) / gdf["trips_total"]
 
 # trips less that 5km %
 gdf["trips_less5km"] = 100 * gdf["trips_less5km"] / gdf["trips_total"]

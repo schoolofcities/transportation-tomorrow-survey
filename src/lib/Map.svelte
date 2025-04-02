@@ -16,30 +16,31 @@
 	import uppertier from "../data/TTS_Upper_Single_Tier.geo.json";
 
 	let PMTILES_URL = 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b'
+	let TTS_URL = "tts2022zones_data.pmtiles"
 
 	let map = null;
 
 	let colours = ["#f1c500", "#eca50d", "#e7861a", "#e16626", "#DC4633"];
 
-	const defaultMap = "Population Density";
+	const defaultMap = "% Bicycle";
 	let mapSelected = defaultMap;
 
 	const choropleths = {
-		"Population Density": {
-			dataSource: "Pop_Dens",
-			breaks: [2000, 4000, 8000, 16000], // using similar breaks to the essential-spaces map
+		// "Population Density": {
+		// 	dataSource: "Pop_Dens",
+		// 	breaks: [2000, 4000, 8000, 16000], // using similar breaks to the essential-spaces map
+		// 	colours: colours,
+		// 	text: "TTS Zone-level population density per sq km"
+		// },
+		"% Bicycle": {
+			dataSource: "mode_bike",
+			breaks: [2, 5, 10, 20],  // using natural jenks breaks
 			colours: colours,
-			text: "TTS Zone-level population density per sq km"
+			text: "Mode share % by bicycle"
 		},
-		"% of Households with No Vehicles": {
-			dataSource: "Perc_No_Veh",
-			breaks: [6, 20, 40, 71],  // using natural jenks breaks
-			colours: colours,
-			text: "Percentage of households in each TTS Zone that do not own a vehicle"
-		},
-		"Rate of Vehicles per Household": {
-			dataSource: "Veh_Per_Hhld",
-			breaks: [0.26, 0.59, 0.79, 0.93],
+		"% Transit": {
+			dataSource: "mode_transit",
+			breaks: [5, 10, 25, 50],
 			colours: colours,
 			text: "Number of vehicles divided by total households in each TTS Zone"
 		}
@@ -83,6 +84,7 @@
 	function layerSet(layer) {
 		
 		let choropleth = choropleths[layer];
+		console.log(choropleth);
 
 		map.setPaintProperty("ttszones", "fill-opacity", 0.8);
 		map.setPaintProperty("ttszones", "fill-color", [
@@ -179,8 +181,8 @@
 		map.on('load', async () => {
 
 			map.addSource('ttszones', {
-				type: 'geojson',
-				data: ttszones
+				type: "vector",
+                url: "pmtiles://" + TTS_URL,
 			});
 
 			map.addSource('lowertier', {
@@ -219,6 +221,7 @@
 					'id': 'ttszones',
 					'type': 'fill',
 					'source': 'ttszones',
+					"source-layer": "tts2022zones_data",
 					'paint': {
 						'fill-opacity': 0.85
 					}
