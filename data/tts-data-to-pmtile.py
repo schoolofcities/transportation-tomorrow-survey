@@ -80,5 +80,5 @@ gdf.to_file("tts2022zones_data.geojson", driver="GeoJSON")
 
 # convert geojson to PMTiles
 os.system("rm tts2022zones_data.pmtiles")
-os.system("tippecanoe -zg -o tts2022zones_data.pmtiles --coalesce-densest-as-needed --extend-zooms-if-still-dropping tts2022zones_data.geojson")
+os.system("tippecanoe -zg -o tts2022zones_data.pmtiles --no-feature-limit --extend-zooms-if-still-dropping tts2022zones_data.geojson")
 

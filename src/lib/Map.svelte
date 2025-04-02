@@ -6,7 +6,6 @@
 	import * as pmtiles from "pmtiles";
 	import layers from 'protomaps-themes-base';
 	import "../assets/global.css";
-	import ttszones from "../data/tts2022.geo.json";
 	import current_lines from "../data/current-lines.geo.json";
 	import future_lines from "../data/future-lines.geo.json";
 	import currentstations from "../data/current-stations.geo.json";
@@ -14,36 +13,51 @@
 	import Select from "svelte-select";
 	import lowertier from "../data/TTS_Lower_Tier.geo.json";
 	import uppertier from "../data/TTS_Upper_Single_Tier.geo.json";
+	import hatch from "../assets/hatch-pattern-low-sample.png";
 
 	let PMTILES_URL = 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b'
 	let TTS_URL = "tts2022zones_data.pmtiles"
 
 	let map = null;
 
-	let colours = ["#f1c500", "#eca50d", "#e7861a", "#e16626", "#DC4633"];
+	let colours_yellowred = ["#f1c500", "#eca50d", "#e7861a", "#e16626", "#DC4633"];
+	let colours_greens = ['#eafffc','#6cccbe','#00a189','#067c6c','#0d534d'];
+	let colours_bluepurple = ['#cdf1ff', '#9acef4', '#6fb1ea', '#6e6db4', '#6d247a']
 
-	const defaultMap = "% Bicycle";
+	const defaultMap = "% Trips by bicycle";
 	let mapSelected = defaultMap;
 
 	const choropleths = {
-		// "Population Density": {
-		// 	dataSource: "Pop_Dens",
-		// 	breaks: [2000, 4000, 8000, 16000], // using similar breaks to the essential-spaces map
-		// 	colours: colours,
-		// 	text: "TTS Zone-level population density per sq km"
-		// },
-		"% Bicycle": {
+		"% Trips by bicycle": {
 			dataSource: "mode_bike",
-			breaks: [2, 5, 10, 20],  // using natural jenks breaks
-			colours: colours,
-			text: "Mode share % by bicycle"
+			breaks: [2, 4, 8, 16],  // using natural jenks breaks
+			colours: colours_bluepurple,
+			text: "% of trips by people who live in this zone that are by bicycle"
 		},
-		"% Transit": {
+		"% Trips by walking": {
+			dataSource: "mode_walk",
+			breaks: [5, 15, 30, 50],  // using natural jenks breaks
+			colours: colours_bluepurple,
+			text: "% of trips by people who live in this zone that are by foot"
+		},
+		"% Trips by public transit": {
 			dataSource: "mode_transit",
 			breaks: [5, 10, 25, 50],
-			colours: colours,
-			text: "Number of vehicles divided by total households in each TTS Zone"
-		}
+			colours: colours_bluepurple,
+			text: "% of trips by people who live in this zone that are by public transit"
+		},
+		"% Trips by car": {
+			dataSource: "mode_drive",
+			breaks: [35, 50, 65, 80],  // using natural jenks breaks
+			colours: colours_bluepurple,
+			text: "% of trips by people who live in this zone that are by car (including as a driver or passenger)"
+		},
+		"Activity Participation": {
+			dataSource: "activities_mean",
+			breaks: [0.8, 1, 1.2, 1.4],  // using natural jenks breaks
+			colours: colours_bluepurple,
+			text: "Average number of activity destinations people visit per day"
+		},
 	};
 
 	const items = Object.keys(choropleths).map((key) => {
@@ -89,7 +103,7 @@
 		map.setPaintProperty("ttszones", "fill-opacity", 0.8);
 		map.setPaintProperty("ttszones", "fill-color", [
 			"case",
-			["==", ["get", choropleth.dataSource], null], "#cbcbcb",
+			["==", ["get", choropleth.dataSource], null], "#fff",
 			["step", ["get", choropleth.dataSource],
 			choropleth.colours[0], choropleth.breaks[0],
 			choropleth.colours[1], choropleth.breaks[1],
@@ -163,22 +177,28 @@
 			maxPitch: 0,
 			maxZoom: 15,
 			center: [-79.45, 43.75],
-			zoom: 10
+			zoom: 10,
 
-			// // variety of map interactivity/display settings to change later
+			// variety of map interactivity/display settings to change later
 			// projection: "globe",
-			// scrollZoom: false,
-			// dragPan: false,
-			// dragRotate: false,
-			// doubleClickZoom: false,
+			scrollZoom: false,
+			dragPan: true,
+			dragRotate: false,
+			doubleClickZoom: true,
 			// touchZoomRotate: false,
 			// keyboard: false,
 			// interactive: false,
-			// attributionControl: false,
+			attributionControl: false,
 
 		});
 
 		map.on('load', async () => {
+
+			const nav = new maplibregl.NavigationControl({
+				showCompass: false,  // Optional: Hides the compass
+				showZoom: true       // Shows zoom buttons
+			});
+			map.addControl(nav, 'top-left');
 
 			map.addSource('ttszones', {
 				type: "vector",
@@ -222,11 +242,38 @@
 					'type': 'fill',
 					'source': 'ttszones',
 					"source-layer": "tts2022zones_data",
-					'paint': {
-						'fill-opacity': 0.85
-					}
 				}
 			);
+
+			console.log("Hatch URL:", hatch);
+			fetch(hatch)
+				.then(response => response.blob())
+				.then(blob => createImageBitmap(blob))
+				.then(image => {
+					map.addImage('polygon-pattern', image, { pixelRatio: 1 });
+					console.log("Image loaded via fetch!");
+					map.addLayer({
+						'id': 'polygon-layer',
+						'type': 'fill',
+						'source': 'ttszones',
+						"source-layer": "tts2022zones_data",
+						'paint': {
+							'fill-pattern': 'polygon-pattern',
+						},
+						'filter': [
+							'any',
+							['!', ['has', 'hhld_sample']] ,
+							['<', ['get', 'hhld_sample'], 11]
+						]
+					});
+				})
+				.catch(error => console.error("Error fetching image:", error));
+
+				
+			
+
+
+			
 
 			/*const image = await map.loadImage('https://png.pngtree.com/png-vector/20210224/ourmid/pngtree-diagonal-black-stripes-png-image_2933503.jpg');
 
@@ -408,6 +455,8 @@
 			<h1>Transportation Tomorrow Survey</h1>
 
 			<h2>Results across the Greater Golden Horseshoe Region</h2>
+
+			<img src={hatch} alt="Hatch pattern" />
 
 		</div>
 
