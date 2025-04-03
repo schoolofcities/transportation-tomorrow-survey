@@ -14,6 +14,7 @@
 	import lowertier from "../data/TTS_Lower_Tier.geo.json";
 	import uppertier from "../data/TTS_Upper_Single_Tier.geo.json";
 	import hatch from "../assets/hatch-pattern-low-sample.png";
+	import mapLabels from "../assets/map-labels.json";
 
 	let PMTILES_URL = 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b'
 	let TTS_URL = "tts2022zones_data.pmtiles"
@@ -28,6 +29,18 @@
 	let mapSelected = defaultMap;
 
 	const choropleths = {
+		"Vehicles per household": {
+			dataSource: "veh_per_hhld",
+			breaks: [0.5, 1, 1.5, 2],  // using natural jenks breaks
+			colours: colours_bluepurple,
+			text: "Average number of private vehicles per household"
+		},
+		"Driver's license per person": {
+			dataSource: "drivers_lic_perperson_20to75",
+			breaks: [0.75, 0.8, 0.85, 0.9],  // using natural jenks breaks
+			colours: colours_bluepurple,
+			text: "Driver's license per person aged 20 to 75"
+		},
 		"% Trips by bicycle": {
 			dataSource: "mode_bike",
 			breaks: [2, 4, 8, 16],  // using natural jenks breaks
@@ -42,7 +55,7 @@
 		},
 		"% Trips by public transit": {
 			dataSource: "mode_transit",
-			breaks: [5, 10, 25, 50],
+			breaks: [5, 10, 20, 30],
 			colours: colours_bluepurple,
 			text: "% of trips by people who live in this zone that are by public transit"
 		},
@@ -52,7 +65,7 @@
 			colours: colours_bluepurple,
 			text: "% of trips by people who live in this zone that are by car (including as a driver or passenger)"
 		},
-		"Activity Participation": {
+		"Activity participation": {
 			dataSource: "activities_mean",
 			breaks: [0.8, 1, 1.2, 1.4],  // using natural jenks breaks
 			colours: colours_bluepurple,
@@ -162,8 +175,8 @@
 			{
 				version: 8,
 				name: "Empty",
-				// glyphs: "https://schoolofcities.github.io/fonts/fonts/{fontstack}/{range}.pbf", // our fonts, switch back in when we have our own style
-				glyphs:'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf',
+				glyphs: "https://schoolofcities.github.io/fonts/fonts/{fontstack}/{range}.pbf", // our fonts, switch back in when we have our own style
+				// glyphs:'https://protomaps.github.io/basemaps-assets/fonts/{fontstack}/{range}.pbf',
     			sprite: "https://protomaps.github.io/basemaps-assets/sprites/v4/dark",
 				sources: {
 					'protomaps': {
@@ -280,27 +293,6 @@
 					}
 				}
 			)
-
-			// map.addLayer(
-			// 	{
-			// 		"id": "water_outline",
-			// 		"type": "line",
-			// 		"filter": [
-			// 			"==",
-			// 			[
-			// 			"geometry-type"
-			// 			],
-			// 			"Polygon"
-			// 		],
-			// 		"source": "protomaps",
-			// 		"source-layer": "water",
-			// 		"paint": {
-			// 			"line-opacity": 1,
-			// 			"line-color": "#bebdbb",
-			// 			"line-width": 0.3
-			// 		}
-			// 	}
-			// )
 
 			map.addLayer(
 				{
@@ -463,6 +455,11 @@
 				}
 			);
 
+			mapLabels.forEach(style => {
+				console.log(style);
+				map.addLayer(style);
+			});
+
 			// hatch pattern on low sample
 			fetch(hatch)
 				.then(response => response.blob())
@@ -503,11 +500,14 @@
 								'line-color': '#fff'
 							},
 					}, 'lowertier');
+
+					
+
 				})
 				.catch(error => console.error("Error fetching image:", error));
 
 				
-			
+				
 
 
 			

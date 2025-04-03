@@ -127,6 +127,14 @@
        y="1.3229165"
        transform="rotate(-90)" />
     <rect
+       style="fill:#d0cfce;fill-rule:evenodd;stroke:#3d3846;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke;fill-opacity:1"
+       id="rect1-6-9-6-7"
+       width="0.26458332"
+       height="0.26458332"
+       x="-2.1166663"
+       y="1.8520832"
+       transform="rotate(-90)" />
+    <rect
        style="fill:#9a9996;fill-rule:evenodd;stroke:#3d3846;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;paint-order:markers fill stroke"
        id="rect1-2-6-7"
        width="0.26458332"
