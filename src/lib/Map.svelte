@@ -40,13 +40,13 @@
 			dataSource: "veh_per_hhld",
 			breaks: [0.5, 1, 1.5, 2],   
 			colours: colours_bluepurple,
-			text: "Average number of private vehicles per household"
+			text: "Average number of private vehicles per household."
 		},
 		"Driver's license per person": {
 			dataSource: "drivers_lic_perperson_20to75",
 			breaks: [75, 80, 85, 90],   
 			colours: colours_bluepurple,
-			text: "Percent of residents aged 20 to 75 that have a driver's license"
+			text: "Percent of residents aged 20 to 75 that have a driver's license."
 		},
 		// "Transit pass per person": {
 		// 	dataSource: "transpass_perperson_6up",
@@ -58,31 +58,31 @@
 			dataSource: "mode_bike",
 			breaks: [2, 4, 8, 16],   
 			colours: colours_bluepurple,
-			text: "Percent of trips by people who live in this zone that are by bicycle"
+			text: "Percentage of trips made by residents of this zone that are taken by bicycle."
 		},
 		"% of trips by walking": {
 			dataSource: "mode_walk",
 			breaks: [5, 15, 30, 50],   
 			colours: colours_bluepurple,
-			text: "Percent of trips by people who live in this zone that are solely by foot/walking/pedestrian"
+			text: "Percentage of trips made by residents of this zone that are solely pedestrian/walking trips."
 		},
 		"% of trips by public transit": {
 			dataSource: "mode_transit",
 			breaks: [5, 10, 20, 30],
 			colours: colours_bluepurple,
-			text: "Percent of trips by people who live in this zone that are by public transit (can include different access and egress modes, but the main mode is public transit)"
+			text: "Percentage of trips made by residents of this zone that are by public transit. These trips can include different access and egress modes, but the main mode is public transit."
 		},
 		"% of trips by car": {
 			dataSource: "mode_drive",
 			breaks: [50, 65, 80, 90],   
 			colours: colours_bluepurple,
-			text: "Percent of trips by people who live in this zone that are by car (including as a driver or passenger, and includes taxi/ride-share)"
+			text: "Percentage of trips made by residents of this zone that are by car. These include trips as a driver or as a passenger, including all taxi/ride-share trips)"
 		},
 		"Average trip distance (km)": {
 			dataSource: "trip_km_avg",
 			breaks: [5, 10, 15, 20],   
 			colours: colours_bluepurple,
-			text: "Average straight line (i.e. Euclidean) distance of trips made by households in this zone"
+			text: "Average straight line (i.e. Euclidean) distance of trips made by households in this zone (i.e. how far to people travel on average on a per trip basis)"
 		},
 		"Trips per person": {
 			dataSource: "trips_5up_per_person",
@@ -94,19 +94,19 @@
 			dataSource: "activities_mean",
 			breaks: [0.8, 1, 1.2, 1.4],   
 			colours: colours_bluepurple,
-			text: "Average number of activity destinations people visit per day among people who live in this zone."
+			text: "Average number of activity destinations people visit per day among people who live in this zone. This has been used as a measure of transport-related social inclusion/exclusion."
 		},
 		"% of trips that are local trips": {
 			dataSource: "trips_less5km_percent",
 			breaks: [20, 40, 60, 80],   
 			colours: colours_bluepurple,
-			text: "% of trips made by households that live in this zone that are less than 5km in length - i.e. what proportion of trips do people make that are local"
+			text: "Percentage of trips made by residents of this zone that are less than 5km in length. In other words, what proportion of trips do people make that are local"
 		},
 		"% of local trips by car": {
 			dataSource: "trips_less5km_percent_car",
 			breaks: [20, 40, 60, 80],   
 			colours: colours_bluepurple,
-			text: "Of local trips made by households that live in this zone (trips less than 5km in length), what percent are by car - i.e. how car dependent are residents on cars for local trips"
+			text: "Of local trips made by residents that live in this zone (i.e. of trips less than 5km in length), what percent are by car. In other words, how car dependent are residents on cars for local trips"
 		},
 		"% of children driven to/from school": {
 			dataSource: "children_driven_to_school",
@@ -900,7 +900,7 @@
 		</p>
 
 		<p class="notes">
-			If there's anything on this map you have questions about, have feedback for ways to improve it, or want to see additional data on the map, please add an issue on the <a href="https://github.com/schoolofcities/ggh-transport-geography" target="_blank">GitHub page</a> or just email us directly. 
+			If there's anything on this map you have questions about, have feedback for ways to improve it, or want to see additional data on the map, please add an issue on the <a href="https://github.com/schoolofcities/ggh-transport-geography" target="_blank">GitHub page</a> or just email us directly. Thank you! :)
 		</p>
 
 		<a href="https://schoolofcities.utoronto.ca/" target="_blank">
