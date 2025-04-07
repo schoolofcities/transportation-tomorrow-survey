@@ -4,20 +4,21 @@
 	import maplibregl from "maplibre-gl";
 	import "maplibre-gl/dist/maplibre-gl.css";
 	import * as pmtiles from "pmtiles";
-	import layers from 'protomaps-themes-base';
 	import "../assets/global.css";
+	import dotCity from "../assets/sofc-long-city.svg";
+	import sofcLogo from "../assets/top-logo-full.svg";
 	import current_lines from "../data/current-lines.geo.json";
 	import future_lines from "../data/future-lines.geo.json";
 	import currentstations from "../data/current-stations.geo.json";
 	import futurestations from "../data/future-stations.geo.json";
 	import Select from "svelte-select";
-	import lowertier from "../data/TTS_Lower_Tier.geo.json";
-	import uppertier from "../data/TTS_Upper_Single_Tier.geo.json";
 	import hatch from "../assets/hatch-pattern-low-sample.png";
 	import mapLabels from "../assets/map-labels.json";
+    import filter from "svelte-select/filter";
 
-	let PMTILES_URL = 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b'
-	let TTS_URL = "tts2022zones_data.pmtiles"
+	let PMTILES_URL = 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b';
+	let LAYERS_URL = 'map-layers.pmtiles';
+	let TTS_URL = "tts2022zones_data.pmtiles";
 
 	let map = null;
 
@@ -25,52 +26,94 @@
 	let colours_greens = ['#eafffc','#6cccbe','#00a189','#067c6c','#0d534d'];
 	let colours_bluepurple = ['#cdf1ff', '#9acef4', '#6fb1ea', '#6e6db4', '#6d247a']
 
-	const defaultMap = "% Trips by walking";
+	const defaultMap = "% of trips by walking";
 	let mapSelected = defaultMap;
+
+	let data = "TTS";
+
+	let ttsZone = "";
+	let ttsValue = "NA"
+	let lastHoveredZone = null; 
 
 	const choropleths = {
 		"Vehicles per household": {
 			dataSource: "veh_per_hhld",
-			breaks: [0.5, 1, 1.5, 2],  // using natural jenks breaks
+			breaks: [0.5, 1, 1.5, 2],   
 			colours: colours_bluepurple,
 			text: "Average number of private vehicles per household"
 		},
 		"Driver's license per person": {
 			dataSource: "drivers_lic_perperson_20to75",
-			breaks: [0.75, 0.8, 0.85, 0.9],  // using natural jenks breaks
+			breaks: [75, 80, 85, 90],   
 			colours: colours_bluepurple,
-			text: "Driver's license per person aged 20 to 75"
+			text: "Percent of residents aged 20 to 75 that have a driver's license"
 		},
-		"% Trips by bicycle": {
+		// "Transit pass per person": {
+		// 	dataSource: "transpass_perperson_6up",
+		// 	breaks: [5, 10, 15, 20],   
+		// 	colours: colours_bluepurple,
+		// 	text: "Percent of residents aged 6 and up that have a transit pass"
+		// },
+		"% of trips by bicycle": {
 			dataSource: "mode_bike",
-			breaks: [2, 4, 8, 16],  // using natural jenks breaks
+			breaks: [2, 4, 8, 16],   
 			colours: colours_bluepurple,
-			text: "% of trips by people who live in this zone that are by bicycle"
+			text: "Percent of trips by people who live in this zone that are by bicycle"
 		},
-		"% Trips by walking": {
+		"% of trips by walking": {
 			dataSource: "mode_walk",
-			breaks: [5, 15, 30, 50],  // using natural jenks breaks
+			breaks: [5, 15, 30, 50],   
 			colours: colours_bluepurple,
-			text: "% of trips by people who live in this zone that are by foot"
+			text: "Percent of trips by people who live in this zone that are solely by foot/walking/pedestrian"
 		},
-		"% Trips by public transit": {
+		"% of trips by public transit": {
 			dataSource: "mode_transit",
 			breaks: [5, 10, 20, 30],
 			colours: colours_bluepurple,
-			text: "% of trips by people who live in this zone that are by public transit"
+			text: "Percent of trips by people who live in this zone that are by public transit (can include different access and egress modes, but the main mode is public transit)"
 		},
-		"% Trips by car": {
+		"% of trips by car": {
 			dataSource: "mode_drive",
-			breaks: [50, 65, 80, 90],  // using natural jenks breaks
+			breaks: [50, 65, 80, 90],   
 			colours: colours_bluepurple,
-			text: "% of trips by people who live in this zone that are by car (including as a driver or passenger)"
+			text: "Percent of trips by people who live in this zone that are by car (including as a driver or passenger, and includes taxi/ride-share)"
+		},
+		"Average trip distance (km)": {
+			dataSource: "trip_km_avg",
+			breaks: [5, 10, 15, 20],   
+			colours: colours_bluepurple,
+			text: "Average straight line (i.e. Euclidean) distance of trips made by households in this zone"
+		},
+		"Trips per person": {
+			dataSource: "trips_5up_per_person",
+			breaks: [1.75, 2, 2.25, 2.5],   
+			colours: colours_bluepurple,
+			text: "Average number of trips people live in this zone make per day"
 		},
 		"Activity participation": {
 			dataSource: "activities_mean",
-			breaks: [0.8, 1, 1.2, 1.4],  // using natural jenks breaks
+			breaks: [0.8, 1, 1.2, 1.4],   
 			colours: colours_bluepurple,
-			text: "Average number of activity destinations people visit per day"
+			text: "Average number of activity destinations people visit per day among people who live in this zone."
 		},
+		"% of trips that are local trips": {
+			dataSource: "trips_less5km_percent",
+			breaks: [20, 40, 60, 80],   
+			colours: colours_bluepurple,
+			text: "% of trips made by households that live in this zone that are less than 5km in length - i.e. what proportion of trips do people make that are local"
+		},
+		"% of local trips by car": {
+			dataSource: "trips_less5km_percent_car",
+			breaks: [20, 40, 60, 80],   
+			colours: colours_bluepurple,
+			text: "Of local trips made by households that live in this zone (trips less than 5km in length), what percent are by car - i.e. how car dependent are residents on cars for local trips"
+		},
+		"% of children driven to/from school": {
+			dataSource: "children_driven_to_school",
+			breaks: [5, 20, 35, 50],   
+			colours: colours_bluepurple,
+			text: "Percent of home-school trips by children (ages 6-17) that are by car"
+		}
 	};
 
 	const items = Object.keys(choropleths).map((key) => {
@@ -163,6 +206,36 @@
 		}
 	}
 
+	let onHighways = false;
+
+	$: onHighways, filterHighways()
+
+	function filterHighways() {
+		if (map) {
+			if (onHighways) {
+				map.setPaintProperty('highways', 'line-opacity', 1);
+			} else {
+				map.setPaintProperty('highways', 'line-opacity', 0);
+			}
+		}
+	}
+
+	let onBicycle = false;
+
+	$: onBicycle, filterBicycle()
+
+	function filterBicycle() {
+		if (map) {
+			if (onBicycle) {
+				map.setPaintProperty('bikes', 'line-opacity', 1);
+			} else {
+				map.setPaintProperty('bikes', 'line-opacity', 0);
+			}
+		}
+	}
+
+
+
 	onMount(async () => {
 
 		let protocol = new pmtiles.Protocol();
@@ -181,8 +254,7 @@
 				sources: {
 					'protomaps': {
 						type: 'vector',
-						url: 'https://api.protomaps.com/tiles/v4.json?key=f1d93c3bd5c79742',
-						attribution: '<a href="https://protomaps.com">Protomaps</a> © <a href="https://openstreetmap.org">OpenStreetMap</a>'
+						url: 'https://api.protomaps.com/tiles/v4.json?key=f1d93c3bd5c79742'
 					}
 				},
 				layers: [
@@ -203,10 +275,9 @@
 			maxPitch: 0,
 			maxZoom: 14,
 			minZoom: 8,
-			center: [-79.45, 43.75],
+			center: [-79.44, 43.72],
 			zoom: 10,
 
-			// variety of map interactivity/display settings to change later
 			// projection: "globe",
 			scrollZoom: false,
 			dragPan: true,
@@ -232,17 +303,20 @@
                 url: "pmtiles://" + TTS_URL,
 			});
 
-			
-
-			map.addSource('lowertier', {
-				type: 'geojson',
-				data: lowertier
+			map.addSource('maplayers', {
+				type: "vector",
+                url: "pmtiles://" + LAYERS_URL,
 			});
 
-			map.addSource('uppertier', {
-				type: 'geojson',
-				data: uppertier
-			});
+			// map.addSource('lowertier', {
+			// 	type: 'geojson',
+			// 	data: lowertier
+			// });
+
+			// map.addSource('uppertier', {
+			// 	type: 'geojson',
+			// 	data: uppertier
+			// });
 
 
 			map.addSource('current_lines', {
@@ -378,7 +452,8 @@
 				{
 					'id': 'lowertier',
 					'type': 'line',
-					'source': 'lowertier',
+					'source': 'maplayers',
+					'source-layer': 'Lower_Tier',
 					'paint': {
 						'line-color': '#fff',
 						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 0.5, 10, 3]
@@ -390,11 +465,69 @@
 				{
 					'id': 'uppertier',
 					'type': 'line',
-					'source': 'uppertier',
+					'source': 'maplayers',
+					'source-layer': 'Upper_Single_Tier',
 					'paint': {
 						'line-color': '#fff',
 						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 10, 6],
 						
+					}
+				}
+			);
+
+			map.addLayer(
+				{
+					"id": "highways",
+					"type": "line",
+					"source": "protomaps",
+					"source-layer": "roads",
+					"filter": [
+						"any",
+						[
+							"==",
+							"kind",
+							"highway"
+						],
+						[
+							"==",
+							"kind_detail",
+							"trunk"
+						],
+						[
+							"==",
+							"kind_detail",
+							"trunk_link"
+						]
+					],
+					"paint": {
+						"line-opacity": 0,
+						"line-color": "#ce6456",
+						"line-width": [
+						"interpolate",
+						[
+							"exponential",
+							1.6
+						],
+						[
+							"zoom"
+						],
+						7, 1,
+						15,	5,
+						]
+					}
+				}
+			)
+
+			map.addLayer(
+				{
+					'id':'bikes',
+					'type':'line',
+					'source':'maplayers',
+					'source-layer':'CanBICS_wgs84',
+					'paint': {
+						'line-color': '#00A189',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 9, 0.5, 14, 3],
+						'line-opacity': 0 
 					}
 				}
 			);
@@ -406,7 +539,7 @@
 					'source':'current_lines',
 					'paint': {
 						'line-color': '#1E3765',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 16, 2] 
+						'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1, 14, 4] 
 					}
 				}
 			);
@@ -418,7 +551,7 @@
 					'source':'future_lines',
 					'paint': {
 						'line-color': '#1E3765',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 16, 2],
+						'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1, 14, 4],
 						'line-dasharray': [4, 2],
 						'line-opacity': 0
 					}
@@ -455,12 +588,22 @@
 				}
 			);
 
+			map.addLayer({
+				"id": 'outline-hover',
+				"type": 'line',
+				'source': 'ttszones',
+				"source-layer": "tts2022zones_data",
+				"paint": {
+					'line-color': '#AB1368',
+					'line-width': 2,
+				},
+				"filter": ['==', 'TTS2022', ''],
+			});
+
 			mapLabels.forEach(style => {
-				console.log(style);
 				map.addLayer(style);
 			});
 
-			// hatch pattern on low sample
 			fetch(hatch)
 				.then(response => response.blob())
 				.then(blob => createImageBitmap(blob))
@@ -468,7 +611,7 @@
 					map.addImage('polygon-pattern', image, { pixelRatio: 1 });
 					console.log("Image loaded via fetch!");
 					map.addLayer({
-						'id': 'polygon-layer',
+						'id': 'tts-low-sample',
 						'type': 'fill',
 						'source': 'ttszones',
 						"source-layer": "tts2022zones_data",
@@ -504,29 +647,8 @@
 					
 
 				})
-				.catch(error => console.error("Error fetching image:", error));
+				.catch(error => console.error("Error fetching image:", error));			
 
-				
-				
-
-
-			
-
-			/*const image = await map.loadImage('https://png.pngtree.com/png-vector/20210224/ourmid/pngtree-diagonal-black-stripes-png-image_2933503.jpg');
-
-			map.addImage('pattern', image.data);
-
-			map.addLayer({
-				id: 'ttszones-pattern',
-				type: 'fill',
-				source: 'ttszones',
-				paint: {
-					'fill-pattern': 'pattern',
-					'fill-opacity': 0.6
-				}
-			});*/
-
-			
 
 			console.log("Map loaded successfully.");
 			mapLoaded = true;
@@ -539,61 +661,47 @@
 			});
 		});
 
-		const popup = new maplibregl.Popup({
-			closeButton: false,
-			closeOnClick: false
-		});
+		// const popup = new maplibregl.Popup({
+		// 	closeButton: false,
+		// 	closeOnClick: false
+		// });
 
+		
+		let lastUpdate = 0;
 		map.on('mousemove', 'ttszones', (e) => {
+			const now = performance.now();
+			if (now - lastUpdate < 100) return;
+			lastUpdate = now;
+
 			map.getCanvas().style.cursor = 'pointer';
+			
+			if (!e.features.length) return;
+			
+			const properties = e.features[0].properties;
+			const currentZone = properties.TTS2022;
+			
+			if (currentZone !== ttsZone) {
 
-    		const properties = e.features[0].properties; // Extract properties from the feature
-
-    		// Create the popup content
-    		const description = 
-    		`<strong>TTS Zone ${properties.TTS2022}</strong><br>
-    		Population Density: ${properties.Pop_Dens}<br>
-    		No-Vehicle Household Rate (in %): ${properties.Perc_No_Veh}<br>
-    		Vehicle per Household Rate: ${properties.Veh_Per_Hhld}`;
-
-    		// Get map container dimensions
-    		const container = map.getContainer();
-    		const width = container.offsetWidth;
-    
-    		// Position popup in top-right corner (adjust padding as needed)
-    		popup.setLngLat([0, 0]) // Dummy coordinates (won't be used)
-			.setHTML(description)
-          	.addTo(map);
-    
-		    // Manually position the popup element
-    		const popupElement = popup.getElement();
-    		popupElement.style.position = 'absolute';
-    		popupElement.style.top = '10px';
-    		popupElement.style.right = '10px';
-    		popupElement.style.left = 'auto';
-    		popupElement.style.transform = 'none';
+				map.setFilter('outline-hover', ['==', 'TTS2022', currentZone]);
+				
+				ttsValue = (properties[choropleths[mapSelected].dataSource] >= 0) 
+					? Math.round(properties[choropleths[mapSelected].dataSource] * 10) / 10
+					: "No Data";
+				
+				ttsZone = currentZone;
+			}
 		});
 
 		map.on('mouseleave', 'ttszones', () => {
 			map.getCanvas().style.cursor = '';
-			popup.remove();
+			ttsValue = "no data";
+			ttsZone = "";
+			map.setFilter('outline-hover', ['==', 'TTS2022', '']);
 		});
 
 		map.on('error', (error) => {
 			console.error("Map load error:", error);
 		});
-
-		const attributions = [
-			'<a href="https://openstreetmap.org" target= "_blank" style="color: black; text-decoration: underline;"> OpenStreetMap</a>'
-		];
-		const attributionString = attributions.join(", ");
-
-		map.addControl(
-			new maplibregl.AttributionControl({
-				compact: false,
-			}),
-			'bottom-right'
-		);
 
 		let scale = new maplibregl.ScaleControl({
 			maxWidth: 100,
@@ -604,23 +712,23 @@
 	
 	});
 
+	
+
 </script>
 
 <div id='container'>
 
 	<div id='panel'>
 
-		<div id='title'>
+		<img src={dotCity} alt="dot city" style="padding-left: 20px" />
 
-			<h1>Transportation Tomorrow Survey</h1>
+		<h1>Greater Golden Horseshoe</h1>
 
-			<h2>Results across the Greater Golden Horseshoe Region</h2>
+		<h2>Mapping data about the region's transportation geography and travel patterns</h2>
 
-			<img src={hatch} alt="Hatch pattern" />
+		<div id="line"></div>
 
-		</div>
-
-		<h3>Select Layers</h3>
+		<div id="line"></div>
 
 		<div id='select-wrapper'>
 			{#if map && mapLoaded && isMapReady}
@@ -697,25 +805,115 @@
 			{choropleths[mapSelected].text}
 		</p>
 
-		<h3>Select Other Reference Layers</h3>
+		
+
+		<p class="des">
+
+			<span style="
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+			">
+				<span style="
+					width: 30px;
+					height: 16px;
+					background: url('{hatch}') repeat;
+					background-size: 6px 6px;
+					background-color: #6FC7EA;
+					opacity: 0.8;
+					"
+				/>
+				<span style="font-size: 14px">Low sample (n {"<"} 10) </span>
+			</span>
+		
+			<span style="
+				display: inline-flex;
+				align-items: center;
+				gap: 8px;
+			">
+				<span style="
+					margin-left: 7px;
+					width: 30px;
+					height: 16px;
+					background: url('{hatch}') repeat;
+					background-size: 6px 6px;
+					background-color: #D0D1C9;
+					opacity: 0.8;
+					"
+				/>
+				<span style="font-size: 14px">No data</span>
+			</span>
+
+		</p>
+
+		<p  class="des" style="font-size: 11px; color: #AB1368; padding-bottom; -20px">
+			Selected zone
+		</p>
+		<p class="des" style="font-size: 13px; padding: 4px; border: solid 1px #AB1368; margin-top: -10px;">
+			{mapSelected}: {ttsValue}
+		</p>
+
+		<div id="line"></div>
 
 		<div id="checkbox" class="check-box">
 			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onTransit}/> 
-				Existing Transit Lines
+				Major transit routes (GO, Subway, LRT)
 				<svg width="30" height="12">
-					<line x1="0" y1="6" x2="40" y2="6" stroke="#002FD8" stroke-width="4.5"/>
-					<circle cx="15" cy="6" r="4" fill="#002FD8", stroke="#ffffff"/>
+					<line x1="0" y1="6" x2="40" y2="6" stroke="#1E3765" stroke-width="2"/>
+					<circle cx="15" cy="6" r="4" fill="#1E3765", stroke="#ffffff" stroke-width="2"/>
 				</svg>
 			</label>
 			<br>
 			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onTransitFuture}/> 
-				Upcoming Transit Lines
+				Major transit routes under developemnt
 				<svg width="30" height="12">
-					<line x1="0" y1="6" x2="40" y2="6" stroke="#00CCFF" stroke-width="4.5"/>
-					<circle cx="15" cy="6" r="4" fill="#00CCFF", stroke="#000000"/>
+					<line x1="0" y1="6" x2="40" y2="6" stroke="#1E3765" stroke-width="2" stroke-dasharray="4,1"/>
+					<circle cx="15" cy="6" r="4" fill="#1E3765", stroke="#ffffff"  stroke-width="2"/>
+				</svg>
+			</label>
+			<br>
+			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onHighways}/> 
+				Major highways 
+				<svg width="30" height="12">
+					<line x1="0" y1="8" x2="40" y2="8" stroke="#DC4633" stroke-width="3" opacity="0.5"/>
+				</svg>
+			</label>
+			<br>
+			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onBicycle}/> 
+				Cycling infrastructure
+				<svg width="30" height="12">
+					<line x1="0" y1="8" x2="40" y2="8" stroke="#00A189" stroke-width="3" opacity="0.95"/>
 				</svg>
 			</label>
 		</div>
+
+		<div id="line"></div>
+
+		<div id="line"></div>
+
+		<p class="notes">
+			These maps were created by <a href="https://jamaps.github.io" target="_blank">Jeff Allen</a> and <a href="https://mkbs-mkbs2000.github.io/Personal-Portfolio/">Muhammad Khalis Bin Samion</a> at the <a href="https://schoolofcities.utoronto.ca/" target="_blank">School of Cities, University of Toronto</a>.
+		</p>
+
+		<p class="notes">
+			All the travel-related data are from the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">2022 Transportation Tomorrow Survey</a>. The base-map data pertaining to roads and water are from <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>. Cycling data are from <a href="https://chatrlab.ca/projects/can-bics-english/" target="_blank">Can-BICS (CHATR Lab)</a> and include bike lanes, cycle tracks, and trails. Transit route data are from <a href="https://www.metrolinx.com/en/about-us/open-data" target="_blank">Metrolinx</a>. 
+		</p>
+
+		<p class="notes">
+			If there's anything on this map you have questions about, have feedback for ways to improve it, or want to see additional data on the map, please add an issue on the <a href="https://github.com/schoolofcities/ggh-transport-geography" target="_blank">GitHub page</a> or just email us directly. 
+		</p>
+
+		<a href="https://schoolofcities.utoronto.ca/" target="_blank">
+			<img 
+				src={sofcLogo} 
+				alt="School of Cities logo" 
+				style="display: block; margin: 0 auto; width: 300px; height: auto; opacity: 0.8"
+				on:mouseover={() => (event.target.style.opacity = 1)}
+   				on:mouseout={() => (event.target.style.opacity = 0.8)}
+			/>
+		</a>
+
+		<br>
 
 	</div>
 
@@ -728,32 +926,51 @@
 
 	#container {
 		display: flex;
+		flex-direction: row; 
 	}
 
 	#panel {
-		width: 420px;
-		min-width: 420px;
-		height:100vh;
-		overflow: auto;
-		overflow-x: hidden;
-		background-color: #F0FFFF;
-		border-left: 10px;
+		max-width: 420px;
+		width: 100%;
+		min-width: 350px;
+		height: calc(100vh - 15px);
+		overflow-y: auto;
+		/* overflow-x: hidden; */
+		background-color: var(--brandWhite);
+		padding-top: 15px;
+		border-right: solid 1px var(--brandLightBlue);
+		flex-shrink: 0;
 	}
 
-	#title {
-		text-decoration: none;
-		margin-left: 16px;
-		margin-bottom: 0px;
-		margin-right: 16px;
-		margin-top: 17px;
-		padding: 10px;
-		text-align: center;
-		background-color: #007FA3;
+	#map {
+		flex: 1;
+		height: 100vh;
+		overflow: hidden;
 	}
 
-	#panel h3 {
-		color: #000000;
+	/* Mobile layout at 840px or below */
+	@media (max-width: 840px) {
+		#container {
+			flex-direction: column;
+			height: 100vh;
+		}
+
+		#panel {
+			max-width: 840px;
+			width: 100%;
+			height: 50vh;
+			border-right: none; 
+			order: 2;
+		}
+
+		#map {
+			border-bottom: solid 1px var(--brandLightBlue);
+			width: 100%;
+			height: 50vh;
+			order: 1;
+		}
 	}
+
 
 	#select-wrapper {
 		--margin: 16px;
@@ -765,14 +982,15 @@
 		--item-color: #000000;
 		--border-radius: 0px;
 		--border: 1px solid #cbcbcb;
-		--border-focused: 1px solid #A50F00;
+		--border-focused: 1px solid #6FC7EA;
 		--list-border-radius: 0px;
 		--font-size: 13.7px;
+		--font-family: Roboto;
 		--max-height: 30px;
 		--item-is-active-color: #FFFFFF;
-		--item-is-active-bg: #DA291C;
-		--chevron-color: #DA291C;
-		--item-hover-bg: #F8D4D2;
+		--item-is-active-bg: #007FA3;
+		--chevron-color: #1E3765;
+		--item-hover-bg: #F1C500;
 	}
 
 	.des {
@@ -783,11 +1001,35 @@
 		line-height: 18px;
 	}
 
-	#map {
-		width: calc(100vw - 400px);
-		height: 100vh;
-		overflow: hidden;
-		overflow-x: hidden;
+	.notes {
+		margin-top: 4px;
+		margin-left: 20px;
+		margin-right: 20px;
+		font-size: 13px;
+		line-height: 17px;
 	}
+
+	#checkbox {
+		padding-left: 15px;
+	}
+
+	.label-format {
+		font-size: 14px;
+		line-height: 18px;
+		color: var(--brandDarkBlue);
+	}
+
+	#line {
+		height: 1px;
+		width: 100%;
+		background-color: var(--brandLightBlue);
+		margin-top: 10px;
+		margin-bottom: 10px
+	}
+
+	img:hover {
+		opacity: 1;
+	}
+
 
 </style>

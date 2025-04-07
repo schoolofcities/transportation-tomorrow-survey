@@ -41,13 +41,18 @@ gdf["mode_transit"] = 100 * (gdf["trip_mode_prime_B"] + gdf["trip_mode_prime_G"]
 gdf["mode_drive"] = 100 * (gdf["trip_mode_prime_D"] + gdf["trip_mode_prime_P"] + gdf["trip_mode_prime_T"] + gdf["trip_mode_prime_U"]) / gdf["trips_total"]
 
 # trips less that 5km %
-gdf["trips_less5km"] = 100 * gdf["trips_less5km"] / gdf["trips_total"]
+gdf["trips_less5km_percent"] = 100 * gdf["trips_less5km"] / gdf["trips_total"]
 
 # trips less that 5km that are by car %
-gdf["trips_less5km_by_car"] = 100 * gdf["trips_less5km_car"] / gdf["trips_less5km"]
+gdf["trips_less5km_percent_car"] = 100 * gdf["trips_less5km_car"] / gdf["trips_less5km"]
 
 # children driven to school
 gdf["children_driven_to_school"] = 100 * gdf["trip_home_school_car"] / gdf["trip_home_school_total"]
+
+# drivers licence %
+gdf["drivers_lic_perperson_20to75"] = 100 * gdf["drivers_lic_perperson_20to75"]
+
+
 
 # final metrics to save
 gdf = gdf[[
@@ -68,8 +73,8 @@ gdf = gdf[[
 	"mode_walk",
 	"mode_transit",
 	"mode_drive",
-	"trips_less5km",
-	"trips_less5km_by_car",
+	"trips_less5km_percent",
+	"trips_less5km_percent_car",
 	"children_driven_to_school",
 	"geometry"
 ]]

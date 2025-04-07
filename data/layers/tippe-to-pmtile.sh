@@ -1,0 +1,1 @@
+tippecanoe -o map-layers.pmtiles -Z 0 -z 15 --drop-densest-as-needed --force *.geojson
