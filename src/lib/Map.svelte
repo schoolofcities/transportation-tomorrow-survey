@@ -865,7 +865,7 @@
 			</label>
 			<br>
 			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onTransitFuture}/> 
-				Major transit routes under developemnt
+				Major transit routes under development
 				<svg width="30" height="12">
 					<line x1="0" y1="6" x2="40" y2="6" stroke="#1E3765" stroke-width="2" stroke-dasharray="4,1"/>
 					<circle cx="15" cy="6" r="4" fill="#1E3765", stroke="#ffffff"  stroke-width="2"/>
@@ -912,7 +912,7 @@
    				on:mouseout={() => (event.target.style.opacity = 0.8)}
 			/>
 		</a>
-
+		
 		<br>
 
 	</div>
