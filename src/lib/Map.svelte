@@ -100,25 +100,25 @@
 			dataSource: "mode_drive",
 			breaks: [50, 65, 80, 90],   
 			colours: colours_bluepurple,
-			text: "Percentage of trips made by residents of this zone that are by car. These include trips as a driver or as a passenger, including all taxi/ride-share trips)"
+			text: "Percentage of trips made by residents of this zone that are by car. These include trips as a driver or as a passenger, including all taxi/ride-share trips"
 		},
 		"Average trip distance (km)": {
 			dataSource: "trip_km_avg",
 			breaks: [5, 10, 15, 20],   
 			colours: colours_bluepurple,
-			text: "Average straight line (i.e. Euclidean) distance of trips made by households in this zone (i.e. how far to people travel on average on a per trip basis)"
+			text: "Average straight line (i.e. Euclidean) distance of trips made by households in this zone (i.e. how far do people travel on average on a per trip basis)"
 		},
 		"Trips per person": {
 			dataSource: "trips_5up_per_person",
 			breaks: [1.75, 2, 2.25, 2.5],   
 			colours: colours_bluepurple,
-			text: "Average number of trips people live in this zone make per day"
+			text: "Average number of trips that people make per day"
 		},
 		"Activity participation": {
 			dataSource: "activities_mean",
 			breaks: [0.8, 1, 1.2, 1.4],   
 			colours: colours_bluepurple,
-			text: "Average number of activity destinations people visit per day among people who live in this zone. This has been used as a measure of transport-related social inclusion/exclusion."
+			text: "Average number of activity destinations people visit per day. (This metric has been used by researchers as an indicator of transport-related social inclusion/exclusion)."
 		},
 		"% of trips that are local trips": {
 			dataSource: "trips_less5km_percent",
@@ -136,7 +136,7 @@
 			dataSource: "children_driven_to_school",
 			breaks: [5, 20, 35, 50],   
 			colours: colours_bluepurple,
-			text: "Percent of home-school trips by children (ages 6-17) that are by car"
+			text: "Percent of home-school trips by children (aged 6-17) that are by car"
 		}
 	};
 
