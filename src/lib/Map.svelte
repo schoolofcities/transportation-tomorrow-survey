@@ -130,7 +130,7 @@
 			dataSource: "trips_less5km_percent_car",
 			breaks: [20, 40, 60, 80],   
 			colours: colours_bluepurple,
-			text: "Of local trips made by residents that live in this zone (i.e. of trips less than 5km in length), what percent are by car. In other words, how car dependent are residents on cars for local trips"
+			text: "Of trips <5km in length made by residents that live in this zone, what percent are by car. In other words, how dependent are residents on cars for local trips"
 		},
 		"% of children driven to/from school": {
 			dataSource: "children_driven_to_school",
