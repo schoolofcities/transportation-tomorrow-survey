@@ -6414,6 +6414,7 @@
 			24
 		  ]
 		},
+    "minzoom": 13,
 		"paint": {
 		  "text-opacity": 0.95,
       "text-color": "#44454a",
@@ -7353,152 +7354,59 @@
 			11
 		  ],
 		  "text-size": [
-			"interpolate",
-			[
-			  "linear"
-			],
-			[
-			  "zoom"
-			],
-			2,
-			[
-			  "case",
-			  [
-				"<",
-				[
-				  "get",
-				  "population_rank"
-				],
-				13
-			  ],
-			  8,
-			  [
-				">=",
-				[
-				  "get",
-				  "population_rank"
-				],
-				13
-			  ],
-			  11,
-			  0
-			],
-			4,
-			[
-			  "case",
-			  [
-				"<",
-				[
-				  "get",
-				  "population_rank"
-				],
-				13
-			  ],
-			  9,
-			  [
-				">=",
-				[
-				  "get",
-				  "population_rank"
-				],
-				13
-			  ],
-			  12,
-			  0
-			],
-			6,
-			[
-			  "case",
-			  [
-				"<",
-				[
-				  "get",
-				  "population_rank"
-				],
-				12
-			  ],
-			  10,
-			  [
-				">=",
-				[
-				  "get",
-				  "population_rank"
-				],
-				12
-			  ],
-			  14,
-			  0
-			],
-			8,
-			[
-			  "case",
-			  [
-				"<",
-				[
-				  "get",
-				  "population_rank"
-				],
-				11
-			  ],
-			  11,
-			  [
-				">=",
-				[
-				  "get",
-				  "population_rank"
-				],
-				11
-			  ],
-			  15,
-			  0
-			],
-			10,
-			[
-			  "case",
-			  [
-				"<",
-				[
-				  "get",
-				  "population_rank"
-				],
-				9
-			  ],
-			  12,
-			  [
-				">=",
-				[
-				  "get",
-				  "population_rank"
-				],
-				9
-			  ],
-			  17,
-			  0
-			],
-			15,
-			[
-			  "case",
-			  [
-				"<",
-				[
-				  "get",
-				  "population_rank"
-				],
-				8
-			  ],
-			  12,
-			  [
-				">=",
-				[
-				  "get",
-				  "population_rank"
-				],
-				8
-			  ],
-			  22,
-			  0
-			]
-		  ],
+        "interpolate",
+        ["linear"],
+        ["zoom"],
+      
+        2,
+        [
+          "case",
+          ["<", ["get", "population_rank"], 13], 8,
+          [">=", ["get", "population_rank"], 13], 11,
+          0
+        ],
+      
+        4,
+        [
+          "case",
+          ["<", ["get", "population_rank"], 13], 9,
+          [">=", ["get", "population_rank"], 13], 12,
+          0
+        ],
+      
+        6,
+        [
+          "case",
+          ["<", ["get", "population_rank"], 12], 10,
+          [">=", ["get", "population_rank"], 12], 14,
+          0
+        ],
+      
+        8,
+        [
+          "case",
+          ["<", ["get", "population_rank"], 11], 11,
+          [">=", ["get", "population_rank"], 11], 15,
+          0
+        ],
+      
+        10,
+        [
+          "case",
+          ["<", ["get", "population_rank"], 9], 12,
+          [">=", ["get", "population_rank"], 9], 17,
+          0
+        ],
+      
+        15,
+        [
+          "case",
+          ["<", ["get", "population_rank"], 8], 12,
+          [">=", ["get", "population_rank"], 8], 22,
+          0
+        ]
+      ]
+      ,
 		  "icon-padding": [
 			"interpolate",
 			[

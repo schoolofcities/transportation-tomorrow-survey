@@ -251,8 +251,10 @@
 	function filterBicycle() {
 		if (map) {
 			if (onBicycle) {
+				map.setPaintProperty('bikes_case', 'line-opacity', 1);
 				map.setPaintProperty('bikes', 'line-opacity', 1);
 			} else {
+				map.setPaintProperty('bikes_case', 'line-opacity', 0);
 				map.setPaintProperty('bikes', 'line-opacity', 0);
 			}
 		}
@@ -413,8 +415,8 @@
 					],
 					"minzoom": 11,
 					"paint": {
-					"line-opacity": 0.3,
-					"line-color": "#d0cfce",
+					"line-opacity": 0.35,
+					"line-color": "#fff",
 					"line-width": [
 						"interpolate",
 						[
@@ -453,8 +455,8 @@
 					],
 					"minzoom": 10,
 					"paint": {
-						"line-opacity": 0.3,
-						"line-color": "#d0cfce",
+						"line-opacity": 0.45,
+						"line-color": "#fff",
 						"line-width": [
 						"interpolate",
 						[
@@ -544,13 +546,26 @@
 
 			map.addLayer(
 				{
+					'id':'bikes_case',
+					'type':'line',
+					'source':'maplayers',
+					'source-layer':'CanBICS_wgs84',
+					'paint': {
+						'line-color': '#fff',
+						'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1.5, 14, 5],
+						'line-opacity': 0 
+					}
+				}
+			);
+			map.addLayer(
+				{
 					'id':'bikes',
 					'type':'line',
 					'source':'maplayers',
 					'source-layer':'CanBICS_wgs84',
 					'paint': {
 						'line-color': '#00A189',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 9, 0.5, 14, 3],
+						'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1, 14, 3],
 						'line-opacity': 0 
 					}
 				}
@@ -772,56 +787,56 @@
 			{/if}
 		</div>
 
-		<svg width='400' height='40'>
+		<svg width='350' height='40'>
 			<rect
 			class = "box"
-			width="74"
+			width="59"
 			height="20"
-			x="18"
+			x="20"
 			y="0"
 			style="fill:{choropleths[mapSelected].colours[0]};"
 			/>
 	
 			<rect
 			class = "box"
-			width="74"
+			width="59"
 			height="20"
-			x="94"
+			x="80"
 			y="0"
 			style="fill:{choropleths[mapSelected].colours[1]};"
 			/>
 	
 			<rect
 			class = "box"
-			width="74"
+			width="59"
 			height="20"
-			x="170"
+			x="140"
 			y="0"
 			style="fill:{choropleths[mapSelected].colours[2]};"
 			/>
 	
 			<rect
 			class = "box"
-			width="74"
+			width="59"
 			height="20"
-			x="246"
+			x="200"
 			y="0"
 			style="fill:{choropleths[mapSelected].colours[3]};"
 			/>
 	
 			<rect
 			class = "box"
-			width="74"
+			width="59"
 			height="20"
-			x="322"
+			x="260"
 			y="0"
 			style="fill:{choropleths[mapSelected].colours[4]};"
 			/>
 	
-			<text class="legend-label"  x="80" y="35">&lt;{choropleths[mapSelected].breaks[0]}</text>
-			<text class="legend-label"  x="160" y="35">{choropleths[mapSelected].breaks[1]}</text>
-			<text class="legend-label"  x="235" y="35">{choropleths[mapSelected].breaks[2]}</text>
-			<text class="legend-label"  x="305" y="35">&gt{choropleths[mapSelected].breaks[3]}</text>
+			<text class="legend-label" text-anchor="middle" x="80" y="35">&lt;{choropleths[mapSelected].breaks[0]}</text>
+			<text class="legend-label" text-anchor="middle" x="140" y="35">{choropleths[mapSelected].breaks[1]}</text>
+			<text class="legend-label" text-anchor="middle" x="200" y="35">{choropleths[mapSelected].breaks[2]}</text>
+			<text class="legend-label" text-anchor="middle" x="260" y="35">&gt{choropleths[mapSelected].breaks[3]}</text>
 	
 		</svg>
 
@@ -916,7 +931,7 @@
 		<div id="line"></div>
 
 		<p class="notes">
-			These maps were created by <a href="https://jamaps.github.io" target="_blank">Jeff Allen</a> and <a href="https://mkbs-mkbs2000.github.io/Personal-Portfolio/">Muhammad Khalis Bin Samion</a> at the <a href="https://schoolofcities.utoronto.ca/" target="_blank">School of Cities, University of Toronto</a>.
+			These maps were created by <a hrefsc="https://jamaps.github.io" target="_blank">Jeff Allen</a> and <a href="https://mkbs-mkbs2000.github.io/Personal-Portfolio/">Muhammad Khalis Bin Samion</a> at the <a href="https://schoolofcities.utoronto.ca/" target="_blank">School of Cities, University of Toronto</a>.
 		</p>
 
 		<p class="notes">
@@ -997,8 +1012,8 @@
 
 
 	#select-wrapper {
-		--margin: 16px;
-		--width: 380px;
+		--margin: 20px;
+		--width: calc(100% - 40px);
 		--multi-max-width: 300px;
 		--background: white;
 		--selected-item-color: #000000;
