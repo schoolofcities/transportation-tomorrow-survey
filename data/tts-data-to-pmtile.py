@@ -26,7 +26,10 @@ gdf["population_density"] = gdf["population"] / gdf["area_km2"]
 gdf["low_income_hhlds_percent"] = 100 * (gdf["hhld_income_group_1"] + gdf["hhld_income_group_2"] + gdf["hhld_income_group_3"]) / (gdf["hhld_income_group_1"] + gdf["hhld_income_group_2"] + gdf["hhld_income_group_3"] + gdf["hhld_income_group_4"] + gdf["hhld_income_group_5"] + gdf["hhld_income_group_6"] + gdf["hhld_income_group_7"] + gdf["hhld_income_group_8"] + gdf["hhld_income_group_9"])
 
 # immigrated in past 2 years / non citizen
-gdf["immig_recent"] = 100 * (gdf["immig_2year"] + gdf["immig_nonpr"]) / (gdf["immig_2year"] + gdf["immig_nonpr"] + gdf["immig_2to5year"] + gdf["immig_5to10year"] + gdf["immig_10to15year"] + gdf["immig_15moreyear"] + gdf["immig_no"])
+gdf["immig_recent"] = 100 * (gdf["immig_2year"] + gdf["immig_nonpr"] + gdf["immig_2to5year"]) / (gdf["immig_2year"] + gdf["immig_nonpr"] + gdf["immig_2to5year"] + gdf["immig_5to10year"] + gdf["immig_10to15year"] + gdf["immig_15moreyear"] + gdf["immig_no"])
+
+# no car hhlds
+gdf["hhlds_no_veh"] = 100 * gdf["hhlds_no_veh"] / gdf["hhlds"]
 
 # bike
 gdf["mode_bike"] = 100 * gdf["trip_mode_prime_C"] / gdf["trips_total"]
@@ -49,7 +52,7 @@ gdf["trips_less5km_percent_car"] = 100 * gdf["trips_less5km_car"] / gdf["trips_l
 # children driven to school
 gdf["children_driven_to_school"] = 100 * gdf["trip_home_school_car"] / gdf["trip_home_school_total"]
 
-# drivers licence %
+# drivers license %
 gdf["drivers_lic_perperson_20to75"] = 100 * gdf["drivers_lic_perperson_20to75"]
 
 
@@ -64,6 +67,7 @@ gdf = gdf[[
 	"low_income_hhlds_percent",
 	"immig_recent",
 	"veh_per_hhld",
+	"hhlds_no_veh",
 	"drivers_lic_perperson_20to75",
 	"transpass_perperson_6up",
 	"trip_km_avg",

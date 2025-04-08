@@ -36,13 +36,37 @@
 	let lastHoveredZone = null; 
 
 	const choropleths = {
+		"Population density": {
+			dataSource: "population_density",
+			breaks: [500, 1000, 4000, 7000],   
+			colours: colours_bluepurple,
+			text: "Residents per square kilometre."
+		},
+		"% low income households": {
+			dataSource: "low_income_hhlds_percent",
+			breaks: [10, 20, 30, 40],   
+			colours: colours_bluepurple,
+			text: "Percentage of households that have a before-tax income of less than $60,000."
+		},
+		"% recent immigrants": {
+			dataSource: "immig_recent",
+			breaks: [1, 5, 10, 15],   
+			colours: colours_bluepurple,
+			text: "Percentage of population that immigrated in the last 5 years or is not a permanent resident, based on the date of filling out the survey."
+		},
 		"Vehicles per household": {
 			dataSource: "veh_per_hhld",
 			breaks: [0.5, 1, 1.5, 2],   
 			colours: colours_bluepurple,
 			text: "Average number of private vehicles per household."
 		},
-		"Driver's license per person": {
+		"% of households without vehicles": {
+			dataSource: "hhlds_no_veh",
+			breaks: [5, 10, 25, 50],   
+			colours: colours_bluepurple,
+			text: "Percentage of households without a private vehicle."
+		},
+		"% of residents with a driver's license": {
 			dataSource: "drivers_lic_perperson_20to75",
 			breaks: [75, 80, 85, 90],   
 			colours: colours_bluepurple,
