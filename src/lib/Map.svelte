@@ -309,7 +309,7 @@
 			dragPan: true,
 			dragRotate: false,
 			doubleClickZoom: true,
-			// touchZoomRotate: false,
+			touchZoomRotate: false,
 			// keyboard: false,
 			// interactive: false,
 			attributionControl: false,
@@ -648,7 +648,6 @@
 				.then(blob => createImageBitmap(blob))
 				.then(image => {
 					map.addImage('polygon-pattern', image, { pixelRatio: 1 });
-					console.log("Image loaded via fetch!");
 					map.addLayer({
 						'id': 'tts-low-sample',
 						'type': 'fill',
