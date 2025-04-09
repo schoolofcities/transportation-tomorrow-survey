@@ -1052,6 +1052,11 @@
 		padding-left: 15px;
 	}
 
+	svg .legend-label {
+		font-size: 15px;
+		fill: var(--brandDarkBlue);
+	}
+
 	.label-format {
 		font-size: 14px;
 		line-height: 18px;
