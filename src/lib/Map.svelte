@@ -183,7 +183,7 @@
 		map.setPaintProperty("ttszones", "fill-opacity", 0.8);
 		map.setPaintProperty("ttszones", "fill-color", [
 			"case",
-			["==", ["get", choropleth.dataSource], null], "#c0bfbc",
+			["==", ["get", choropleth.dataSource], null], "#BBBCB4",
 			["step", ["get", choropleth.dataSource],
 			choropleth.colours[0], choropleth.breaks[0],
 			choropleth.colours[1], choropleth.breaks[1],
@@ -658,7 +658,7 @@
 						},
 						'filter': [
 							'any',
-							['!', ['has', 'hhld_sample']] ,
+							// ['!', ['has', 'hhld_sample']] ,
 							['<', ['get', 'hhld_sample'], 10]
 						]
 					}, 'lowertier');
@@ -873,9 +873,8 @@
 					margin-left: 7px;
 					width: 30px;
 					height: 16px;
-					background: url('{hatch}') repeat;
 					background-size: 6px 6px;
-					background-color: #D0D1C9;
+					background-color: #BBBCB4;
 					opacity: 0.8;
 					"
 				/>
@@ -973,7 +972,6 @@
 		min-width: 350px;
 		height: calc(100vh - 15px);
 		overflow-y: auto;
-		/* overflow-x: hidden; */
 		background-color: var(--brandWhite);
 		padding-top: 15px;
 		border-right: solid 1px var(--brandLightBlue);
@@ -986,7 +984,6 @@
 		overflow: hidden;
 	}
 
-	/* Mobile layout at 840px or below */
 	@media (max-width: 840px) {
 		#container {
 			flex-direction: column;
