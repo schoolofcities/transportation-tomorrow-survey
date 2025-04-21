@@ -280,7 +280,7 @@
 				sources: {
 					'protomaps': {
 						type: 'vector',
-						url: 'https://api.protomaps.com/tiles/v4.json?key=f1d93c3bd5c79742'
+						url: 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b'
 					}
 				},
 				layers: [
