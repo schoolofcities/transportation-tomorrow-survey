@@ -929,7 +929,7 @@
 		<div id="line"></div>
 
 		<p class="notes">
-			These maps were created by <a hrefsc="https://jamaps.github.io" target="_blank">Jeff Allen</a> and <a href="https://mkbs-mkbs2000.github.io/Personal-Portfolio/">Muhammad Khalis Bin Samion</a> at the <a href="https://schoolofcities.utoronto.ca/" target="_blank">School of Cities, University of Toronto</a>.
+			These maps were created by <a href="https://jamaps.github.io" target="_blank">Jeff Allen</a> and <a href="https://mkbs-mkbs2000.github.io/Personal-Portfolio/">Muhammad Khalis Bin Samion</a> at the <a href="https://schoolofcities.utoronto.ca/" target="_blank">School of Cities, University of Toronto</a>.
 		</p>
 
 		<p class="notes">
