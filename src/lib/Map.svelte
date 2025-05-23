@@ -762,7 +762,7 @@
 
 		<h1>Greater Golden Horseshoe</h1>
 
-		<h2>Mapping data about the region's transportation geography and travel patterns</h2>
+		<h2>Mapping information about the region's transportation geography and travel patterns via 2022/23 Transportation Tomorrow Survey data</h2>
 
 		<div id="line"></div>
 
@@ -937,7 +937,7 @@
 		</p>
 
 		<p class="notes">
-			If there's anything on this map you have questions about, have feedback for ways to improve it, or want to see additional data on the map, please add an issue on the <a href="https://github.com/schoolofcities/ggh-transport-geography" target="_blank">GitHub page</a> or just email us directly. Thank you! :)
+			If there's anything on this map you have questions about, have feedback for ways to improve it, or want to see additional data on the map, please add an issue on the <a href="https://github.com/schoolofcities/transportation-tomorrow-survey" target="_blank">GitHub page</a> or just email us directly. Thank you! :)
 		</p>
 
 		<a href="https://schoolofcities.utoronto.ca/" target="_blank">

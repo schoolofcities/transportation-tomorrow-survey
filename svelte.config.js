@@ -15,7 +15,7 @@ const config = {
 		    assets: "docs"
 		}),
 		paths: {
-		    base: dev ? "" : "/ggh-transport-geography",
+		    base: dev ? "" : "/transportation-tomorrow-survey",
 		}
 	}
 };
