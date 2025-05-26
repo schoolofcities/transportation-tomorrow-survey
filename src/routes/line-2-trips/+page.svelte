@@ -6,10 +6,35 @@
 
 </script>
 
+<svelte:head>
+
+	<title>Arc Diagram of Bloor-Danforth Subway Line (Line 2) Trips | School of Cities</title>
+
+	<meta name="description" content="Charting out AM peak trips in Toronto with R and using data from the Transportation Tomorrow Survey.">
+	<meta name="author" content="Jeff Allen">
+
+	<meta property="og:title" content="Arc Diagram of Bloor-Danforth Subway Line (Line 2) Trips | School of Cities" />
+	<meta property="og:description" content="Charting out AM peak trips in Toronto with R and using data from the Transportation Tomorrow Survey." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://schoolofcities.github.io/transportation-tomorrow-survey/line-2-trips/" />
+	<meta property="og:image" content="https://raw.githubusercontent.com/schoolofcities/ggh-transport-geography/main/static/web-card.png" />
+	<meta property="og:locale" content="en_CA">
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="https://schoolofcities.github.io/transportation-tomorrow-survey/line-2-trips/" />
+	<meta name="twitter:creator" content="@JeffAllenMaps" />
+	<meta name="twitter:title" content="Arc Diagram of Bloor-Danforth Subway Line (Line 2) Trips | School of Cities" />
+	<meta name="twitter:description" content="Charting out AM peak trips in Toronto with R and using data from the Transportation Tomorrow Survey." />
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/schoolofcities/ggh-transport-geography/main/static/web-card.png" /> 
+
+</svelte:head>
+
 <main>
 
 	<div class="arc-diagram">
-		<img src={diagramImage} alt="Arc diagram of trips on the Bloor-Danforth Subway Line (Line 2) in Toronto during peak hours, showing connections between stations with arcs. The thickness and opacity of the arcs represent the number of trips between two stations." />
+		<a href={diagramImage} target="_blank">
+			<img src={diagramImage} alt="Arc diagram of trips on the Bloor-Danforth Subway Line (Line 2) in Toronto during peak hours, showing connections between stations with arcs. The thickness and opacity of the arcs represent the number of trips between two stations." />
+		</a>
 		<p id="caption">Click on the image for a higher resolution</p>
 	</div>
 
@@ -17,11 +42,9 @@
 
 	<div class="text">
 
-		
-
 		<h1>On creating this arc diagram of Line 2 morning peak trips</h1>
 
-		<h3>~ Jeff Allen, 2025</h3>
+		<h3>~ <a href="https://jamaps.github.io/" target="_blank">Jeff Allen</a>, 2025</h3>
 
 		<p>
 			I used to ride the Bloor-Danforth Subway Line (Line 2) in Toronto a lot, especially when I lived in the east-end and commuted to/from downtown. Ride it a few times and you start to notice patterns in the way people board and alight at different stations, especially during peak hours - e.g. lots of people hopping on at Broadview, far fewer at Castle Frank, and so on.
@@ -52,7 +75,7 @@
 		</p>
 
 		<p>
-			All of this data processing as well as sketching of the chart was done in R (with ggplot). I then exported it and added the labels and legend in Inkscape, and adjusted the colours a bit in GIMP.
+			All of this data processing as well as sketching of the chart was done in R (with ggplot). <a href="https://github.com/schoolofcities/transportation-tomorrow-survey/blob/main/src/routes/line-2-trips/assets/arc-diagram.R" target="_blank">Here is the R script</a>. I then exported it and added the labels and legend in <a href="https://inkscape.org/" target="_blank">Inkscape</a>, and adjusted the colours a bit in <a href="https://www.gimp.org/" target="_blank">GIMP</a>.
 		</p>
 
 		<p>
