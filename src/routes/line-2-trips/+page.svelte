@@ -8,12 +8,12 @@
 
 <svelte:head>
 
-	<title>Arc diagram of Bloor-Danforth Subway Line (Line 2) trips | School of Cities</title>
+	<title>Arc diagram of Bloor-Danforth Subway (Line 2) trips | School of Cities</title>
 
 	<meta name="description" content="Charting out AM peak trips in Toronto with R and data from the Transportation Tomorrow Survey.">
 	<meta name="author" content="Jeff Allen">
 
-	<meta property="og:title" content="Arc diagram of Bloor-Danforth Subway Line (Line 2) trips | School of Cities" />
+	<meta property="og:title" content="Arc diagram of Bloor-Danforth Subway (Line 2) trips | School of Cities" />
 	<meta property="og:description" content="Charting out AM peak trips in Toronto with R and data from the Transportation Tomorrow Survey." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://schoolofcities.github.io/transportation-tomorrow-survey/line-2-trips/" />
@@ -23,7 +23,7 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="https://schoolofcities.github.io/transportation-tomorrow-survey/line-2-trips/" />
 	<meta name="twitter:creator" content="@JeffAllenMaps" />
-	<meta name="twitter:title" content="Arc diagram of Bloor-Danforth Subway Line (Line 2) trips | School of Cities" />
+	<meta name="twitter:title" content="Arc diagram of Bloor-Danforth Subway (Line 2) trips | School of Cities" />
 	<meta name="twitter:description" content="Charting out AM peak trips in Toronto with R and data from the Transportation Tomorrow Survey." />
 	<meta name="twitter:image" content="https://raw.githubusercontent.com/schoolofcities/ggh-transport-geography/main/static/web-card-line2.png" /> 
 
