@@ -63,6 +63,7 @@ h2 {
 
 h3 {
     font-family: TradeGothicBold;
+    font-weight: normal;
     font-size: 20px;
     color: var(--brandDarkBlue);
     text-decoration: none;
@@ -73,6 +74,7 @@ h3 {
 
 h4 {
     font-family: TradeGothicBold;
+    font-weight: normal;
     font-size: 23px;
     color: var(--brandWhite);
     text-decoration: none;
@@ -84,12 +86,12 @@ h4 {
 
 h5 {
     font-family: TradeGothicBold;
+    font-weight: normal;
     font-size: 21px;
     color: var(--brandWhite);
     text-decoration: none;
     padding-bottom: 5px;
     padding-top: 5px;
-    /* border-top: solid 1px var(--brandDarkBlue); */
     border-bottom: solid 1px var(--brandDarkBlue);
 }
 
@@ -115,17 +117,38 @@ h3 a {
 
 .text {
     margin: 0 auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin-bottom: 10px;
-    max-width: 760px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 20px;
+    max-width: 650px;
     color: white;
-    border-bottom: solid 1px var(--brandDarkBlue);
+    border-left: solid 2px var(--brandGray90);
+}
+
+.text p {
+    font-size: 17px;
+    line-height: 24px;
+    color: var(--brandGray90);
+}
+
+.text h1 {
+    padding: 0px;
+    margin-top: 10px;
+    color: var(--brandGray90);
+    font-size: 26px;
+    border-bottom: solid 1px var(--brandGray);
+}
+
+.text h3 {
+    padding: 2px;
+    font-size: 12px;
+    font-family: Roboto;
+    color: var(--brandGray90);
+    padding-bottom: 10px;
 }
 
 .bold {
     font-family: TradeGothicBold;
-    /* font-size: 24px; */
     color: var(--brandYellow);
 }
 
