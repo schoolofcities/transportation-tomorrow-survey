@@ -1,4 +1,4 @@
-# Load required libraries
+
 library(ggplot2)
 library(ggforce)
 library(tidyverse)
@@ -53,9 +53,7 @@ data <- data %>%
   ))
 
 ggplot() +
-  # Add base line
   geom_segment(data = nodes, aes(x = min(x), xend = max(x), y = 0, yend = 0), color = "white") +
-  # Add arcs
   geom_arc(
     data = data,
     aes(

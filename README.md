@@ -1,15 +1,12 @@
-# ggh-transport-geo
+## Transportation Tomorrow Survey
 
+Maps and charts of TTS data: https://schoolofcities.github.io/transportation-tomorrow-survey/
 
-Developing locally
+Developing locally..
 ```
-git clone https://github.com/schoolofcities/tts
-cd tts
+git clone https://github.com/schoolofcities/transportation-tomorrow-survey
+cd transportation-tomorrow-survey
 npm install
-```
-
-Local development:
-
-```
 npm run dev
 ```
+
