@@ -8,13 +8,13 @@
 
 <svelte:head>
 
-	<title>Arc Diagram of Bloor-Danforth Subway Line (Line 2) Trips | School of Cities</title>
+	<title>Arc diagram of Bloor-Danforth Subway Line (Line 2) trips | School of Cities</title>
 
-	<meta name="description" content="Charting out AM peak trips in Toronto with R and using data from the Transportation Tomorrow Survey.">
+	<meta name="description" content="Charting out AM peak trips in Toronto with R and data from the Transportation Tomorrow Survey.">
 	<meta name="author" content="Jeff Allen">
 
-	<meta property="og:title" content="Arc Diagram of Bloor-Danforth Subway Line (Line 2) Trips | School of Cities" />
-	<meta property="og:description" content="Charting out AM peak trips in Toronto with R and using data from the Transportation Tomorrow Survey." />
+	<meta property="og:title" content="Arc diagram of Bloor-Danforth Subway Line (Line 2) trips | School of Cities" />
+	<meta property="og:description" content="Charting out AM peak trips in Toronto with R and data from the Transportation Tomorrow Survey." />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://schoolofcities.github.io/transportation-tomorrow-survey/line-2-trips/" />
 	<meta property="og:image" content="https://raw.githubusercontent.com/schoolofcities/ggh-transport-geography/main/static/web-card-line2.png" />
@@ -23,8 +23,8 @@
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="https://schoolofcities.github.io/transportation-tomorrow-survey/line-2-trips/" />
 	<meta name="twitter:creator" content="@JeffAllenMaps" />
-	<meta name="twitter:title" content="Arc Diagram of Bloor-Danforth Subway Line (Line 2) Trips | School of Cities" />
-	<meta name="twitter:description" content="Charting out AM peak trips in Toronto with R and using data from the Transportation Tomorrow Survey." />
+	<meta name="twitter:title" content="Arc diagram of Bloor-Danforth Subway Line (Line 2) trips | School of Cities" />
+	<meta name="twitter:description" content="Charting out AM peak trips in Toronto with R and data from the Transportation Tomorrow Survey." />
 	<meta name="twitter:image" content="https://raw.githubusercontent.com/schoolofcities/ggh-transport-geography/main/static/web-card-line2.png" /> 
 
 </svelte:head>
@@ -55,7 +55,7 @@
 		</p>
 
 		<p>	
-			An <a href="https://en.wikipedia.org/wiki/Arc_diagram" target="_blank">arc diagram</a> is a type of network visualization that shows connections between nodes (in this case, trips between subway stations) using arcs. The thickness and opacity of the arc represents the number of trips between two stations, with higher arcs indicating more trips. Since people travel in two directions (eastbound and westbound), I divided the chart into two halves to show both components. 
+			An <a href="https://en.wikipedia.org/wiki/Arc_diagram" target="_blank">arc diagram</a> is a type of network visualization that shows connections between nodes (in this case, trips between subway stations) using arcs. The thickness and opacity of each arc represents the number of trips between two stations. Since people travel in two directions (eastbound and westbound), I divided the chart into two halves to show both components. 
 		</p>
 
 		<p>
@@ -67,11 +67,11 @@
 		</p>
 
 		<p>
-			Instead, I used data form the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which includes a questions about the subway line and station where people board and alight for transit trips. The TTS is approximately a 5% sample, so while not comprehensive, it does provide a good overview of travel patterns.
+			Instead, I used data form the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which includes a questions about the subway line and station where people start and end their subway trips. The TTS is approximately a 5% sample, so while not comprehensive, it does provide a good overview of travel patterns.
 		</p>
 
 		<p>
-			However, one issue with the TTS is that it only includes trips that start or end at a station, but not any transfer station. So for trips that start or end on other Lines (e.g. 1 or 4), I inferred the Line 2 leg based on the most likely transfer point. For example, if a trip started at Finch on Line 1 and ended at Bathurst, I assumed that it was most likely to transfer to Line 2 at Yonge-Bloor rather than looping down and around to St. George.
+			However, one issue with the TTS is that it only notes the start or end station, but not any transfer station. So for trips that start or end on other Lines (e.g. 1 or 4), I inferred the Line 2 leg based on the most likely transfer point. For example, if a trip started at Finch on Line 1 and ended at Bathurst, I assumed that it was most likely to transfer to Line 2 at Yonge-Bloor rather than looping down and around to St. George.
 		</p>
 
 		<p>
