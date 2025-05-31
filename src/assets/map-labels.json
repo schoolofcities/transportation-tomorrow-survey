@@ -3635,7 +3635,7 @@
     "type": "symbol",
     "source": "protomaps",
     "source-layer": "roads",
-    "minzoom": 11,
+    "minzoom": 12,
     "filter": [
       "in",
       "kind",

@@ -92,7 +92,7 @@
 			alt="School of Cities logo" 
 			style="display: block; margin: 0 auto; width: 300px; height: auto; opacity: 1"
 			on:mouseover={() => (event.target.style.opacity = 0.8)}
-			   on:mouseout={() => (event.target.style.opacity = 1)}
+			on:mouseout={() => (event.target.style.opacity = 1)}
 		/>
 	</a>
 

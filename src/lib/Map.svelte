@@ -173,7 +173,7 @@
     	console.log("Setting layer:", e.detail.value);
     	mapSelected = e.detail.value;
     	layerSet(mapSelected);
-	}		
+	}
 
 	function layerSet(layer) {
 		
@@ -270,7 +270,6 @@
 		map = new maplibregl.Map({
 			container: "map",
 			style: 
-			// https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
 			{
 				version: 8,
 				name: "Empty",
@@ -527,7 +526,7 @@
 					],
 					"paint": {
 						"line-opacity": 0,
-						"line-color": "#ce6456",
+						"line-color": "#656662",
 						"line-width": [
 						"interpolate",
 						[
@@ -578,7 +577,21 @@
 					'source':'current_lines',
 					'paint': {
 						'line-color': '#1E3765',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1, 14, 4] 
+						'line-width': [
+							'interpolate', ['linear'], ['zoom'],
+							9, [
+								'case',
+								['==', ['get', 'TECHNOLOGY'], 'LRT / BRT'], 
+								1,
+								1.5 
+							],
+							14, [
+								'case',
+								['==', ['get', 'TECHNOLOGY'], 'LRT / BRT'],
+								3,
+								5
+							]
+						],
 					}
 				}
 			);
@@ -590,7 +603,21 @@
 					'source':'future_lines',
 					'paint': {
 						'line-color': '#1E3765',
-						'line-width': ['interpolate', ['linear'], ['zoom'], 9, 1, 14, 4],
+						'line-width': [
+							'interpolate', ['linear'], ['zoom'],
+							9, [
+								'case',
+								['==', ['get', 'TECHNOLOGY'], 'LRT / BRT'], 
+								1,
+								2 
+							],
+							14, [
+								'case',
+								['==', ['get', 'TECHNOLOGY'], 'LRT / BRT'],
+								3,
+								5
+							]
+						],
 						'line-dasharray': [4, 2],
 						'line-opacity': 0
 					}
@@ -675,8 +702,8 @@
 									['linear'],               
 									['zoom'],                
 									8, 0,
-									9, 0.5,                   
-									10, 0.9                   
+									9, 0.3,                   
+									10, 0.6                   
 								],
 								'line-color': '#fff'
 							},
@@ -894,7 +921,7 @@
 
 		<div id="checkbox" class="check-box">
 			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onTransit}/> 
-				Major transit routes (GO, Subway, LRT)
+				Major transit routes (GO, Subway, LRT, BRT)
 				<svg width="30" height="12">
 					<line x1="0" y1="6" x2="40" y2="6" stroke="#1E3765" stroke-width="2"/>
 					<circle cx="15" cy="6" r="4" fill="#1E3765", stroke="#ffffff" stroke-width="2"/>
@@ -912,7 +939,7 @@
 			<label class="label-format"><input type="checkbox" class="check-box-item" bind:checked={onHighways}/> 
 				Major highways 
 				<svg width="30" height="12">
-					<line x1="0" y1="8" x2="40" y2="8" stroke="#DC4633" stroke-width="3" opacity="0.5"/>
+					<line x1="0" y1="8" x2="40" y2="8" stroke="#656662" stroke-width="3" opacity="0.5"/>
 				</svg>
 			</label>
 			<br>
