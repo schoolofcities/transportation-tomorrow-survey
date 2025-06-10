@@ -52,7 +52,7 @@
 
 		<p>
 			A couple months ago we built an <a href="https://schoolofcities.github.io/transportation-tomorrow-survey/" target="_blank">interactive map</a> for viewing <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS) data. 
-			Among the several layers on the map are maps of travel mode share: what percentage of trips are made by car, public transit, walking, and cycling. These maps are useful for understanding how people travel in the Greater Toronto Area (GTA), but they only show one mode at a time and so can be hard to compare, especially if you want to compare four at once!
+			Among the several layers on the map are maps of travel mode share: what percentage of trips are made by car, public transit, walking, and cycling. These maps are useful for understanding how people travel in the region, but they only show one mode at a time and so can be hard to compare, especially if you want to compare four at once!
 		</p>
 
 		<p>
