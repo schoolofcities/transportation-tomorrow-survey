@@ -3,6 +3,7 @@
 
 # Data
 data/local/
+data/mode-maps/input-data/
 !src/data
 
 # npm

@@ -960,11 +960,11 @@
 		</p>
 
 		<p class="notes">
-			All the travel-related data are from the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">2022 Transportation Tomorrow Survey</a>. The base-map data pertaining to roads and water are from <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>. Cycling data are from <a href="https://chatrlab.ca/projects/can-bics-english/" target="_blank">Can-BICS (CHATR Lab)</a> and include bike lanes, cycle tracks, and trails. Transit route data are from <a href="https://www.metrolinx.com/en/about-us/open-data" target="_blank">Metrolinx</a>. 
+			All the travel-related data are from the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">2022 Transportation Tomorrow Survey</a>. The base-map data pertaining to roads and water are from <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>. Cycling infrastructure data are from <a href="https://chatrlab.ca/projects/can-bics-english/" target="_blank">Can-BICS (CHATR Lab)</a> and include bike lanes, cycle tracks, and trails. Transit route data are from <a href="https://www.metrolinx.com/en/about-us/open-data" target="_blank">Metrolinx</a>. All data can be downloaded from our <a href="https://github.com/schoolofcities/transportation-tomorrow-survey" target="_blank">GitHub page</a>.
 		</p>
 
 		<p class="notes">
-			If there's anything on this map you have questions about, have feedback for ways to improve it, or want to see additional data on the map, please add an issue on the <a href="https://github.com/schoolofcities/transportation-tomorrow-survey" target="_blank">GitHub page</a> or just email us directly. Thank you! :)
+			If there's anything on this map you have questions about, have feedback for ways to improve it, or want to see additional data on the map, please add an issue on GitHub or just email us directly. Thank you! :)
 		</p>
 
 		<a href="https://schoolofcities.utoronto.ca/" target="_blank">
@@ -1097,6 +1097,5 @@
 	img:hover {
 		opacity: 1;
 	}
-
 
 </style>
