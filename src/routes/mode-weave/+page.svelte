@@ -33,7 +33,7 @@
 
 	<div class="mode-weave">
 		<a href={diagramImage} target="_blank">
-			<img src={diagramImage} alt="Arc diagram of trips on the Bloor-Danforth Subway Line (Line 2) in Toronto during peak hours, showing connections between stations with arcs. The thickness and opacity of the arcs represent the number of trips between two stations." />
+			<img src={diagramImage} alt="A visualization of Toronto showing % of daily trips by walk, car, bicycle, and public transit. There is one large map at the top with all four modes 'weaved' together to visualize patterns. Underneath this map are four smaller maps, one for each mode." />
 		</a>
 		<p id="caption">Click on the image for a higher resolution</p>
 	</div>
