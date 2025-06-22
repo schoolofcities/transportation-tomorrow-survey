@@ -19,6 +19,9 @@
 	let PMTILES_URL = 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b';
 	let LAYERS_URL = 'map-layers.pmtiles';
 	let TTS_URL = "tts2022zones_data.pmtiles";
+	// "tts2022zones_data.pmtiles";
+	// https://schoolofcities.github.io/transportation-tomorrow-survey/tts2022zones_data.pmtiles
+	// https://github.com/schoolofcities/transportation-tomorrow-survey/blob/main/static/tts2022zones_data.pmtiles
 
 	let map = null;
 
@@ -960,7 +963,7 @@
 		</p>
 
 		<p class="notes">
-			All the travel-related data are from the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">2022 Transportation Tomorrow Survey</a>. The base-map data pertaining to roads and water are from <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a>. Cycling infrastructure data are from <a href="https://chatrlab.ca/projects/can-bics-english/" target="_blank">Can-BICS (CHATR Lab)</a> and include bike lanes, cycle tracks, and trails. Transit route data are from <a href="https://www.metrolinx.com/en/about-us/open-data" target="_blank">Metrolinx</a>. All data can be downloaded from our <a href="https://github.com/schoolofcities/transportation-tomorrow-survey" target="_blank">GitHub page</a>.
+			All the travel-related data are from the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">2022 Transportation Tomorrow Survey</a>. The base-map data pertaining to roads and water are from <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> via <a href="https://protomaps.com/" target="_blank">Protomaps</a>. Cycling infrastructure data are from <a href="https://chatrlab.ca/projects/can-bics-english/" target="_blank">Can-BICS (CHATR Lab)</a> and include bike lanes, cycle tracks, and trails. Transit route data are from <a href="https://www.metrolinx.com/en/about-us/open-data" target="_blank">Metrolinx</a>. All data can be downloaded from our <a href="https://github.com/schoolofcities/transportation-tomorrow-survey" target="_blank">GitHub page</a>.
 		</p>
 
 		<p class="notes">
