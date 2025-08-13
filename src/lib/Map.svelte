@@ -17,8 +17,8 @@
     import filter from "svelte-select/filter";
 
 	let PMTILES_URL = 'https://api.protomaps.com/tiles/v4.json?key=7f48bb9c6a1f1e3b';
-	let LAYERS_URL = 'map-layers.pmtiles';
-	let TTS_URL = "tts2022zones_data.pmtiles";
+	let LAYERS_URL = 'map-layers.pmtiles.gz';
+	let TTS_URL = "tts2022zones_data.pmtiles.gz";
 	// "tts2022zones_data.pmtiles";
 	// https://schoolofcities.github.io/transportation-tomorrow-survey/tts2022zones_data.pmtiles
 	// https://github.com/schoolofcities/transportation-tomorrow-survey/blob/main/static/tts2022zones_data.pmtiles
@@ -27,7 +27,7 @@
 
 	let colours_yellowred = ["#f1c500", "#eca50d", "#e7861a", "#e16626", "#DC4633"];
 	let colours_greens = ['#eafffc','#6cccbe','#00a189','#067c6c','#0d534d'];
-	let colours_bluepurple = ['#cdf1ff', '#9acef4', '#6fb1ea', '#6e6db4', '#6d247a']
+	let colours_bluepurple = ['#cdf1ff', '#9acef4', '#6fb1ea', '#6e6db4', '#6d247a'];
 
 	const defaultMap = "% of trips by walking";
 	let mapSelected = defaultMap;
