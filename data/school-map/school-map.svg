@@ -1,0 +1,1423 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="1692"
+   height="785"
+   viewBox="0 0 1692 784.99993"
+   sodipodi:docname="school-map.svg"
+   inkscape:version="1.4.2 (1:1.4.2+202505120738+ebf0e940d0)"
+   inkscape:export-filename="school-map.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path2" />
+    </marker>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter8"
+       x="-0.011307485"
+       y="-0.024892144"
+       width="1.022615"
+       height="1.0497843">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="4.705654"
+         id="feGaussianBlur8" />
+    </filter>
+    <filter
+       inkscape:collect="always"
+       style="color-interpolation-filters:sRGB"
+       id="filter31"
+       x="-0.0028649467"
+       y="-0.0071887184"
+       width="1.0057299"
+       height="1.0143774">
+      <feGaussianBlur
+         inkscape:collect="always"
+         stdDeviation="0.77295667"
+         id="feGaussianBlur31" />
+    </filter>
+    <marker
+       style="overflow:visible"
+       id="ArrowWideRounded-9"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Wide, rounded arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:none;stroke:context-stroke;stroke-width:1;stroke-linecap:round"
+         d="M 3,-3 0,0 3,3"
+         transform="rotate(180,0.125,0)"
+         sodipodi:nodetypes="ccc"
+         id="path2-6" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.3615699"
+     inkscape:cx="225.1078"
+     inkscape:cy="267.70568"
+     inkscape:window-width="1920"
+     inkscape:window-height="1016"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="false">
+    <inkscape:grid
+       id="grid2"
+       units="px"
+       originx="0"
+       originy="0"
+       spacingx="4.9999998"
+       spacingy="4.9999998"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="5"
+       enabled="true"
+       visible="false" />
+  </sodipodi:namedview>
+  <g
+     inkscape:groupmode="layer"
+     inkscape:label="Image"
+     id="g1"
+     sodipodi:insensitive="true">
+    <image
+       width="1692"
+       height="785.00006"
+       preserveAspectRatio="none"
+       xlink:href="school-map-qgis-gimp.png"
+       id="image1"
+       x="0"
+       y="0" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Image 1">
+    <path
+       style="opacity:0.253583;fill:none;stroke:#000000;stroke-width:15;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;filter:url(#filter8)"
+       d="M 15,480.00004 H 360 V 15.000001 H 1677.0469 V 770.00006 H 15 Z"
+       id="path8"
+       sodipodi:nodetypes="ccccccc" />
+    <rect
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-linecap:square;stroke-width:30;stroke-dasharray:none"
+       id="rect1"
+       width="1692"
+       height="785"
+       x="0"
+       y="0" />
+    <rect
+       style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:2.15907;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:2.15907, 4.31815;stroke-dashoffset:0"
+       id="rect2-5"
+       width="360"
+       height="480.00003"
+       x="0"
+       y="0" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-rule:evenodd;stroke:#77767b;stroke-width:1;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:1,2;stroke-dashoffset:0;stroke-opacity:1"
+       id="rect2"
+       width="329.5"
+       height="450.00003"
+       x="15"
+       y="15.000001" />
+    <path
+       style="opacity:0.5;fill:#deddda;stroke:#deddda;stroke-width:1.42405;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 60.121074,62.672928 0.08839,392.912932"
+       id="path7-4-4-0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="opacity:0.5;fill:#deddda;stroke:#deddda;stroke-width:1.42405;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 162.07574,62.305705 0,393.280155"
+       id="path7-4-4"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="opacity:0.5;fill:#deddda;stroke:#deddda;stroke-width:1.42405;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="M 98.325069,62.305705 V 455.58586"
+       id="path7-4-4-5"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="opacity:1;fill:none;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:square;stroke-dasharray:none"
+       id="rect3"
+       width="1662.0469"
+       height="755.00006"
+       x="15"
+       y="15.000001" />
+    <text
+       xml:space="preserve"
+       style="font-size:22.5px;line-height:26.0526px;font-family:OpenSans-Italic, 'Open Sans';-inkscape-font-specification:'OpenSans-Italic, Open Sans, Normal'"
+       x="33.661499"
+       y="49.132969"
+       id="text3"><tspan
+         sodipodi:role="line"
+         x="33.661499"
+         y="49.132969"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:22.5px;line-height:26.0526px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan11">% of students driven to school</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19px;line-height:22px;font-family:OpenSans-Italic, 'Open Sans';-inkscape-font-specification:'OpenSans-Italic, Open Sans, Normal'"
+       x="1426.2397"
+       y="-423.62704"
+       id="text3-2"
+       transform="rotate(45)"><tspan
+         sodipodi:role="line"
+         x="1426.2397"
+         y="-423.62704"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan11-7">N</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:19px;line-height:22px;font-family:OpenSans-Italic, 'Open Sans';-inkscape-font-specification:'OpenSans-Italic, Open Sans, Normal'"
+       x="1220.8242"
+       y="718.867"
+       id="text3-2-5"><tspan
+         sodipodi:role="line"
+         x="1220.8242"
+         y="718.867"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:21px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         id="tspan11-7-0">5km</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="50.625267"
+       y="93.799797"
+       id="text3-6"><tspan
+         sodipodi:role="line"
+         x="50.625267"
+         y="93.799797"
+         id="tspan4-8"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">10%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="88.315308"
+       y="93.799797"
+       id="text3-6-2"><tspan
+         sodipodi:role="line"
+         x="88.315308"
+         y="93.799797"
+         id="tspan4-8-7"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">25%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="152.15808"
+       y="93.799797"
+       id="text3-6-6"><tspan
+         sodipodi:role="line"
+         x="152.15808"
+         y="93.799797"
+         id="tspan4-8-4"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">50%</tspan></text>
+    <rect
+       style="opacity:1;fill:#009dff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1;stroke-linecap:square;stroke-dasharray:none"
+       id="rect5"
+       width="25.5"
+       height="14.999999"
+       x="34.497437"
+       y="65.700089"
+       rx="3.6109128"
+       ry="3.6109128" />
+    <rect
+       style="opacity:1;fill:#7ad6ff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1;stroke-linecap:square;stroke-dasharray:none"
+       id="rect6"
+       width="38.25"
+       height="14.999999"
+       x="59.997437"
+       y="65.700089"
+       rx="3.7876894"
+       ry="3.7876894" />
+    <rect
+       style="opacity:1;fill:#ffd325;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1;stroke-linecap:square;stroke-dasharray:none"
+       id="rect7"
+       width="63.75"
+       height="14.999999"
+       x="98.247437"
+       y="65.700089"
+       rx="3.6109128"
+       ry="3.6109128" />
+    <rect
+       style="fill:#ff445a;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1;stroke-linecap:square;stroke-dasharray:none"
+       id="rect7-2"
+       width="127.5"
+       height="15.000002"
+       x="161.99744"
+       y="65.700089"
+       rx="4.0528545"
+       ry="4.0528545" />
+    <path
+       style="fill:none;stroke:#77767b;stroke-width:1.42405;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 98.24744,96.457459 0,359.128401"
+       id="path7-4"
+       sodipodi:nodetypes="cc" />
+    <rect
+       style="opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8"
+       width="79.821007"
+       height="15.079071"
+       x="34.15556"
+       y="114.92095"
+       rx="3.75"
+       ry="3.75" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-1"
+       width="112.15812"
+       height="15.079071"
+       x="34.497429"
+       y="394.92096"
+       rx="4.0625"
+       ry="4.0625" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-2"
+       width="96.098892"
+       height="15.079071"
+       x="34.497429"
+       y="174.92097"
+       rx="4.75"
+       ry="4.75" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-3"
+       width="104.65813"
+       height="15.079073"
+       x="34.497433"
+       y="234.8419"
+       rx="3.9375"
+       ry="3.9375" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-2-8"
+       width="92.696556"
+       height="15.079071"
+       x="34.497433"
+       y="154.92097"
+       rx="4.5"
+       ry="4.5" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-3-5"
+       width="107.03313"
+       height="15.079071"
+       x="34.497433"
+       y="274.92096"
+       rx="3.9586015"
+       ry="3.9586015" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-2-3"
+       width="130.50256"
+       height="15.079071"
+       x="34.497437"
+       y="434.92096"
+       rx="3.5313721"
+       ry="3.5313721" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="118.56181"
+       y="126.69974"
+       id="text3-6-6-1"><tspan
+         sodipodi:role="line"
+         x="118.56181"
+         y="126.69974"
+         id="tspan4-8-4-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Toronto</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="152.23627"
+       y="406.69977"
+       id="text3-6-6-1-73"><tspan
+         sodipodi:role="line"
+         x="152.23627"
+         y="406.69977"
+         id="tspan4-8-4-5-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Pickering</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="134.78346"
+       y="186.23149"
+       id="text3-6-6-1-73-4"><tspan
+         sodipodi:role="line"
+         x="134.78346"
+         y="186.23149"
+         id="tspan4-8-4-5-6-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Ajax</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="146.23627"
+       y="246.5284"
+       id="text3-6-6-1-73-4-4"><tspan
+         sodipodi:role="line"
+         x="146.23627"
+         y="246.5284"
+         id="tspan4-8-4-5-6-0-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Whitby</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="131.02148"
+       y="166.1534"
+       id="text3-6-6-1-73-4-2"><tspan
+         sodipodi:role="line"
+         x="131.02148"
+         y="166.1534"
+         id="tspan4-8-4-5-6-0-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Oshawa</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="145.96674"
+       y="286.06555"
+       id="text3-6-6-1-73-4-21"><tspan
+         sodipodi:role="line"
+         x="145.96674"
+         y="286.06555"
+         id="tspan4-8-4-5-6-0-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Newmarket</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="169.23242"
+       y="446.83734"
+       id="text3-6-6-1-73-4-4-8"><tspan
+         sodipodi:role="line"
+         x="169.23242"
+         y="446.83734"
+         id="tspan4-8-4-5-6-0-9-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Aurora</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="150.15884"
+       y="386.4361"
+       id="text3-6-6-1-73-4-2-0"><tspan
+         sodipodi:role="line"
+         x="150.15884"
+         y="386.4361"
+         id="tspan4-8-4-5-6-0-3-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Richmond Hill</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="146.71674"
+       y="266.28076"
+       id="text3-6-6-1-73-4-2-0-0"><tspan
+         sodipodi:role="line"
+         x="146.71674"
+         y="266.28076"
+         id="tspan4-8-4-5-6-0-3-1-4"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Markham</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="158.60753"
+       y="426.57404"
+       id="text3-6-6-1-73-4-2-0-0-4"><tspan
+         sodipodi:role="line"
+         x="158.60753"
+         y="426.57404"
+         id="tspan4-8-4-5-6-0-3-1-4-5"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Vaughan</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="149.72525"
+       y="345.85321"
+       id="text3-6-6-1-73-4-2-0-0-4-3"><tspan
+         sodipodi:role="line"
+         x="149.72525"
+         y="345.85321"
+         id="tspan4-8-4-5-6-0-3-1-4-5-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Brampton</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="150.18814"
+       y="366.20425"
+       id="text3-6-6-1-73-4-2-0-0-4-3-3"><tspan
+         sodipodi:role="line"
+         x="150.18814"
+         y="366.20425"
+         id="tspan4-8-4-5-6-0-3-1-4-5-1-9"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Mississauga</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="141.62651"
+       y="226.8727"
+       id="text3-6-6-1-73-4-2-0-0-4-3-3-9"><tspan
+         sodipodi:role="line"
+         x="141.62651"
+         y="226.8727"
+         id="tspan4-8-4-5-6-0-3-1-4-5-1-9-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Halton Hills</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="146.71674"
+       y="305.87964"
+       id="text3-6-6-1-73-4-2-0-0-4-3-3-9-1"><tspan
+         sodipodi:role="line"
+         x="146.71674"
+         y="305.87964"
+         id="tspan4-8-4-5-6-0-3-1-4-5-1-9-6-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Milton</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="146.71674"
+       y="325.99115"
+       id="text3-6-6-1-73-4-2-0-0-4-3-3-9-1-9"><tspan
+         sodipodi:role="line"
+         x="146.71674"
+         y="325.99115"
+         id="tspan4-8-4-5-6-0-3-1-4-5-1-9-6-3-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Oakville</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="139.92433"
+       y="205.97023"
+       id="text3-6-6-1-73-4-2-0-0-4-3-3-9-1-9-0"><tspan
+         sodipodi:role="line"
+         x="139.92433"
+         y="205.97023"
+         id="tspan4-8-4-5-6-0-3-1-4-5-1-9-6-3-1-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Burlington</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="130.81055"
+       y="146.89461"
+       id="text3-6-6-1-73-4-2-0-0-4-3-3-9-1-9-0-7"><tspan
+         sodipodi:role="line"
+         x="130.81055"
+         y="146.89461"
+         id="tspan4-8-4-5-6-0-3-1-4-5-1-9-6-3-1-7-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Hamilton</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+       x="239.96825"
+       y="166.92934"
+       id="text3-6-6-1-7"><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="166.92934"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan12">Data are a ~5%</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="180.92934"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan18">sample of all</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="194.92934"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan34">students in the</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="208.92934"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan38">region aged 6-17.</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="222.92934"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan5" /><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="236.92934"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan19">Values show </tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="250.92934"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan29">percent of trips </tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="264.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan31">between home </tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="278.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan24">and school that</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="292.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan25">are by private</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="306.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan26">motor vehicle</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="320.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan16" /><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="334.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan17">Data are from the </tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="348.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan14">2022-2023 </tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="362.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan20">Transportation</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="376.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan10">Tomorrow Survey.</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="390.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan35" /><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="404.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan13" /><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="418.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan23">Map by Jeff Allen</tspan><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="432.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan1" /><tspan
+         sodipodi:role="line"
+         x="239.96825"
+         y="446.92935"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#9a9996"
+         id="tspan2">CC BY-NC-SA 4.0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#77767b;fill-opacity:1"
+       x="202.45645"
+       y="109.72658"
+       id="text3-6-6-1-7-1"><tspan
+         sodipodi:role="line"
+         x="202.45645"
+         y="109.72658"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#77767b;fill-opacity:1"
+         id="tspan27">City of Toronto's goal </tspan><tspan
+         sodipodi:role="line"
+         x="202.45645"
+         y="123.72658"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#77767b;fill-opacity:1"
+         id="tspan28">for school (and work)</tspan><tspan
+         sodipodi:role="line"
+         x="202.45645"
+         y="137.72658"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14px;line-height:14px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#77767b;fill-opacity:1"
+         id="tspan32">trips &lt;5km by 2030</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:16px;line-height:22px;font-family:OpenSans-Italic, 'Open Sans';-inkscape-font-specification:'OpenSans-Italic, Open Sans, Normal';fill:#9a9996"
+       x="736.9353"
+       y="667.91028"
+       id="text3-6-6-1-26-5-6-9-9-7-1-0-66"><tspan
+         sodipodi:role="line"
+         x="736.9353"
+         y="667.91028"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:16px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#9a9996"
+         id="tspan8-7-3-9-2">Lake Ontario</tspan></text>
+    <g
+       id="g20-1"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none;filter:url(#filter31)">
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="1246.4766"
+         y="83.046883"
+         id="text3-6-6-1-26-5-6-9-6"><tspan
+           sodipodi:role="line"
+           x="1246.4766"
+           y="83.046883"
+           id="tspan4-8-4-5-9-2-0-0-8"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Newmarket</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="994.32031"
+         y="501.64453"
+         id="text3-6-6-1-26-6"><tspan
+           sodipodi:role="line"
+           x="994.32031"
+           y="501.64453"
+           id="tspan4-8-4-5-9-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Toronto</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="1185.8511"
+         y="388.4053"
+         id="text3-6-6-1-26-5-7"><tspan
+           sodipodi:role="line"
+           x="1185.8511"
+           y="388.4053"
+           id="tspan4-8-4-5-9-2-6"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Markham</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="1422.5306"
+         y="577.55548"
+         id="text3-6-6-1-26-5-8-6"><tspan
+           sodipodi:role="line"
+           x="1422.5306"
+           y="577.55548"
+           id="tspan4-8-4-5-9-2-7-08"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Ajax</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="1509.6785"
+         y="609.79321"
+         id="text3-6-6-1-26-5-8-4-0"><tspan
+           sodipodi:role="line"
+           x="1509.6785"
+           y="609.79321"
+           id="tspan4-8-4-5-9-2-7-0-4"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Whitby</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="1582.505"
+         y="677.10663"
+         id="text3-6-6-1-26-5-8-4-2-8"><tspan
+           sodipodi:role="line"
+           x="1582.505"
+           y="677.10663"
+           id="tspan4-8-4-5-9-2-7-0-3-9"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Oshawa</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="1319.0938"
+         y="544.87958"
+         id="text3-6-6-1-26-5-8-4-2-9-2"><tspan
+           sodipodi:role="line"
+           x="1319.0938"
+           y="544.87958"
+           id="tspan4-8-4-5-9-2-7-0-3-2-4"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Pickering</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="1209.125"
+         y="158.53125"
+         id="text3-6-6-1-26-5-6-8"><tspan
+           sodipodi:role="line"
+           x="1209.125"
+           y="158.53125"
+           id="tspan4-8-4-5-9-2-0-7"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Aurora</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="1162.9883"
+         y="262.53125"
+         id="text3-6-6-1-26-5-6-9-9-3"><tspan
+           sodipodi:role="line"
+           x="1162.9883"
+           y="262.53125"
+           id="tspan4-8-4-5-9-2-0-0-0-5"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none">Richmond</tspan><tspan
+           sodipodi:role="line"
+           x="1162.9883"
+           y="284.53125"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-5">Hill</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="976.89447"
+         y="245.60938"
+         id="text3-6-6-1-26-5-6-9-9-7-7"><tspan
+           sodipodi:role="line"
+           x="976.89447"
+           y="245.60938"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-7-0">Vaughan</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="701.80151"
+         y="226.0009"
+         id="text3-6-6-1-26-5-6-9-9-7-1-8"><tspan
+           sodipodi:role="line"
+           x="701.80151"
+           y="226.0009"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-7-3-8">Brampton</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="682.14453"
+         y="433.27344"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-2"><tspan
+           sodipodi:role="line"
+           x="682.14453"
+           y="433.27344"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-7-3-9-0">Mississauga</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="480.84375"
+         y="543.98438"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-3"><tspan
+           sodipodi:role="line"
+           x="480.84375"
+           y="543.98438"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-7-3-9-4-93">Oakville</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="319.29297"
+         y="557.07031"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-0-1"><tspan
+           sodipodi:role="line"
+           x="319.29297"
+           y="557.07031"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-7-3-9-4-9-2">Burlington</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="147.58594"
+         y="655.57031"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-0-5-9"><tspan
+           sodipodi:role="line"
+           x="147.58594"
+           y="655.57031"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-7-3-9-4-9-9-9">Hamilton</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="439.11328"
+         y="367.57031"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-0-5-1-0"><tspan
+           sodipodi:role="line"
+           x="439.11328"
+           y="367.57031"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-7-3-9-4-9-9-1-0">Milton</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+         x="477.78516"
+         y="124.02537"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-0-5-1-7-6"><tspan
+           sodipodi:role="line"
+           x="477.78516"
+           y="124.02537"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan8-7-3-9-4-9-9-1-4-9">Halton</tspan><tspan
+           sodipodi:role="line"
+           x="477.78516"
+           y="146.02538"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;stroke:#ffffff;stroke-width:5;stroke-dasharray:none"
+           id="tspan9-6">Hills</tspan></text>
+    </g>
+    <g
+       id="g20">
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="1246.4766"
+         y="83.046883"
+         id="text3-6-6-1-26-5-6-9"><tspan
+           sodipodi:role="line"
+           x="1246.4766"
+           y="83.046883"
+           id="tspan4-8-4-5-9-2-0-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Newmarket</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="994.32031"
+         y="501.64453"
+         id="text3-6-6-1-26"><tspan
+           sodipodi:role="line"
+           x="994.32031"
+           y="501.64453"
+           id="tspan4-8-4-5-9"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Toronto</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="1185.8511"
+         y="388.4053"
+         id="text3-6-6-1-26-5"><tspan
+           sodipodi:role="line"
+           x="1185.8511"
+           y="388.4053"
+           id="tspan4-8-4-5-9-2"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Markham</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="1422.5306"
+         y="577.55548"
+         id="text3-6-6-1-26-5-8"><tspan
+           sodipodi:role="line"
+           x="1422.5306"
+           y="577.55548"
+           id="tspan4-8-4-5-9-2-7"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Ajax</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="1509.6785"
+         y="609.79321"
+         id="text3-6-6-1-26-5-8-4"><tspan
+           sodipodi:role="line"
+           x="1509.6785"
+           y="609.79321"
+           id="tspan4-8-4-5-9-2-7-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Whitby</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="1582.505"
+         y="677.10663"
+         id="text3-6-6-1-26-5-8-4-2"><tspan
+           sodipodi:role="line"
+           x="1582.505"
+           y="677.10663"
+           id="tspan4-8-4-5-9-2-7-0-3"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Oshawa</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="1319.0938"
+         y="544.87958"
+         id="text3-6-6-1-26-5-8-4-2-9"><tspan
+           sodipodi:role="line"
+           x="1319.0938"
+           y="544.87958"
+           id="tspan4-8-4-5-9-2-7-0-3-2"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Pickering</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="1209.125"
+         y="158.53125"
+         id="text3-6-6-1-26-5-6"><tspan
+           sodipodi:role="line"
+           x="1209.125"
+           y="158.53125"
+           id="tspan4-8-4-5-9-2-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:40.0667px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">Aurora</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="1162.9883"
+         y="262.53125"
+         id="text3-6-6-1-26-5-6-9-9"><tspan
+           sodipodi:role="line"
+           x="1162.9883"
+           y="262.53125"
+           id="tspan4-8-4-5-9-2-0-0-0"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle">Richmond</tspan><tspan
+           sodipodi:role="line"
+           x="1162.9883"
+           y="284.98187"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8">Hill</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="976.89447"
+         y="245.60938"
+         id="text3-6-6-1-26-5-6-9-9-7"><tspan
+           sodipodi:role="line"
+           x="976.89447"
+           y="245.60938"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8-7">Vaughan</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="701.80151"
+         y="226.0009"
+         id="text3-6-6-1-26-5-6-9-9-7-1"><tspan
+           sodipodi:role="line"
+           x="701.80151"
+           y="226.0009"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8-7-3">Brampton</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="682.14453"
+         y="433.27344"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0"><tspan
+           sodipodi:role="line"
+           x="682.14453"
+           y="433.27344"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8-7-3-9">Mississauga</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="480.84375"
+         y="543.98438"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6"><tspan
+           sodipodi:role="line"
+           x="480.84375"
+           y="543.98438"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8-7-3-9-4">Oakville</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="319.29297"
+         y="557.07031"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-0"><tspan
+           sodipodi:role="line"
+           x="319.29297"
+           y="557.07031"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8-7-3-9-4-9">Burlington</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="147.58594"
+         y="655.57031"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-0-5"><tspan
+           sodipodi:role="line"
+           x="147.58594"
+           y="655.57031"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8-7-3-9-4-9-9">Hamilton</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="439.11328"
+         y="367.57031"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-0-5-1"><tspan
+           sodipodi:role="line"
+           x="439.11328"
+           y="367.57031"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8-7-3-9-4-9-9-1">Milton</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+         x="477.78516"
+         y="124.02537"
+         id="text3-6-6-1-26-5-6-9-9-7-1-0-6-0-5-1-7"><tspan
+           sodipodi:role="line"
+           x="477.78516"
+           y="124.02537"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan8-7-3-9-4-9-9-1-4">Halton</tspan><tspan
+           sodipodi:role="line"
+           x="477.78516"
+           y="146.47598"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:17px;line-height:22px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle"
+           id="tspan9">Hills</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="88.365334"
+       y="127.08648"
+       id="text3-6-6-1-2"><tspan
+         sodipodi:role="line"
+         x="88.365334"
+         y="127.08648"
+         id="tspan4-8-4-5-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">31%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="117.62982"
+       y="407.08649"
+       id="text3-6-6-1-2-3"><tspan
+         sodipodi:role="line"
+         x="117.62982"
+         y="407.08649"
+         id="tspan4-8-4-5-1-08"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">44%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="103.63068"
+       y="187.08647"
+       id="text3-6-6-1-2-3-7"><tspan
+         sodipodi:role="line"
+         x="103.63068"
+         y="187.08647"
+         id="tspan4-8-4-5-1-08-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">37%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="112.39453"
+       y="247.12172"
+       id="text3-6-6-1-2-3-7-4"><tspan
+         sodipodi:role="line"
+         x="112.39453"
+         y="247.12172"
+         id="tspan4-8-4-5-1-08-0-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">41%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="112.89907"
+       y="287.08646"
+       id="text3-6-6-1-2-3-7-4-8"><tspan
+         sodipodi:role="line"
+         x="112.89907"
+         y="287.08646"
+         id="tspan4-8-4-5-1-08-0-6-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">42%</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-3-5-2"
+       width="107.03313"
+       height="15.079071"
+       x="34.497433"
+       y="295.06796"
+       rx="3.9586015"
+       ry="3.9586015" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="112.89908"
+       y="307.23346"
+       id="text3-6-6-1-2-3-7-4-8-2"><tspan
+         sodipodi:role="line"
+         x="112.89908"
+         y="307.23346"
+         id="tspan4-8-4-5-1-08-0-6-2-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">42%</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-3-5-2-5"
+       width="107.03313"
+       height="15.079071"
+       x="35"
+       y="314.92096"
+       rx="3.9586015"
+       ry="3.9586015" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="113.40164"
+       y="327.08646"
+       id="text3-6-6-1-2-3-7-4-8-2-4"><tspan
+         sodipodi:role="line"
+         x="113.40164"
+         y="327.08646"
+         id="tspan4-8-4-5-1-08-0-6-2-2-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">42%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="137.8457"
+       y="446.93695"
+       id="text3-6-6-1-2-3-7-4-8-6"><tspan
+         sodipodi:role="line"
+         x="137.8457"
+         y="446.93695"
+         id="tspan4-8-4-5-1-08-0-6-2-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">51%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="98.05381"
+       y="167.14796"
+       id="text3-6-6-1-2-3-7-4-6"><tspan
+         sodipodi:role="line"
+         x="98.05381"
+         y="167.14796"
+         id="tspan4-8-4-5-1-08-0-6-1"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">36%</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-18"
+       width="104.65813"
+       height="15.079073"
+       x="34.497437"
+       y="254.92097"
+       rx="4.3310289"
+       ry="4.3310289" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-1-7"
+       width="121.59563"
+       height="15.079071"
+       x="34.839302"
+       y="414.92096"
+       rx="3.75"
+       ry="3.75" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-2-4"
+       width="109.25433"
+       height="15.079071"
+       x="34.839302"
+       y="334.92096"
+       rx="3.7123106"
+       ry="3.7123106" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-3-1"
+       width="109.07755"
+       height="15.079071"
+       x="34.83931"
+       y="355.00006"
+       rx="3.2703688"
+       ry="3.2703688" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-3-5-3-6"
+       width="101.65813"
+       height="15.079071"
+       x="34.83931"
+       y="194.92097"
+       rx="3.9774756"
+       ry="3.9774756" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-2-3-8-4"
+       width="91.84182"
+       height="15.079071"
+       x="34.83931"
+       y="134.92097"
+       rx="3.9774756"
+       ry="3.9774756" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="111.98135"
+       y="267.08649"
+       id="text3-6-6-1-2-5"><tspan
+         sodipodi:role="line"
+         x="111.98135"
+         y="267.08649"
+         id="tspan4-8-4-5-1-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">41%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="128.75282"
+       y="427.18317"
+       id="text3-6-6-1-2-5-2"><tspan
+         sodipodi:role="line"
+         x="128.75282"
+         y="427.18317"
+         id="tspan4-8-4-5-1-0-7"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">47%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="115.52968"
+       y="346.57675"
+       id="text3-6-6-1-2-5-2-0"><tspan
+         sodipodi:role="line"
+         x="115.52968"
+         y="346.57675"
+         id="tspan4-8-4-5-1-0-7-8"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">43%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="115.52968"
+       y="366.97223"
+       id="text3-6-6-1-2-5-2-0-5"><tspan
+         sodipodi:role="line"
+         x="115.52968"
+         y="366.97223"
+         id="tspan4-8-4-5-1-0-7-8-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">43%</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-3-1-6"
+       width="109.07755"
+       height="15.079071"
+       x="35"
+       y="374.92096"
+       rx="3.2703688"
+       ry="3.2703688" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="115.52968"
+       y="386.89313"
+       id="text3-6-6-1-2-5-2-0-5-4"><tspan
+         sodipodi:role="line"
+         x="115.52968"
+         y="386.89313"
+         id="tspan4-8-4-5-1-0-7-8-6-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">43%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="109.95127"
+       y="207.13051"
+       id="text3-6-6-1-2-5-2-0-5-7-6-9-1"><tspan
+         sodipodi:role="line"
+         x="109.95127"
+         y="207.13051"
+         id="tspan4-8-4-5-1-0-7-8-6-4-7-0-0"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">40%</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#3d3846;stroke-width:1.02572;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8-3-5-3-6-0"
+       width="101.65813"
+       height="15.079071"
+       x="35"
+       y="214.92097"
+       rx="3.9774756"
+       ry="3.9774756" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="110.11196"
+       y="227.13051"
+       id="text3-6-6-1-2-5-2-0-5-7-6-9-1-1"><tspan
+         sodipodi:role="line"
+         x="110.11196"
+         y="227.13051"
+         id="tspan4-8-4-5-1-0-7-8-6-4-7-0-0-3"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">40%</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
+       x="98.05381"
+       y="146.60123"
+       id="text3-6-6-1-2-5-2-0-5-7-6-9-1-2"><tspan
+         sodipodi:role="line"
+         x="98.05381"
+         y="146.60123"
+         id="tspan4-8-4-5-1-0-7-8-6-4-7-0-0-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:30.05px;font-family:'Comic Neue';-inkscape-font-specification:'Comic Neue, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal">36%</tspan></text>
+    <path
+       style="fill:#77767b;fill-opacity:1;stroke:#77767b;stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:3,1.5;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 100.99481,105.25001 h 98.56217"
+       id="path28"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1206.6773,724.5 h 66.1146"
+       id="path32-2"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1.84288;stroke-linecap:round;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+       d="m 1292.4475,734.24186 16.4837,-16.48377"
+       id="path32-2-0"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:type="star"
+       style="opacity:0.889831;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:square;stroke-linejoin:round;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path32"
+       inkscape:flatsided="false"
+       sodipodi:sides="3"
+       sodipodi:cx="1302.0233"
+       sodipodi:cy="736.8053"
+       sodipodi:r1="9.9099312"
+       sodipodi:r2="4.9549656"
+       sodipodi:arg1="2.6179939"
+       sodipodi:arg2="3.6651914"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 1293.4411,741.76026 4.2911,-7.43244 4.2911,-7.43245 4.2911,7.43244 4.2912,7.43245 -8.5823,0 z"
+       inkscape:transform-center-y="1.2824139"
+       transform="rotate(45,1316.5887,730.69917)"
+       inkscape:transform-center-x="1.2824303" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="M 74.978555,89.2008 H 86.598609"
+       id="path38"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 113.89833,89.2008 h 36.37756"
+       id="path38-7"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#ArrowWideRounded)"
+       d="m 178.66952,89.2008 31.51185,0"
+       id="path38-7-7"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#ArrowWideRounded-9)"
+       d="m 49.455981,89.2008 -10.258292,0"
+       id="path38-7-7-5"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>

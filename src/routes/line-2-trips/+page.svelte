@@ -67,7 +67,7 @@
 		</p>
 
 		<p>
-			Instead, I used data form the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which includes a questions about the subway line and station where people start and end their subway trips. The TTS is approximately a 5% sample, so while not comprehensive, it does provide a good overview of travel patterns.
+			Instead, I used data from the <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which includes a questions about the subway line and station where people start and end their subway trips. The TTS is approximately a 5% sample, so while not comprehensive, it does provide a good overview of travel patterns.
 		</p>
 
 		<p>
