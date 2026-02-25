@@ -50,7 +50,7 @@
 		<h3>~ <a href="https://jamaps.github.io/" target="_blank">Jeff Allen</a>, 02/2026</h3>
 
 		<p>
-			Last March (2025), I created <a href="./line-2-trips" target="_blank">a diagram for Line 2</a> showing trip patterns during an average morning commute. Since making it, I received a few requests to make a similar <a href="https://en.wikipedia.org/wiki/Arc_diagram" target="_blank">arc diagram</a> for Line 1. I originally thought doing so would be a bit of a challenge, since the geometry for Line 1 is not a (mostly) straight line like Line 2. Line 1 is more like a warped 'U' or elongated semi-circle looping from Vaughan down to Union then up to North York. 
+			Last March (2025), I created <a href="./line-2-trips" target="_blank">a diagram for Line 2</a> showing trip patterns during an average morning commute. Since making it, I have received several requests to make a similar <a href="https://en.wikipedia.org/wiki/Arc_diagram" target="_blank">arc diagram</a> for Line 1. I originally thought doing so would be a bit of a challenge, since the geometry for Line 1 is not a (mostly) straight line like  Line 2 – it is more like a warped 'U' or an elongated semi-circle looping from Vaughan down to Union and then up to North York. 
 		</p>
 
 		<img
@@ -60,7 +60,7 @@
 		/>
 
 		<p>
-			I found that by unfurling the geometry of Line 1, then plotting flows of trips between stations using a similar arc diagram approach can still reveal a few interesting trends.
+			But I found that by unfurling the geometry of Line 1, then plotting flows of trips between stations using a similar arc diagram approach, I could still still show a few interesting trends.
 		</p>
 
 		<img
@@ -74,7 +74,7 @@
 		</p>
 
 		<p>
-			At a more regional level, the diagram shows two distinct domes or mountains of arcs, one for the more well-travelled, eastern, Yonge section and one for the longer, western, University section. This dual pattern highlights how Line 1, based on trip data like this, is used more like two lines that share an overlapping section (stations south of Bloor).
+			At a more regional level, the diagram shows two distinct domes (or mountains) of arcs, one for the more well-travelled, eastern, Yonge section and one for the longer, western, University section. This dual pattern highlights how Line 1, based on trip data like this, is used more like two lines that share an overlapping section (stations south of Bloor).
 		</p>
 
 		<img
@@ -88,19 +88,19 @@
 		</p>
 
 		<p>
-			However, one issue with the TTS is that it only notes the start or end station of a subway trip, but not any intermediate transfer station. So for trips that start or end on other Lines (e.g. Lines 2 or 4), I inferred the Line 1 leg based on the most likely transfer point. For example, if your trip started at Kipling on Line 2 and ended at Davisville on Line 1, I assumed that your most likely transfer to Line 1 would be at Bloor–Yonge (adding to the total of trips between Bloor–Yonge and Davisville shown on the diagram), rather than at St. George or Spadina and looping around.
+			However, one issue with the TTS is that it only notes the start or end station of a subway trip, but not any intermediate transfer stations. So, for trips that start or end on other lines (e.g. Lines 2 or 4), I inferred the Line 1 leg based on the most likely transfer point. For example, if your trip started at Kipling on Line 2 and ended at Davisville on Line 1, I assumed that your most likely transfer to Line 1 was at Bloor–Yonge (adding to the total of trips between Bloor–Yonge and Davisville shown on the diagram), rather than at St. George or Spadina.
 		</p>
 
 		<p>
-			This can get a bit arbitrary in some situations. For example, say you are travelling from Dupont to College (both on Line 1), would you stay on Line 1 the entire way? or would you transfer at St. George, ride Line 2 to Yonge, then transfer back south on Line 1? My simple assumption here is that any trip starting north of Bloor and ending south of Bloor, you would not transfer; but any trip starting north from St. George and north of Bloor–Yonge would transfer on Line 2 between St. George and Bloor–Yonge rather than travelling the full loop. Maybe this not the greatest assumption, but this type of trip that starts and ends on opposite segments north of Bloor only account for ~1.4% of all trips, so if my assumptions were improved with better data, the overall patterns on the arc diagram would not change a lot. 
+			This can get a bit arbitrary in some situations. For example, say you are travelling from Dupont to College (both on Line 1); would you stay on Line 1 the entire way, or would you transfer at St. George, ride Line 2 to Yonge, then transfer back south on Line 1? My assumption here is that for any trip starting north of Bloor and ending south of Bloor, you would not transfer; but for any trip starting north of St. George and ending north of Bloor–Yonge you would transfer on Line 2 between St. George and Bloor–Yonge rather than travelling the full loop. Trip that start and end on opposite segments north of Bloor only account for ~1.4% of all trips, so even if my assumptions were strengthened with better data, the overall patterns on the arc diagram would not change a lot. 
 		</p>
 
 		<p>
-			Anyways, because of the sample size, as well as some assumptions with transferring, this chart can be interpreted as the likely trend for this time period, but not 100% accurate. 
+			So, due to the sample size and some assumptions about transferring, this chart can be interpreted as the likely trend for this time period, but not as 100% accurate. 
 		</p>
 
 		<p>
-			That's it for now :) If you have any questions, comments, or suggestions, please feel free to reach out to me at <a>jeff.allen@utoronto.ca</a>
+			That's it for now! If you have any questions, comments, or suggestions, please feel free to reach out to me at <a>jeff.allen@utoronto.ca</a>
 		</p>
 
 	</div>
