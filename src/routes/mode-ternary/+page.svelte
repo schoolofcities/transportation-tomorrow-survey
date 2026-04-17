@@ -3,6 +3,9 @@
 	import csvTransit from './assets/modes_percent_transit_line.csv?raw';
 	import csvMunicipality from './assets/modes_percent_municipality.csv?raw';
 	import csvIncome from './assets/modes_percent_income.csv?raw';
+	import csvImmigration from './assets/modes_percent_immigration.csv?raw';
+	import csvAge from './assets/modes_percent_age.csv?raw';
+	import csvAgeGender from './assets/modes_percent_age_gender.csv?raw';
 	import * as d3 from 'd3';
 	import '../../assets/global.css';
 	import sofcLogo from "../../assets/top-logo-full.svg";
@@ -18,7 +21,8 @@
 	const TRI_GRAD_OPACITY = 0.05;
 
 	// Chart title and subtitle (editable)
-	const CHART_TITLE = 'Daily travel mode share in the Toronto region';
+	const CHART_TITLE = 'How does Toronto travel?';
+	const CHART_SUBTITLE = 'Exploring patterns of daily travel mode share via ternary charts'
 	let chartSubtext = '';
 	const dataSource = 'Data source: Transportation Tomorrow Survey, 2022-23';
 	const authorText = 'Jeff Allen, Polina Gorn';
@@ -29,7 +33,7 @@
 		{
 			id: 'transit_lines',
 			fileName: 'modes_percent_transit_line.csv',
-			title: 'Major transit lines',
+			title: 'Near major transit lines',
 			infoText: 'Mode share of residents who live within 800m of stations on major transit lines',
 			raw: csvTransit
 		},
@@ -37,7 +41,7 @@
 			id: 'upper_tier_municipalities',
 			fileName: 'modes_percent_upper_tier_municipality.csv',
 			title: 'Municipality',
-			infoText: 'Mode share by residents for residents living in municipalities in the Greater Toronto and Hamilton Area ',
+			infoText: 'Mode share by residents in Toronto compared to municipalities in the Greater Golden Horseshoe',
 			raw: csvMunicipality
 		},
 		{
@@ -46,10 +50,31 @@
 			title: 'Household income',
 			infoText: 'Mode share by City of Toronto residents grouped by their household income.',
 			raw: csvIncome
+		},
+		{
+			id: 'immigration',
+			fileName: 'modes_percent_immigration.csv',
+			title: 'Immigration',
+			infoText: 'Mode share by City of Toronto residents grouped by if and when they immigrated to Canada.',
+			raw: csvImmigration
+		},
+		{
+			id: 'age',
+			fileName: 'modes_percent_age.csv',
+			title: 'Age',
+			infoText: 'Mode share by City of Toronto residents grouped by age.',
+			raw: csvAge
+		},
+		{
+			id: 'age_gender',
+			fileName: 'modes_percent_age_gender.csv',
+			title: 'Age and gender',
+			infoText: 'Mode share by City of Toronto residents grouped by age and gender.',
+			raw: csvAgeGender
 		}
 	];
 
-	let selectedDataset = DATASETS[0].id;
+	let selectedDataset = DATASETS[1].id;
 	// ===== End editable parameters =====
 
 	// Chart dimensions
@@ -65,7 +90,7 @@
 	const leftBoxWidth = Math.min(280, Math.floor(triW / 2 - 24));
 	const rightBoxWidth = 250;
 	const leftBoxX = margin + sideBoxPadding;
-	const leftBoxY = margin + sideBoxPadding + 3;
+	const leftBoxY = margin + sideBoxPadding - 5;
 	const rightBoxX = margin + triW - rightBoxWidth - sideBoxPadding;
 	const rightBoxY = margin + sideBoxPadding;
 
@@ -78,8 +103,8 @@
 	const squareHover = 16;
 
 	const tickLen = 12;
-	const LINE_GROUP_STROKE_WIDTH = 2;
-	const LINE_GROUP_OPACITY = 0.45;
+	const LINE_GROUP_STROKE_WIDTH = 1.5;
+	const LINE_GROUP_OPACITY = 0.65;
 
 	// Axis and callout labels
 	const AXIS_LABEL_ACTIVE = '% of trips by active modes (walking or bicycle)';
@@ -450,18 +475,31 @@
 
 	.chart-heading {
 		font-family: TradeGothicBold, sans-serif;
-		font-size: 28px;
+		font-size: 37px;
 		color: black;
 		margin: 0px;
-		line-height: 35px;
+		line-height:45px;
 		padding: 0px;
+		padding-bottom: 15px;
+		border: none;
+	}
+
+	.chart-subheading {
+		font-family: Roboto, sans-serif;
+		font-size: 16px;
+		color: var(--brandBlack);
+		margin: 0px;
+		line-height: 22px;
+		padding: 0px;
+		padding-bottom: 32px;
 		border: none;
 	}
 
 	svg {
 		font-family: Roboto, sans-serif;
 		border: solid 1px var(--brandGray);
-		border-top: solid 5px black;
+		border-top: solid 8px black;
+		border-bottom: solid 2px black;
 	}
 
 	.svg-subtext {
@@ -619,9 +657,10 @@
 		<rect x="0" y="0" width={svgW} height={svgH} fill="none" stroke="#ddd" stroke-width="1" />
 
 		<!-- Left info box (top-left whitespace inside triangle bounding box) -->
-		<foreignObject x={leftBoxX} y={leftBoxY} width={leftBoxWidth} height="140">
+		<foreignObject x={leftBoxX} y={leftBoxY} width={leftBoxWidth} height="240">
 			<div xmlns="http://www.w3.org/1999/xhtml" class="fo-left">
 				<h1 class="chart-heading">{CHART_TITLE}</h1>
+				<h2 class="chart-subheading">{CHART_SUBTITLE}</h2>
 				<div class="fo-author">{authorText}</div>
 				<div class="fo-date">{dateText}</div>
 			</div>
@@ -810,8 +849,8 @@
 	{#if tooltip.show}
 		<div class="tooltip" style="left: {tooltip.x}px; top: {tooltip.y}px;">
 			<div style="font-weight:600; margin-bottom:4px">{tooltip.row.short}</div>
-			<div>Drive: {tooltip.row.drive.toFixed(1)}%</div>
-			<div>Transit: {tooltip.row.transit.toFixed(1)}%</div>
+			<div>Motor vehicle: {tooltip.row.drive.toFixed(1)}%</div>
+			<div>Public transit: {tooltip.row.transit.toFixed(1)}%</div>
 			<div>Active (walk+bike): {tooltip.row.active.toFixed(1)}%</div>
 		</div>
 	{/if}
@@ -821,32 +860,34 @@
 
 <div class="text">
 
-	<h1>Background</h1>
+	<h1>Briefly about this chart</h1>
 	<p>
-		Last year we built an <a href="https://schoolofcities.github.io/transportation-tomorrow-survey/" target="_blank">interactive map</a> for viewing <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS) data. 
-		Among the several layers included are maps of travel mode share: what percentage of trips are made by car, public transit, walking, and cycling. These maps are useful for understanding how people travel in the region and how that varies by neighbourhood.
+		Ternary charts are a type of plot that show the composition of three-part data, where the three parts sum to a whole (e.g. 100% of trips). In transportation research, ternary charts can be used to show mode share: the percentage of trips made by different modes like driving, transit, and active transportation (walking/cycling). Each point on the chart represents a specific region or population group, and its position within the triangle indicates the relative proportions of each mode. 
 	</p>
 	<p>
-		We've also experimented with multi-variate "weaving" maps to show how mode share varies across the region, but these can be difficult to interpret and compare across areas. Ternary plots are a common way to show the composition of three-part data like mode share, so we wanted to try building an interactive ternary plot to explore the TTS data in a new way.
+		The corners of the triangle represent 100% of one mode (e.g. all driving, all transit, or all active), while points along the edges represent combinations of two modes, and points within the interior represent combinations of all three modes (i.e. regions or groups that are quite multi-modal). For example, looking by municipality, pre-amalgamated Toronto (Old Toronto), is quite close to the centre of the chart, indicating a more balanced mode share between driving, transit, and active travel. In contrast, suburban and rural municipalities, more than 90% are by motor vehicle, and thus they cluster near bottom-left corner
 	</p>
 	<p>
-		
+		The data for this chart comes from the  <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which is a large-scale household travel survey conducted in the Greater Golden Horseshoe (south-central Ontario) every 5 years. The TTS collects detailed information on travel behaviour, including mode share, trip purpose, and demographics, making it a valuable resource for transportation planning and research in the region. The latest version of the survey (which is shown on the chart here) was conducted in 2022 and 2023, so the patterns may have shifted since, but probably not substantially.
+	</p>
+	<p>
+		If you are interested in maps showing mode share in the Toronto region, check out our <a href="./" target="_blank">interactive map</a> of Transportation Tomorrow Survey data, which includes mode share maps and other visualizations. We've also created a more experimental visualization of mode share across the the City of Toronto <a href="./mode-weave" target="_blank">using a "weaving-space" method</a>.
 	</p>
 
 </div>
 
-	<br>
+<br>
 
-	<a href="https://schoolofcities.utoronto.ca/" target="_blank">
-		<img 
-			src={sofcLogo} 
-			alt="School of Cities logo" 
-			style="display: block; margin: 0 auto; width: 300px; height: auto; opacity: 1"
-			on:mouseover={() => (event.target.style.opacity = 0.8)}
-			on:mouseout={() => (event.target.style.opacity = 1)}
-		/>
-	</a>
+<a href="https://schoolofcities.utoronto.ca/" target="_blank">
+	<img 
+		src={sofcLogo} 
+		alt="School of Cities logo" 
+		style="display: block; margin: 0 auto; width: 300px; height: auto; opacity: 1"
+		on:mouseover={() => (event.target.style.opacity = 0.8)}
+		on:mouseout={() => (event.target.style.opacity = 1)}
+	/>
+</a>
 
-	<br><br><br>
+<br><br><br>
 
 
