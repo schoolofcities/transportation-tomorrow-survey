@@ -1,6 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
 	import csvTransit from './assets/modes_percent_transit_line.csv?raw';
+	import csvStations from './assets/modes_percent_station.csv?raw';
 	import csvMunicipality from './assets/modes_percent_municipality.csv?raw';
 	import csvIncome from './assets/modes_percent_income.csv?raw';
 	import csvImmigration from './assets/modes_percent_immigration.csv?raw';
@@ -31,18 +32,18 @@
 	// Dataset registry (JSON): add entries for each CSV here
 	const DATASETS = [
 		{
-			id: 'transit_lines',
-			fileName: 'modes_percent_transit_line.csv',
-			title: 'Near major transit lines',
-			infoText: 'Mode share of residents who live within 800m of stations on major transit lines',
-			raw: csvTransit
+			id: 'age',
+			fileName: 'modes_percent_age.csv',
+			title: 'Age',
+			infoText: 'Mode share by City of Toronto residents grouped by age.',
+			raw: csvAge
 		},
 		{
-			id: 'upper_tier_municipalities',
-			fileName: 'modes_percent_upper_tier_municipality.csv',
-			title: 'Municipality',
-			infoText: 'Mode share by residents in Toronto compared to municipalities in the Greater Golden Horseshoe',
-			raw: csvMunicipality
+			id: 'age_gender',
+			fileName: 'modes_percent_age_gender.csv',
+			title: 'Age and gender',
+			infoText: 'Mode share by City of Toronto residents grouped by age and gender.',
+			raw: csvAgeGender
 		},
 		{
 			id: 'income',
@@ -59,22 +60,29 @@
 			raw: csvImmigration
 		},
 		{
-			id: 'age',
-			fileName: 'modes_percent_age.csv',
-			title: 'Age',
-			infoText: 'Mode share by City of Toronto residents grouped by age.',
-			raw: csvAge
+			id: 'upper_tier_municipalities',
+			fileName: 'modes_percent_upper_tier_municipality.csv',
+			title: 'Municipality',
+			infoText: 'Mode share by residents in Toronto compared to municipalities in the Greater Golden Horseshoe',
+			raw: csvMunicipality
 		},
 		{
-			id: 'age_gender',
-			fileName: 'modes_percent_age_gender.csv',
-			title: 'Age and gender',
-			infoText: 'Mode share by City of Toronto residents grouped by age and gender.',
-			raw: csvAgeGender
+			id: 'transit_lines',
+			fileName: 'modes_percent_transit_line.csv',
+			title: 'Near major transit lines',
+			infoText: 'Mode share of residents who live within 800m of stations on major transit lines',
+			raw: csvTransit
+		},
+		{
+			id: 'transit_stations',
+			fileName: 'modes_percent_station.csv',
+			title: 'Near major transit stations',
+			infoText: 'Mode share of residents who live within 800m of stations on major transit lines (in operation by the time of the survey)',
+			raw: csvStations
 		}
 	];
 
-	let selectedDataset = DATASETS[1].id;
+	let selectedDataset = DATASETS[4].id;
 	// ===== End editable parameters =====
 
 	// Chart dimensions
@@ -107,9 +115,9 @@
 	const LINE_GROUP_OPACITY = 0.65;
 
 	// Axis and callout labels
-	const AXIS_LABEL_ACTIVE = '% of trips by active modes (walking or bicycle)';
-	const AXIS_LABEL_DRIVE = '% of trips by motor vehicle';
-	const AXIS_LABEL_TRANSIT = '% of trips by public transit';
+	const AXIS_LABEL_ACTIVE = 'trips by active modes (walking or bicycle) (%)';
+	const AXIS_LABEL_DRIVE = 'trips by motor vehicle (%)';
+	const AXIS_LABEL_TRANSIT = 'trips by public transit (%)';
 
 	const CALLOUT_EVERYBODY = 'Everybody';
 	const CALLOUT_DRIVE = 'drives';
@@ -288,8 +296,9 @@
 		const rect = svg.getBoundingClientRect();
 		const clientX = e.touches ? e.touches[0].clientX : e.clientX;
 		const clientY = e.touches ? e.touches[0].clientY : e.clientY;
-		const lx = clientX - rect.left;
-		const ly = clientY - rect.top;
+		const scale = svgW / rect.width;
+		const lx = (clientX - rect.left) * scale;
+		const ly = (clientY - rect.top) * scale;
 
 		const activeF = 1 - (ly - margin) / triH;
 		const transitF = (lx - margin - 0.5 * triW * activeF) / triW;
@@ -462,197 +471,43 @@
 	});
 </script>
 
-<style>
-	.chart-wrap {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		/* padding: 12px; */
-		position: relative;
-		min-height: 100vh;
-	}
 
-	.chart-heading {
-		font-family: TradeGothicBold, sans-serif;
-		font-size: 37px;
-		color: black;
-		margin: 0px;
-		line-height:45px;
-		padding: 0px;
-		padding-bottom: 15px;
-		border: none;
-	}
 
-	.chart-subheading {
-		font-family: Roboto, sans-serif;
-		font-size: 16px;
-		color: var(--brandBlack);
-		margin: 0px;
-		line-height: 22px;
-		padding: 0px;
-		padding-bottom: 32px;
-		border: none;
-	}
 
-	svg {
-		font-family: Roboto, sans-serif;
-		border: solid 1px var(--brandGray);
-		border-top: solid 8px black;
-		border-bottom: solid 2px black;
-	}
 
-	.svg-subtext {
-		font-family: Roboto, sans-serif;
-		font-size: 13px;
-		color: #4d4d4d;
-		margin-left: 15px;
-	}
 
-	.dataset-select {
-		font-family: Roboto, sans-serif;
-		font-size: 13px;
-		padding: 6px 8px;
-		border-radius: 4px;
-		border: 1px solid #ccc;
-		background: #fff;
-		width: calc(100% - 15px);
-		margin-left: 15px;
-		box-sizing: border-box;
-		margin-bottom: 6px;
-		cursor: pointer;
-		transition: background-color 0.2s ease;
-		/* right-align text and options */
-		direction: rtl;
-		text-align: right;
-		text-align-last: right;
-		-moz-text-align-last: right;
-		-webkit-text-align-last: right;
-		/* custom dropdown arrow */
-		appearance: none;
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-		background-repeat: no-repeat;
-		background-position: left 8px center;
-		background-size: 12px 12px;
-		padding-right: 8px;
-		padding-left: 34px;
-	}
 
-	.dataset-select:hover {
-		background-color: #f5f5f5;
-	}
+<svelte:head>
 
-	.fo-right { position: relative; }
-	.fo-author, .fo-date, .fo-data-source  {
-		font-family: Roboto, sans-serif;
-		font-size: 12px;
-		color: #555;
-		margin-top: 6px;
-	}
+	<title>Charting mode share in Toronto via ternary charts | School of Cities</title>
 
-	.fo-data-source {
-		position: absolute;
-		right: 0;
-		width: 160px;
-		text-align: right;
-		font-size: 12px;
-		margin-top: 20px;
-		color: #555;
-		line-height: 1.4;
-	}
+	<meta name="description" content="Visualizing percent of trips made by car, public transit, and active travel in the Toronto region" />
+	<meta name="author" content="Jeff Allen">
 
-	.fo-left h1 { margin: 0; }
+	<meta property="og:title" content="Charting mode share in Toronto via ternary charts | School of Cities" />
+	<meta property="og:description" content="isualizing percent of trips made by car, public transit, and active travel in the Toronto region" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://schoolofcities.github.io/transportation-tomorrow-survey/mode-ternary/" />
+	<meta property="og:image" content="https://raw.githubusercontent.com/schoolofcities/ggh-transport-geography/main/static/web-card-ternary.png" />
+	<meta property="og:locale" content="en_CA">
 
-	.point-label {
-		font-size: 13px;
-		fill: var(--brandGray80, #4d4d4d);
-		pointer-events: none;
-	}
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="https://schoolofcities.github.io/transportation-tomorrow-survey/mode-ternary/" />
+	<meta name="twitter:creator" content="@JeffAllenMaps" />
+	<meta name="twitter:title" content="Charting mode share in Toronto via ternary charts | School of Cities" />
+	<meta name="twitter:description" content="Visualizing percent of trips made by car, public transit, and active travel in the Toronto region" />
+	<meta name="twitter:image" content="https://raw.githubusercontent.com/schoolofcities/ggh-transport-geography/main/static/web-card-ternary.png" /> 
 
-	.vertex-label {
-		font-size: 15px;
-		fill: var(--brandGray80, #4d4d4d);
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
-	}
+</svelte:head>
 
-	.grid-line {
-		stroke: #e0e0e0;
-		stroke-width: 0.75;
-		opacity: 0.95;
-	}
 
-	.grid-major {
-		stroke: #c5c5c5;
-		stroke-width: 1.5;
-		opacity: 0.98;
-	}
 
-	.tick-label {
-		font-size: 13px;
-		fill: var(--brandGray80, #4d4d4d);
-		font-weight: 500;
-		pointer-events: none;
-	}
 
-	.tick-line {
-		stroke: #2c2c2c;
-		stroke-width: 2;
-		pointer-events: none;
-	}
-
-	.hover-grid-line {
-		stroke: #111;
-		stroke-width: 1.6;
-		stroke-dasharray: 6 4;
-		opacity: 0.95;
-		pointer-events: none;
-	}
-
-	.data-point { cursor: pointer; }
-
-	.axis-title {
-		font-size: 14px;
-		fill: var(--brandGray80, #4d4d4d);
-		text-transform: uppercase;
-		letter-spacing: 0.02em;
-		pointer-events: none;
-	}
-
-	.callout-label { font-size: 14px; fill: var(--brandGray80, #4d4d4d); pointer-events: none; }
-
-	.area-polygon { pointer-events: none; }
-
-	.tooltip {
-		position: absolute;
-		background: rgba(255,255,255,0.96);
-		border: 1px solid #ddd;
-		padding: 8px 10px;
-		border-radius: 4px;
-		box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-		pointer-events: none;
-		font-size: 13px;
-		color: #111;
-		min-width: 140px;
-	}
-
-	a {
-		color: var(--brandBlack);
-		text-decoration: underline
-	}
-
-	a:hover {
-		color: var(--brandDarkBlue);
-	}
-
-</style>
 
 <div class="chart-space">
 
 <div class="chart-wrap" bind:this={wrapEl}>
-	<svg width={svgW} height={svgH} viewBox={`0 0 ${svgW} ${svgH}`} aria-label="Ternary mode share chart" on:mousemove={handleSvgPointerMove} on:mouseleave={hideHoverGuide}>
+	<svg width="100%" style="max-width: {svgW}px" viewBox={`0 0 ${svgW} ${svgH}`} aria-label="Ternary mode share chart" on:mousemove={handleSvgPointerMove} on:mouseleave={hideHoverGuide}>
 		<!-- Bounding box for the svg area -->
 		<rect x="0" y="0" width={svgW} height={svgH} fill="none" stroke="#ddd" stroke-width="1" />
 
@@ -676,6 +531,7 @@
 				</select>
 				<div class="svg-subtext">{chartSubtext}</div>
 				<div class="fo-data-source">{dataSource}</div>
+				<div class="fo-instructions">Hover over each point to display specific stats</div>
 			</div>
 		</foreignObject>
 
@@ -839,8 +695,10 @@
 						on:mouseleave={hideTooltip}
 					/>
 				{/if}
-				{#if row.label && row.label.toLowerCase() === 'yes'}
-					<text x={row.x + 9} y={row.y + 4} class="point-label" alignment-baseline="middle">{row.short}</text>
+				{#if row.label && (row.label.toLowerCase() === 'yes' || row.label.toLowerCase() === 'right')}
+					<text x={row.x + 9} y={row.y + 4} class="point-label" text-anchor="start" alignment-baseline="middle">{row.short}</text>
+				{:else if row.label && row.label.toLowerCase() === 'left'}
+					<text x={row.x - 9} y={row.y + 4} class="point-label" text-anchor="end" alignment-baseline="middle">{row.short}</text>
 				{/if}
 			</g>
 		{/each}
@@ -848,30 +706,38 @@
 
 	{#if tooltip.show}
 		<div class="tooltip" style="left: {tooltip.x}px; top: {tooltip.y}px;">
-			<div style="font-weight:600; margin-bottom:4px">{tooltip.row.short}</div>
+			<div style="font-family:TradeGothicBold; margin-bottom:4px; font-size: 16px;">{tooltip.row.short}</div>
 			<div>Motor vehicle: {tooltip.row.drive.toFixed(1)}%</div>
 			<div>Public transit: {tooltip.row.transit.toFixed(1)}%</div>
 			<div>Active (walk+bike): {tooltip.row.active.toFixed(1)}%</div>
 		</div>
 	{/if}
+
+	<span style="font-size: 22px; padding-top: 20px;">↓</span>
 </div>
 
 </div>
+
+
+
+<br><br>
 
 <div class="text">
 
+
+
 	<h1>Briefly about this chart</h1>
 	<p>
-		Ternary charts are a type of plot that show the composition of three-part data, where the three parts sum to a whole (e.g. 100% of trips). In transportation research, ternary charts can be used to show mode share: the percentage of trips made by different modes like driving, transit, and active transportation (walking/cycling). Each point on the chart represents a specific region or population group, and its position within the triangle indicates the relative proportions of each mode. 
+		Ternary charts are a type of visualization that show the composition of three-part data, where the three parts sum to a whole (e.g. 100% of trips). In transportation research, ternary charts can be used to show mode share: the percentage of trips made by different modes like driving, transit, and active transportation (walking/cycling). Each point on the chart represents a specific geographic area or population group, and its position within the triangle indicates the relative proportions of each mode. 
 	</p>
 	<p>
-		The corners of the triangle represent 100% of one mode (e.g. all driving, all transit, or all active), while points along the edges represent combinations of two modes, and points within the interior represent combinations of all three modes (i.e. regions or groups that are quite multi-modal). For example, looking by municipality, pre-amalgamated Toronto (Old Toronto), is quite close to the centre of the chart, indicating a more balanced mode share between driving, transit, and active travel. In contrast, suburban and rural municipalities, more than 90% are by motor vehicle, and thus they cluster near bottom-left corner
+		The corners of the triangle represent 100% of one mode (e.g. all driving, all transit, or all active), while points along the edges represent combinations of two modes, and points within the interior represent combinations of all three modes (i.e. regions or groups that are quite multi-modal). For example, looking by municipality, pre-amalgamated Toronto (Old Toronto), is quite close to the centre of the chart, indicating a more balanced mode share between driving, transit, and active travel. In contrast, suburban and rural municipalities, more than 90% of trips are by motor vehicle, and thus they cluster near bottom-left corner
 	</p>
 	<p>
 		The data for this chart comes from the  <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which is a large-scale household travel survey conducted in the Greater Golden Horseshoe (south-central Ontario) every 5 years. The TTS collects detailed information on travel behaviour, including mode share, trip purpose, and demographics, making it a valuable resource for transportation planning and research in the region. The latest version of the survey (which is shown on the chart here) was conducted in 2022 and 2023, so the patterns may have shifted since, but probably not substantially.
 	</p>
 	<p>
-		If you are interested in maps showing mode share in the Toronto region, check out our <a href="./" target="_blank">interactive map</a> of Transportation Tomorrow Survey data, which includes mode share maps and other visualizations. We've also created a more experimental visualization of mode share across the the City of Toronto <a href="./mode-weave" target="_blank">using a "weaving-space" method</a>.
+		If you are interested in maps showing mode share in the Toronto region, check out our <a href="./" target="_blank">interactive map</a> of Transportation Tomorrow Survey data, which includes mode share maps and other visualizations. We've also created a more experimental visualization of mode share across the the City of Toronto <a href="./mode-weave" target="_blank">using a "weaving-space" method</a>. Code for these as well as the chart on this page are on <a href="https://github.com/schoolofcities/transportation-tomorrow-survey" target="_blank">GitHub</a>.
 	</p>
 
 </div>
@@ -891,3 +757,220 @@
 <br><br><br>
 
 
+
+
+
+<style>
+	.chart-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		/* padding: 12px; */
+		position: relative;
+		min-height: 300px;
+		max-height: 1000px;
+		height: 100vh;
+		padding-top: 5px;
+	}
+
+	.chart-heading {
+		font-family: TradeGothicBold, sans-serif;
+		font-size: 37px;
+		color: black;
+		margin: 0px;
+		line-height:45px;
+		padding: 0px;
+		padding-bottom: 15px;
+		border: none;
+	}
+
+	.chart-subheading {
+		font-family: Roboto, sans-serif;
+		font-size: 16px;
+		color: var(--brandBlack);
+		margin: 0px;
+		line-height: 22px;
+		padding: 0px;
+		padding-bottom: 32px;
+		border: none;
+	}
+
+	svg {
+		font-family: Roboto, sans-serif;
+		border: solid 1px var(--brandGray);
+		border-top: solid 8px black;
+		border-bottom: solid 2px black;
+	}
+
+	@media (max-width: 870px) {
+		svg {
+			border-top-width: 4px;
+			border-bottom-width: 1px;
+		}
+	}
+
+	.svg-subtext {
+		font-family: Roboto, sans-serif;
+		font-size: 13px;
+		color: #000000;
+		margin-left: 15px;
+	}
+
+	.dataset-select {
+		font-family: Roboto, sans-serif;
+		font-size: 13px;
+		padding: 6px 8px;
+		border-radius: 4px;
+		border: 1px solid #ccc;
+		background: #fff;
+		width: calc(100% - 15px);
+		margin-left: 15px;
+		box-sizing: border-box;
+		margin-bottom: 6px;
+		cursor: pointer;
+		transition: background-color 0.2s ease;
+		/* right-align text and options */
+		direction: rtl;
+		text-align: right;
+		text-align-last: right;
+		-moz-text-align-last: right;
+		-webkit-text-align-last: right;
+		/* custom dropdown arrow */
+		appearance: none;
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: left 8px center;
+		background-size: 12px 12px;
+		padding-right: 8px;
+		padding-left: 34px;
+	}
+
+	.dataset-select:hover {
+		background-color: #f5f5f5;
+	}
+
+	.fo-right { position: relative; }
+	.fo-author, .fo-date, .fo-data-source .fo-instructions  {
+		font-family: Roboto, sans-serif;
+		font-size: 12px;
+		color: #555;
+		margin-top: 6px;
+	}
+
+	.fo-data-source {
+		position: absolute;
+		right: 0;
+		width: 160px;
+		text-align: right;
+		font-size: 12px;
+		margin-top: 20px;
+		color: #555;
+		line-height: 1.4;
+	}
+
+	.fo-instructions {
+		position: absolute;
+		font-family: Roboto, sans-serif;
+		right: 0;
+		width: 160px;
+		text-align: right;
+		font-size: 12px;
+		margin-top: 70px;
+		color: #000000;
+		line-height: 1.4;
+	}
+
+	.fo-left h1 { margin: 0; }
+
+	.point-label {
+		font-size: 13px;
+		fill: #000000;
+		pointer-events: none;
+		opacity: 0.6
+	}
+
+	.vertex-label {
+		font-size: 15px;
+		fill: var(--brandGray80, #4d4d4d);
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+	}
+
+	.grid-line {
+		stroke: #e0e0e0;
+		stroke-width: 0.75;
+		opacity: 0.95;
+	}
+
+	.grid-major {
+		stroke: #c5c5c5;
+		stroke-width: 1.5;
+		opacity: 0.98;
+	}
+
+	.tick-label {
+		font-size: 13px;
+		fill: var(--brandGray80, #4d4d4d);
+		font-weight: 500;
+		pointer-events: none;
+	}
+
+	.tick-line {
+		stroke: #2c2c2c;
+		stroke-width: 2;
+		pointer-events: none;
+	}
+
+	.hover-grid-line {
+		stroke: #111;
+		stroke-width: 1.6;
+		stroke-dasharray: 6 4;
+		opacity: 0.95;
+		pointer-events: none;
+	}
+
+	.data-point { cursor: pointer; }
+
+	.axis-title {
+		font-size: 14px;
+		fill: var(--brandGray80, #4d4d4d);
+		text-transform: uppercase;
+		letter-spacing: 0.02em;
+		pointer-events: none;
+	}
+
+	.callout-label { 
+		font-size: 16px;
+		font-family: TradeGothicBold, sans-serif;
+		fill: var(--brandBlack); 
+		pointer-events: none; 
+	}
+
+	.area-polygon { pointer-events: none; }
+
+	.tooltip {
+		position: absolute;
+		background: rgba(255,255,255,0.96);
+		border: 1px solid #ddd;
+		padding: 8px 10px;
+		border-radius: 4px;
+		box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+		pointer-events: none;
+		font-size: 13px;
+		color: #111;
+		min-width: 140px;
+	}
+
+	a {
+		color: var(--brandBlack);
+		text-decoration: underline
+	}
+
+	a:hover {
+		color: var(--brandDarkBlue);
+	}
+
+</style>
