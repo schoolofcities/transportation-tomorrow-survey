@@ -352,6 +352,7 @@
 	let wrapEl;
 	let tooltip = { show: false, x: 0, y: 0, row: null };
 	let hoveredRow = null;
+	let dropdownOpen = false;
 
 	// area polygons (convex hull per Area) — reactive to `rows`
 	$: areaPolygons = (() => {
@@ -504,10 +505,12 @@
 
 
 
+<svelte:window on:click={() => { dropdownOpen = false; }} />
+
 <div class="chart-space">
 
 <div class="chart-wrap" bind:this={wrapEl}>
-	<svg width="100%" style="max-width: {svgW}px" viewBox={`0 0 ${svgW} ${svgH}`} aria-label="Ternary mode share chart" on:mousemove={handleSvgPointerMove} on:mouseleave={hideHoverGuide}>
+	<svg width="100%" style="max-width: {svgW}px" viewBox={`0 0 ${svgW} ${svgH}`} aria-label="Ternary mode share chart" overflow="visible" on:mousemove={handleSvgPointerMove} on:mouseleave={hideHoverGuide}>
 		<!-- Bounding box for the svg area -->
 		<rect x="0" y="0" width={svgW} height={svgH} fill="none" stroke="#ddd" stroke-width="1" />
 
@@ -522,13 +525,27 @@
 		</foreignObject>
 
 		<!-- Right info box (top-right whitespace) -->
-		<foreignObject x={rightBoxX} y={rightBoxY} width={rightBoxWidth} height="300">
+		<foreignObject x={rightBoxX} y={rightBoxY} width={rightBoxWidth} height="300" overflow="visible">
 			<div xmlns="http://www.w3.org/1999/xhtml" class="fo-right" style="text-align:right;">
-				<select class="dataset-select" bind:value={selectedDataset} on:change={() => handleDatasetSelect(selectedDataset)}>
-					{#each DATASETS as ds}
-						<option value={ds.id}>{ds.title}</option>
-					{/each}
-				</select>
+				<div class="custom-dropdown" role="none" on:click|stopPropagation on:keydown|stopPropagation>
+					<button type="button" class="dropdown-trigger" on:click={() => dropdownOpen = !dropdownOpen}>
+						<span class="dropdown-chevron">▾</span>
+						<span class="dropdown-label">{DATASETS.find(d => d.id === selectedDataset)?.title}</span>
+					</button>
+					{#if dropdownOpen}
+						<div class="dropdown-list" role="listbox">
+							{#each DATASETS as ds}
+								<button
+									type="button"
+									role="option"
+									aria-selected={ds.id === selectedDataset}
+									class:active={ds.id === selectedDataset}
+									on:click={() => { selectedDataset = ds.id; handleDatasetSelect(ds.id); dropdownOpen = false; }}
+								>{ds.title}</button>
+							{/each}
+						</div>
+					{/if}
+				</div>
 				<div class="svg-subtext">{chartSubtext}</div>
 				<div class="fo-data-source">{dataSource}</div>
 				<div class="fo-instructions">Hover over each point to display specific stats</div>
@@ -817,39 +834,78 @@
 		margin-left: 15px;
 	}
 
-	.dataset-select {
-		font-family: TradeGothicBold, sans-serif;
-		font-size: 16px;
-		padding: 6px 8px;
+	.custom-dropdown {
+		position: relative;
+		width: calc(100% - 15px);
+		margin-left: 15px;
+		margin-bottom: 6px;
+	}
+
+	.dropdown-trigger {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 6px 10px;
 		border-radius: 4px;
 		border: 1px solid #ccc;
 		background: #fff;
-		width: calc(100% - 15px);
-		margin-left: 15px;
-		box-sizing: border-box;
-		margin-bottom: 6px;
 		cursor: pointer;
+		font-family: TradeGothicBold, sans-serif;
+		font-size: 15px;
 		transition: background-color 0.2s ease;
-		/* right-align text and options */
-		direction: rtl;
-		text-align: right;
-		text-align-last: right;
-		-moz-text-align-last: right;
-		-webkit-text-align-last: right;
-		/* custom dropdown arrow */
-		appearance: none;
-		-moz-appearance: none;
-		-webkit-appearance: none;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-		background-repeat: no-repeat;
-		background-position: left 6px center;
-		background-size: 20px 20px;
-		padding-right: 8px;
-		padding-left: 34px;
 	}
 
-	.dataset-select:hover {
+	.dropdown-trigger:hover {
 		background-color: #f5f5f5;
+	}
+
+	.dropdown-chevron {
+		flex: 0 0 auto;
+		font-size: 20px;
+		line-height: 1;
+		color: #333;
+		margin-right: 4px;
+	}
+
+	.dropdown-label {
+		flex: 1;
+		text-align: right;
+	}
+
+	.dropdown-list {
+		position: absolute;
+		top: calc(100% + 2px);
+		left: 0;
+		right: 0;
+		background: #fff;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		padding: 2px 0;
+		z-index: 9999;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+	}
+
+	.dropdown-list button {
+		display: block;
+		width: 100%;
+		padding: 5px 10px;
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-family: Roboto, sans-serif;
+		font-size: 13px;
+		text-align: right;
+		color: #333;
+	}
+
+	.dropdown-list button:hover {
+		background: #f5f5f5;
+	}
+
+	.dropdown-list button.active {
+		font-weight: 600;
+		color: #000;
 	}
 
 	.fo-right { position: relative; }
