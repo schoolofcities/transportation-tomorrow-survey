@@ -726,12 +726,12 @@
 
 
 
-	<h1>Briefly about this chart</h1>
+	<h1>About this chart</h1>
 	<p>
-		Ternary charts are a type of visualization that show the composition of three-part data, where the three parts sum to a whole (e.g. 100% of trips). In transportation research, ternary charts can be used to show mode share: the percentage of trips made by different modes like driving, transit, and active transportation (walking/cycling). Each point on the chart represents a specific geographic area or population group, and its position within the triangle indicates the relative proportions of each mode. 
+		<a href="https://en.wikipedia.org/wiki/Ternary_plot" target="_blank">Ternary charts</a> are a type of visualization that show the composition of three-part data, where the three parts sum to a whole (e.g. 100% of trips). In transportation research, ternary charts can be used to show mode share: the percentage of trips made by different modes like driving, transit, and active transportation (walking/cycling). Each point on the chart represents a specific geographic area or population group, and its position within the triangle indicates the relative proportions of each mode. 
 	</p>
 	<p>
-		The corners of the triangle represent 100% of one mode (e.g. all driving, all transit, or all active), while points along the edges represent combinations of two modes, and points within the interior represent combinations of all three modes (i.e. regions or groups that are quite multi-modal). For example, looking by municipality, pre-amalgamated Toronto (Old Toronto), is quite close to the centre of the chart, indicating a more balanced mode share between driving, transit, and active travel. In contrast, suburban and rural municipalities, more than 90% of trips are by motor vehicle, and thus they cluster near bottom-left corner
+		The corners of the triangle represent 100% of one mode (e.g. all driving, all transit, or all active), while points along the edges represent combinations of two modes, and points within the interior represent combinations of all three modes (i.e. regions or groups that are quite multi-modal). For example, looking by municipality, pre-amalgamated Toronto (Old Toronto) is quite close to the centre of the chart, indicating a more balanced mode share between driving, transit, and active travel. In contrast, in suburban and rural municipalities, more than 90% of trips are by motor vehicle, and thus they cluster near bottom-left corner.
 	</p>
 	<p>
 		The data for this chart comes from the  <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which is a large-scale household travel survey conducted in the Greater Golden Horseshoe (south-central Ontario) every 5 years. The TTS collects detailed information on travel behaviour, including mode share, trip purpose, and demographics, making it a valuable resource for transportation planning and research in the region. The latest version of the survey (which is shown on the chart here) was conducted in 2022 and 2023, so the patterns may have shifted since, but probably not substantially.
@@ -818,8 +818,8 @@
 	}
 
 	.dataset-select {
-		font-family: Roboto, sans-serif;
-		font-size: 13px;
+		font-family: TradeGothicBold, sans-serif;
+		font-size: 16px;
 		padding: 6px 8px;
 		border-radius: 4px;
 		border: 1px solid #ccc;
@@ -840,10 +840,10 @@
 		appearance: none;
 		-moz-appearance: none;
 		-webkit-appearance: none;
-		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24'%3E%3Cpath fill='%23333' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
 		background-repeat: no-repeat;
-		background-position: left 8px center;
-		background-size: 12px 12px;
+		background-position: left 6px center;
+		background-size: 20px 20px;
 		padding-right: 8px;
 		padding-left: 34px;
 	}
