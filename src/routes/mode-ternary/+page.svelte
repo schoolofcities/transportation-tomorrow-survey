@@ -548,7 +548,7 @@
 				</div>
 				<div class="svg-subtext">{chartSubtext}</div>
 				<div class="fo-data-source">{dataSource}</div>
-				<div class="fo-instructions">Hover over each point to display specific stats</div>
+				<div class="fo-instructions">Click on or hover over each point to display specific stats</div>
 			</div>
 		</foreignObject>
 
@@ -723,7 +723,7 @@
 
 	{#if tooltip.show}
 		<div class="tooltip" style="left: {tooltip.x}px; top: {tooltip.y}px;">
-			<div style="font-family:TradeGothicBold; margin-bottom:4px; font-size: 16px;">{tooltip.row.short}</div>
+			<div class="tooltip-title">{tooltip.row.short}</div>
 			<div>Motor vehicle: {tooltip.row.drive.toFixed(1)}%</div>
 			<div>Public transit: {tooltip.row.transit.toFixed(1)}%</div>
 			<div>Active (walk+bike): {tooltip.row.active.toFixed(1)}%</div>
@@ -1018,6 +1018,34 @@
 		font-size: 13px;
 		color: #111;
 		min-width: 140px;
+	}
+
+	.tooltip-title {
+		font-family: TradeGothicBold;
+		margin-bottom: 4px;
+		font-size: 16px;
+	}
+
+	@media (max-width: 500px) {
+		.tooltip {
+			font-size: 9px;
+			padding: 5px 7px;
+			min-width: 90px;
+		}
+		.tooltip-title {
+			font-size: 11px;
+		}
+	}
+
+	@media (max-width: 870px) and (min-width: 501px) {
+		.tooltip {
+			font-size: 11px;
+			padding: 6px 8px;
+			min-width: 115px;
+		}
+		.tooltip-title {
+			font-size: 13px;
+		}
 	}
 
 	a {
