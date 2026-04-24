@@ -486,7 +486,7 @@
 	<meta name="author" content="Jeff Allen">
 
 	<meta property="og:title" content="Charting mode share in Toronto via ternary charts | School of Cities" />
-	<meta property="og:description" content="isualizing percent of trips made by car, public transit, and active travel in the Toronto region" />
+	<meta property="og:description" content="Visualizing percent of trips made by car, public transit, and active travel in the Toronto region" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://schoolofcities.github.io/transportation-tomorrow-survey/mode-ternary/" />
 	<meta property="og:image" content="https://raw.githubusercontent.com/schoolofcities/ggh-transport-geography/main/static/web-card-ternary.png" />
