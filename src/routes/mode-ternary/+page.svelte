@@ -745,16 +745,25 @@
 
 	<h1>About this chart</h1>
 	<p>
-		<a href="https://en.wikipedia.org/wiki/Ternary_plot" target="_blank">Ternary charts</a> are a type of visualization that show the composition of three-part data, where the three parts sum to a whole (e.g. 100% of trips). In transportation research, ternary charts can be used to show mode share: the percentage of trips made by different modes like driving, transit, and active transportation (walking/cycling). Each point on the chart represents a specific geographic area or population group, and its position within the triangle indicates the relative proportions of each mode. 
+		<a href="https://en.wikipedia.org/wiki/Ternary_plot" target="_blank">Ternary charts</a> are a type of visualization that show the composition of three-part data, where the three parts sum to a whole (e.g. 100% of trips). In transportation research, ternary charts can be used to show mode share: the percentage of trips made by different modes like driving, transit, and active transportation (walking/cycling). Each point on the chart represents a specific geographic area or population group, and its position within the triangle indicates the relative proportion of each travel mode. 
 	</p>
 	<p>
-		The corners of the triangle represent 100% of one mode (e.g. all driving, all transit, or all active), while points along the edges represent combinations of two modes, and points within the interior represent combinations of all three modes (i.e. regions or groups that are quite multi-modal). For example, looking by municipality, pre-amalgamated Toronto (Old Toronto) is quite close to the centre of the chart, indicating a more balanced mode share between driving, transit, and active travel. In contrast, in suburban and rural municipalities, more than 90% of trips are by motor vehicle, and thus they cluster near bottom-left corner.
+		The corners of the triangle represent 100% of one mode (e.g. all driving, all transit, or all active), while points along the edges represent combinations of two modes, and points within the interior represent combinations of all three modes (i.e. no single mode dominates). For example, looking by municipality, pre-amalgamated Toronto (Old Toronto) is quite close to the centre of the chart, indicating a more balanced mode share between driving, transit, and active travel. In contrast, in suburban and rural municipalities, more than 90% of trips are by motor vehicle, and thus they cluster near the bottom-left corner.
 	</p>
 	<p>
-		The data for this chart comes from the  <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which is a large-scale household travel survey conducted in the Greater Golden Horseshoe (south-central Ontario) every 5 years. The TTS collects detailed information on travel behaviour, including mode share, trip purpose, and demographics, making it a valuable resource for transportation planning and research in the region. The latest version of the survey (which is shown on the chart here) was conducted in 2022 and 2023, so the patterns may have shifted since, but probably not substantially.
+		In terms of demographics, the charts reveal that newcomers, teenagers, and young adults (especially women aged 15-24), as well as low-income households in Toronto are more likely to rely on public transit, with this mode comprising 30–43% of trips.
+	</p>
+	<p>	
+		Torontonians residing close to the Ontario Line, TTC Line 1, or Line 2 predominantly walk or bike, with some Line 2 stations and most downtown stations showing a higher prevalence of public transit and active transportation over motor vehicles.
 	</p>
 	<p>
-		If you are interested in maps showing mode share in the Toronto region, check out our <a href="./" target="_blank">interactive map</a> of Transportation Tomorrow Survey data, which includes mode share maps and other visualizations. We've also created a more experimental visualization of mode share across the the City of Toronto <a href="./mode-weave" target="_blank">using a "weaving-space" method</a>. Code for these as well as the chart on this page are on <a href="https://github.com/schoolofcities/transportation-tomorrow-survey" target="_blank">GitHub</a>.
+		While the chart is descriptive rather than causal, it can be used for exploratory analysis and supporting additional research. For example, planners could use these data to contextualize demographic differences in mobility as well as support corridor and station investments; researchers could use these charts as framing for deeper travel behaviour analyses or pilot projects.
+	</p>
+	<p>
+		The data for this chart comes from the  <a href="https://dmg.utoronto.ca/tts-introduction/" target="_blank">Transportation Tomorrow Survey</a> (TTS), which is a large-scale household travel survey conducted in the Greater Golden Horseshoe (south-central Ontario) every 5 years. The TTS collects detailed information on travel behaviour, including mode share, trip purpose, and demographics, making it a useful resource for transportation planning and research in the region. The latest version of the survey (which is shown on the chart here) was conducted in 2022-23, so the patterns may have shifted since, but probably not substantially.
+	</p>
+	<p>
+		If you are interested in maps showing mode share in the Toronto region, check out our <a href="./" target="_blank">interactive map</a> of Transportation Tomorrow Survey data, which includes mode share maps and other visualizations. We've also created a more experimental visualization of mode share across the  City of Toronto <a href="./mode-weave" target="_blank">using a "weaving-space" method</a>. Code for what is presented on this page is on <a href="https://github.com/schoolofcities/transportation-tomorrow-survey" target="_blank">GitHub</a>.
 	</p>
 
 </div>
